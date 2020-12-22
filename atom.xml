@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://javalog.cn/"/>
-  <updated>2020-12-22T15:19:15.411Z</updated>
+  <updated>2020-12-22T15:21:47.483Z</updated>
   <id>https://javalog.cn/</id>
   
   <author>
@@ -21,19 +21,18 @@
     <link href="https://javalog.cn/post/springboot-thymeleaf-.html"/>
     <id>https://javalog.cn/post/springboot-thymeleaf-.html</id>
     <published>2020-12-22T13:30:42.000Z</published>
-    <updated>2020-12-22T15:19:15.411Z</updated>
+    <updated>2020-12-22T15:21:47.483Z</updated>
     
-    <content type="html"><![CDATA[<p>##解决办法1：<br>开发环境用如下配置即可<br># Templates reloading during development<br>spring.thymeleaf.prefix=file:src/main/resources/templates/<br>spring.thymeleaf.cache=false</p><p># Static resources reloading during development<br>spring.resources.static-locations=file:src/main/resources/static/<br>spring.resources.cache-period=0</p><p>application.properties中增加如上配置，运行项目即可</p><p>##解决办法2：<br>1、File-Settings-Build, Execution, Deployment-Compiler，勾选Build peojet antomaticcally<br>2、Help-Find Action，搜索Registry，勾选compiler.automake.allow.when.app.running<br>如上设置IDEA，运行项目即可</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="解决办法1：">解决办法1：</h2><p>开发环境用如下配置即可<br># Templates reloading during development<br>spring.thymeleaf.prefix=file:src/main/resources/templates/<br>spring.thymeleaf.cache=false</p><p># Static resources reloading during development<br>spring.resources.static-locations=file:src/main/resources/static/<br>spring.resources.cache-period=0</p><p>application.properties中增加如上配置，运行项目即可</p><h2 id="解决办法2：">解决办法2：</h2><p>1、File-Settings-Build, Execution, Deployment-Compiler，勾选Build peojet antomaticcally<br>2、Help-Find Action，搜索Registry，勾选compiler.automake.allow.when.app.running<br>如上设置IDEA，运行项目即可</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;##解决办法1：&lt;br&gt;
-开发环境用如下配置即可&lt;br&gt;
+        &lt;h2 id=&quot;解决办法1：&quot;&gt;解决办法1：&lt;/h2&gt;
+&lt;p&gt;开发环境用如下配置即可&lt;br&gt;
 # Templates reloading during development&lt;br&gt;
-spring.thymeleaf.prefix=file:src/main/resources/templates/&lt;br&gt;
-
+spring.thymeleaf.prefix=file:src/main/resources/
       
     
     </summary>
