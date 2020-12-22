@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://javalog.cn/"/>
-  <updated>2020-12-22T14:49:26.840Z</updated>
+  <updated>2020-12-22T15:19:15.411Z</updated>
   <id>https://javalog.cn/</id>
   
   <author>
@@ -21,18 +21,19 @@
     <link href="https://javalog.cn/post/springboot-thymeleaf-.html"/>
     <id>https://javalog.cn/post/springboot-thymeleaf-.html</id>
     <published>2020-12-22T13:30:42.000Z</published>
-    <updated>2020-12-22T14:49:26.840Z</updated>
+    <updated>2020-12-22T15:19:15.411Z</updated>
     
-    <content type="html"><![CDATA[<p>解决办法1：<br>开发环境用如下配置即可</p><h1>Templates reloading during development</h1><p>spring.thymeleaf.prefix=file:src/main/resources/templates/<br>spring.thymeleaf.cache=false</p><h1>Static resources reloading during development</h1><p>spring.resources.static-locations=file:src/main/resources/static/<br>spring.resources.cache-period=0</p><p>application.properties中增加如上配置，运行项目即可</p><p>解决办法2：<br>1、File-Settings-Build, Execution, Deployment-Compiler，勾选Build peojet antomaticcally<br>2、Help-Find Action，搜索Registry，勾选compiler.automake.allow.when.app.running<br>如上设置IDEA，运行项目即可</p>]]></content>
+    <content type="html"><![CDATA[<p>##解决办法1：<br>开发环境用如下配置即可<br># Templates reloading during development<br>spring.thymeleaf.prefix=file:src/main/resources/templates/<br>spring.thymeleaf.cache=false</p><p># Static resources reloading during development<br>spring.resources.static-locations=file:src/main/resources/static/<br>spring.resources.cache-period=0</p><p>application.properties中增加如上配置，运行项目即可</p><p>##解决办法2：<br>1、File-Settings-Build, Execution, Deployment-Compiler，勾选Build peojet antomaticcally<br>2、Help-Find Action，搜索Registry，勾选compiler.automake.allow.when.app.running<br>如上设置IDEA，运行项目即可</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;解决办法1：&lt;br&gt;
-开发环境用如下配置即可&lt;/p&gt;
-&lt;h1&gt;Templates reloading during development&lt;/h1&gt;
-&lt;p&gt;spring.thymeleaf.prefix=file:src/main/resources/templates/&lt;
+        &lt;p&gt;##解决办法1：&lt;br&gt;
+开发环境用如下配置即可&lt;br&gt;
+# Templates reloading during development&lt;br&gt;
+spring.thymeleaf.prefix=file:src/main/resources/templates/&lt;br&gt;
+
       
     
     </summary>

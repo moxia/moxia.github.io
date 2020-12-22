@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://javalog.cn">
   <title>解决springboot+thymeleaf页面修改不自动加载 | JAVA日志</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="解决办法1： 开发环境用如下配置即可 Templates reloading during development spring.thymeleaf.prefix=file:src/main/resources/templates/ spring.thymeleaf.cache=false Static resources reloading during development spring.r">
+  <meta name="description" content="##解决办法1： 开发环境用如下配置即可 # Templates reloading during development spring.thymeleaf.prefix=file:src/main/resources/templates/ spring.thymeleaf.cache=false # Static resources reloading during development sp">
 <meta name="keywords" content="springboot,thymeleaf">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决springboot+thymeleaf页面修改不自动加载">
 <meta property="og:url" content="https://javalog.cn/post/springboot-thymeleaf-.html">
 <meta property="og:site_name" content="JAVA日志">
-<meta property="og:description" content="解决办法1： 开发环境用如下配置即可 Templates reloading during development spring.thymeleaf.prefix=file:src/main/resources/templates/ spring.thymeleaf.cache=false Static resources reloading during development spring.r">
+<meta property="og:description" content="##解决办法1： 开发环境用如下配置即可 # Templates reloading during development spring.thymeleaf.prefix=file:src/main/resources/templates/ spring.thymeleaf.cache=false # Static resources reloading during development sp">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-12-22T14:49:26.840Z">
+<meta property="og:updated_time" content="2020-12-22T15:19:15.411Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决springboot+thymeleaf页面修改不自动加载">
-<meta name="twitter:description" content="解决办法1： 开发环境用如下配置即可 Templates reloading during development spring.thymeleaf.prefix=file:src/main/resources/templates/ spring.thymeleaf.cache=false Static resources reloading during development spring.r">
+<meta name="twitter:description" content="##解决办法1： 开发环境用如下配置即可 # Templates reloading during development spring.thymeleaf.prefix=file:src/main/resources/templates/ spring.thymeleaf.cache=false # Static resources reloading during development sp">
   
     <link rel="alternative" href="/atom.xml" title="JAVA日志" type="application/atom+xml">
   
@@ -178,16 +178,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>解决办法1：<br>
-开发环境用如下配置即可</p>
-<h1>Templates reloading during development</h1>
-<p>spring.thymeleaf.prefix=file:src/main/resources/templates/<br>
+        <p>##解决办法1：<br>
+开发环境用如下配置即可<br>
+# Templates reloading during development<br>
+spring.thymeleaf.prefix=file:src/main/resources/templates/<br>
 spring.thymeleaf.cache=false</p>
-<h1>Static resources reloading during development</h1>
-<p>spring.resources.static-locations=file:src/main/resources/static/<br>
+<p># Static resources reloading during development<br>
+spring.resources.static-locations=file:src/main/resources/static/<br>
 spring.resources.cache-period=0</p>
 <p>application.properties中增加如上配置，运行项目即可</p>
-<p>解决办法2：<br>
+<p>##解决办法2：<br>
 1、File-Settings-Build, Execution, Deployment-Compiler，勾选Build peojet antomaticcally<br>
 2、Help-Find Action，搜索Registry，勾选compiler.automake.allow.when.app.running<br>
 如上设置IDEA，运行项目即可</p>
@@ -479,10 +479,6 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
@@ -491,11 +487,15 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
