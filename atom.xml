@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://javalog.cn/"/>
-  <updated>2020-12-15T04:32:55.765Z</updated>
+  <updated>2020-12-22T14:49:26.840Z</updated>
   <id>https://javalog.cn/</id>
   
   <author>
@@ -17,13 +17,89 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>解决springboot+thymeleaf页面修改不自动加载</title>
+    <link href="https://javalog.cn/post/springboot-thymeleaf-.html"/>
+    <id>https://javalog.cn/post/springboot-thymeleaf-.html</id>
+    <published>2020-12-22T13:30:42.000Z</published>
+    <updated>2020-12-22T14:49:26.840Z</updated>
+    
+    <content type="html"><![CDATA[<p>解决办法1：<br>开发环境用如下配置即可</p><h1>Templates reloading during development</h1><p>spring.thymeleaf.prefix=file:src/main/resources/templates/<br>spring.thymeleaf.cache=false</p><h1>Static resources reloading during development</h1><p>spring.resources.static-locations=file:src/main/resources/static/<br>spring.resources.cache-period=0</p><p>application.properties中增加如上配置，运行项目即可</p><p>解决办法2：<br>1、File-Settings-Build, Execution, Deployment-Compiler，勾选Build peojet antomaticcally<br>2、Help-Find Action，搜索Registry，勾选compiler.automake.allow.when.app.running<br>如上设置IDEA，运行项目即可</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;解决办法1：&lt;br&gt;
+开发环境用如下配置即可&lt;/p&gt;
+&lt;h1&gt;Templates reloading during development&lt;/h1&gt;
+&lt;p&gt;spring.thymeleaf.prefix=file:src/main/resources/templates/&lt;
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="后端" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="springboot" scheme="https://javalog.cn/tags/springboot/"/>
+    
+      <category term="thymeleaf" scheme="https://javalog.cn/tags/thymeleaf/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ubuntu下安装可自动更新的chrome</title>
+    <link href="https://javalog.cn/post/ubuntu%E4%B8%8B%E5%AE%89%E8%A3%85%E5%8F%AF%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E7%9A%84chrome.html"/>
+    <id>https://javalog.cn/post/ubuntu下安装可自动更新的chrome.html</id>
+    <published>2020-12-17T06:49:44.000Z</published>
+    <updated>2020-12-17T06:50:04.407Z</updated>
+    
+    <content type="html"><![CDATA[<p>参考：<br><a href="https://linuxhint.com/install_google_chrome_ubuntu_ppa/" target="_blank" rel="noopener">https://linuxhint.com/install_google_chrome_ubuntu_ppa/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;参考：&lt;br&gt;
+&lt;a href=&quot;https://linuxhint.com/install_google_chrome_ubuntu_ppa/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://linuxhint.com/install_go
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>union与union all的区别</title>
+    <link href="https://javalog.cn/post/union%E4%B8%8Eunion%20all%E7%9A%84%E5%8C%BA%E5%88%AB.html"/>
+    <id>https://javalog.cn/post/union与union all的区别.html</id>
+    <published>2020-12-15T13:53:26.000Z</published>
+    <updated>2020-12-22T14:57:16.008Z</updated>
+    
+    <content type="html"><![CDATA[<p>参考：<br><a href="https://www.cnblogs.com/xiangshu/articles/2054447.html" target="_blank" rel="noopener">https://www.cnblogs.com/xiangshu/articles/2054447.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;参考：&lt;br&gt;
+&lt;a href=&quot;https://www.cnblogs.com/xiangshu/articles/2054447.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.cnblogs.com/xiangshu/
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>vbox中使用金税盘</title>
     <link href="https://javalog.cn/post/vbox-use-invoce.html"/>
     <id>https://javalog.cn/post/vbox-use-invoce.html</id>
     <published>2020-12-12T02:42:14.000Z</published>
-    <updated>2020-12-15T04:32:55.765Z</updated>
+    <updated>2020-12-15T05:57:41.430Z</updated>
     
-    <content type="html"><![CDATA[<p>物理机安装的是ubuntu，用来处理日常事务，vbox里起一个win10虚拟机，用来打印发票。<br>1、安装vbox扩展<br>2、物理机插上金税盘<br>3、vbox配置读取物理机U口</p>]]></content>
+    <content type="html"><![CDATA[<p>物理机安装的是ubuntu，用来处理日常事务，vbox里起一个win10虚拟机，用来打印发票。<br>1、安装vbox扩展<br>2、物理机插上金税盘<br>3、使用如下命令将用户名添加到vboxusers组<br>sudo adduser usrname vboxusers<br>4、vbox配置读取物理机U口</p><p>参考：<br><a href="https://www.cnblogs.com/pngcui/p/5951495.html" target="_blank" rel="noopener">https://www.cnblogs.com/pngcui/p/5951495.html</a></p>]]></content>
     
     <summary type="html">
     
@@ -32,8 +108,8 @@
         &lt;p&gt;物理机安装的是ubuntu，用来处理日常事务，vbox里起一个win10虚拟机，用来打印发票。&lt;br&gt;
 1、安装vbox扩展&lt;br&gt;
 2、物理机插上金税盘&lt;br&gt;
-3、vbox配置读取物理机U口&lt;/p&gt;
-
+3、使用如下命令将用户名添加到vboxusers组&lt;br&gt;
+sudo adduser usrname vbox
       
     
     </summary>
@@ -497,89 +573,6 @@ N1盒子&lt;br&gt;
     
     
       <category term="bridge" scheme="https://javalog.cn/tags/bridge/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>IDEA使用记录</title>
-    <link href="https://javalog.cn/post/idea-use-record.html"/>
-    <id>https://javalog.cn/post/idea-use-record.html</id>
-    <published>2020-03-17T08:38:13.000Z</published>
-    <updated>2020-12-07T13:53:12.121Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="后端" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="IDEA" scheme="https://javalog.cn/tags/IDEA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>eclipse使用记录</title>
-    <link href="https://javalog.cn/post/eclipse-use-record.html"/>
-    <id>https://javalog.cn/post/eclipse-use-record.html</id>
-    <published>2020-03-17T02:19:16.000Z</published>
-    <updated>2020-12-07T13:53:12.125Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="设置字体">设置字体</h2><p>Window -&gt; Preferences -&gt; General -&gt; Appearance -&gt; Colors and Fonts -&gt; Basic -&gt; Text font</p><h2 id="配置tomcat">配置Tomcat</h2><h2 id="配置jdk">配置Jdk</h2><h2 id="设置工作空间全局编码">设置工作空间全局编码</h2><p>Window-&gt;Preferences-&gt;General-&gt;Workspace 中Text file encoding 选择other并选UTF-8。</p><h2 id="修改文件默认编码">修改文件默认编码</h2><p>Window -&gt; Preferences -&gt; General -&gt; Content Types，修改最下面的Default encoding，在这里可以将html、properties和jsp文件的编码都改成UTF-8的。<br>这样修改后，以后每次新建properties并保存时，就不会跳出一个对话框说你现在的编码是ISO-8859-1的提示了。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;设置字体&quot;&gt;设置字体&lt;/h2&gt;
-&lt;p&gt;Window -&amp;gt; Preferences -&amp;gt; General -&amp;gt; Appearance -&amp;gt; Colors and Fonts -&amp;gt; Basic -&amp;gt; Text font&lt;/p&gt;
-&lt;h
-      
-    
-    </summary>
-    
-      <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="后端" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="eclipse" scheme="https://javalog.cn/tags/eclipse/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Tomcat9配置LDAP认证</title>
-    <link href="https://javalog.cn/post/tomcat-set-ldap-authentication.html"/>
-    <id>https://javalog.cn/post/tomcat-set-ldap-authentication.html</id>
-    <published>2020-03-13T08:04:14.000Z</published>
-    <updated>2020-12-07T13:53:12.125Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="安装ldap">安装LDAP</h2><h2 id="安装tomcat">安装Tomcat</h2><h2 id="配置tomcat">配置Tomcat</h2><h2 id="配置ldap">配置LDAP</h2><h2 id="测试">测试</h2><p>参考：<br><a href="https://blog.csdn.net/mylitboy/article/details/88865428" target="_blank" rel="noopener">https://blog.csdn.net/mylitboy/article/details/88865428</a><br><a href="https://my.oschina.net/xpbug/blog/198765" target="_blank" rel="noopener">https://my.oschina.net/xpbug/blog/198765</a><br><a href="https://my.oschina.net/u/3304536/blog/859772" target="_blank" rel="noopener">https://my.oschina.net/u/3304536/blog/859772</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;安装ldap&quot;&gt;安装LDAP&lt;/h2&gt;
-&lt;h2 id=&quot;安装tomcat&quot;&gt;安装Tomcat&lt;/h2&gt;
-&lt;h2 id=&quot;配置tomcat&quot;&gt;配置Tomcat&lt;/h2&gt;
-&lt;h2 id=&quot;配置ldap&quot;&gt;配置LDAP&lt;/h2&gt;
-&lt;h2 id=&quot;测试&quot;&gt;测试&lt;/h2&gt;
-
-      
-    
-    </summary>
-    
-      <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="后端" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="tomcat" scheme="https://javalog.cn/tags/tomcat/"/>
-    
-      <category term="ldap" scheme="https://javalog.cn/tags/ldap/"/>
     
   </entry>
   
