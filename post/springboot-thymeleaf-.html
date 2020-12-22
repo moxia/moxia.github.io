@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://javalog.cn">
   <title>解决springboot+thymeleaf页面修改不自动加载 | JAVA日志</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="解决办法1： 开发环境用如下配置即可 # Templates reloading during development spring.thymeleaf.prefix=file:src/main/resources/templates/ spring.thymeleaf.cache=false # Static resources reloading during development spri">
+  <meta name="description" content="解决办法1： 开发环境用如下配置即可 1234567\# Templates reloading during developmentspring.thymeleaf.prefix=file:src/main/resources/templates/spring.thymeleaf.cache=false\# Static resources reloading during developmen">
 <meta name="keywords" content="springboot,thymeleaf">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决springboot+thymeleaf页面修改不自动加载">
 <meta property="og:url" content="https://javalog.cn/post/springboot-thymeleaf-.html">
 <meta property="og:site_name" content="JAVA日志">
-<meta property="og:description" content="解决办法1： 开发环境用如下配置即可 # Templates reloading during development spring.thymeleaf.prefix=file:src/main/resources/templates/ spring.thymeleaf.cache=false # Static resources reloading during development spri">
+<meta property="og:description" content="解决办法1： 开发环境用如下配置即可 1234567\# Templates reloading during developmentspring.thymeleaf.prefix=file:src/main/resources/templates/spring.thymeleaf.cache=false\# Static resources reloading during developmen">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-12-22T15:21:47.483Z">
+<meta property="og:updated_time" content="2020-12-22T15:26:06.759Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决springboot+thymeleaf页面修改不自动加载">
-<meta name="twitter:description" content="解决办法1： 开发环境用如下配置即可 # Templates reloading during development spring.thymeleaf.prefix=file:src/main/resources/templates/ spring.thymeleaf.cache=false # Static resources reloading during development spri">
+<meta name="twitter:description" content="解决办法1： 开发环境用如下配置即可 1234567\# Templates reloading during developmentspring.thymeleaf.prefix=file:src/main/resources/templates/spring.thymeleaf.cache=false\# Static resources reloading during developmen">
   
     <link rel="alternative" href="/atom.xml" title="JAVA日志" type="application/atom+xml">
   
@@ -179,13 +179,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="解决办法1：">解决办法1：</h2>
-<p>开发环境用如下配置即可<br>
-# Templates reloading during development<br>
-spring.thymeleaf.prefix=file:src/main/resources/templates/<br>
-spring.thymeleaf.cache=false</p>
-<p># Static resources reloading during development<br>
-spring.resources.static-locations=file:src/main/resources/static/<br>
-spring.resources.cache-period=0</p>
+<p>开发环境用如下配置即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">\# Templates reloading during development</span><br><span class="line">spring.thymeleaf.prefix=file:src/main/resources/templates/</span><br><span class="line">spring.thymeleaf.cache=false</span><br><span class="line"></span><br><span class="line">\# Static resources reloading during development</span><br><span class="line">spring.resources.static-locations=file:src/main/resources/static/</span><br><span class="line">spring.resources.cache-period=0</span><br></pre></td></tr></table></figure>
 <p>application.properties中增加如上配置，运行项目即可</p>
 <h2 id="解决办法2：">解决办法2：</h2>
 <p>1、File-Settings-Build, Execution, Deployment-Compiler，勾选Build peojet antomaticcally<br>
@@ -483,15 +478,15 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">centos</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,15 +498,15 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Springboot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Debian</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SSH</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Springboot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -539,11 +534,11 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">openLDAP</a>
+                <a href="javascript:void(0)" class="js-tag color5">Websphere</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Websphere</a>
+                <a href="javascript:void(0)" class="js-tag color4">openLDAP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -583,19 +578,19 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">putty</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Vbox</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">LEDE</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">putty</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -647,15 +642,15 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">VirtualBox</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">vbox</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">金税盘</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">VirtualBox</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -691,18 +686,6 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">thymeleaf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vultr</a>
               </li>
              
@@ -712,6 +695,18 @@ gitalk.render('gitalk-container')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">锐速</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">thymeleaf</a>
               </li>
             
             <div class="clearfix"></div>
