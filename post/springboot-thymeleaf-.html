@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://javalog.cn">
   <title>解决springboot+thymeleaf页面修改不自动加载 | JAVA日志</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="解决办法1： 开发环境用如下配置即可 1234567\# Templates reloading during developmentspring.thymeleaf.prefix=file:src/main/resources/templates/spring.thymeleaf.cache=false\# Static resources reloading during developmen">
+  <meta name="description" content="解决办法1： 开发环境用如下配置即可 1234567# Templates reloading during developmentspring.thymeleaf.prefix=file:src/main/resources/templates/spring.thymeleaf.cache=false# Static resources reloading during developments">
 <meta name="keywords" content="springboot,thymeleaf">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决springboot+thymeleaf页面修改不自动加载">
 <meta property="og:url" content="https://javalog.cn/post/springboot-thymeleaf-.html">
 <meta property="og:site_name" content="JAVA日志">
-<meta property="og:description" content="解决办法1： 开发环境用如下配置即可 1234567\# Templates reloading during developmentspring.thymeleaf.prefix=file:src/main/resources/templates/spring.thymeleaf.cache=false\# Static resources reloading during developmen">
+<meta property="og:description" content="解决办法1： 开发环境用如下配置即可 1234567# Templates reloading during developmentspring.thymeleaf.prefix=file:src/main/resources/templates/spring.thymeleaf.cache=false# Static resources reloading during developments">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-12-22T15:26:06.759Z">
+<meta property="og:updated_time" content="2020-12-22T15:30:46.511Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决springboot+thymeleaf页面修改不自动加载">
-<meta name="twitter:description" content="解决办法1： 开发环境用如下配置即可 1234567\# Templates reloading during developmentspring.thymeleaf.prefix=file:src/main/resources/templates/spring.thymeleaf.cache=false\# Static resources reloading during developmen">
+<meta name="twitter:description" content="解决办法1： 开发环境用如下配置即可 1234567# Templates reloading during developmentspring.thymeleaf.prefix=file:src/main/resources/templates/spring.thymeleaf.cache=false# Static resources reloading during developments">
   
     <link rel="alternative" href="/atom.xml" title="JAVA日志" type="application/atom+xml">
   
@@ -180,7 +180,7 @@
       
         <h2 id="解决办法1：">解决办法1：</h2>
 <p>开发环境用如下配置即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">\# Templates reloading during development</span><br><span class="line">spring.thymeleaf.prefix=file:src/main/resources/templates/</span><br><span class="line">spring.thymeleaf.cache=false</span><br><span class="line"></span><br><span class="line">\# Static resources reloading during development</span><br><span class="line">spring.resources.static-locations=file:src/main/resources/static/</span><br><span class="line">spring.resources.cache-period=0</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Templates reloading during development</span><br><span class="line">spring.thymeleaf.prefix=file:src/main/resources/templates/</span><br><span class="line">spring.thymeleaf.cache=false</span><br><span class="line"></span><br><span class="line"># Static resources reloading during development</span><br><span class="line">spring.resources.static-locations=file:src/main/resources/static/</span><br><span class="line">spring.resources.cache-period=0</span><br></pre></td></tr></table></figure>
 <p>application.properties中增加如上配置，运行项目即可</p>
 <h2 id="解决办法2：">解决办法2：</h2>
 <p>1、File-Settings-Build, Execution, Deployment-Compiler，勾选Build peojet antomaticcally<br>
@@ -478,15 +478,15 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">centos</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
