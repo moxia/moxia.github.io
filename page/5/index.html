@@ -155,6 +155,122 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-docker-svn-server" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/docker-svn-server.html">Docker安装SVN服务端</a>
+    </h1>
+  
+
+        
+        <a href="/post/docker-svn-server.html" class="archive-article-date">
+  	<time datetime="2020-02-21T06:01:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="拉取镜像">拉取镜像</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">garethflowers/svn-server</span><br></pre></td></tr></table></figure>
+<h2 id="运行容器">运行容器</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --restart always --name svn -d -v /root/dockers/svn:/var/opt/svn -p 3690:3690 garethflowers/svn-server</span><br></pre></td></tr></table></figure>
+<h3 id="参数含义">参数含义</h3>
+<blockquote>
+<p>-v /root/dockers/svn为宿主机的文件目录，/var/opt/svn为容器内的文件目录<br>
+–restart always命令可以实现容器在宿主机开机时自启动<br>
+-p 3690:3690表示将宿主机的3690端口映射到容器的3690端口，此端口为svn服务的默认端口，可以根据需要自行修改</p>
+</blockquote>
+<h2 id="svn配置">SVN配置</h2>
+<h3 id="建立仓库">建立仓库</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it svn /bin/sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svnadmin create svn</span><br></pre></td></tr></table></figure>
+<h3 id="配置权限">配置权限</h3>
+<h4 id="svnserve-conf文件">svnserve.conf文件</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[general]</span><br><span class="line">anon-access = none             # 匿名用户不可读写，也可设置为只读 read</span><br><span class="line">auth-access = write            # 授权用户可写</span><br><span class="line">password-db = passwd           # 密码文件路径，相对于当前目录</span><br><span class="line">authz-db = authz               # 访问控制文件</span><br><span class="line">realm = /var/opt/svn/svn       # 认证命名空间，会在认证提示界面显示，并作为凭证缓存的关键字，可以写仓库名称比如svn</span><br></pre></td></tr></table></figure>
+<h4 id="passwd文件">passwd文件</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[users]</span><br><span class="line">moxia = 123456</span><br></pre></td></tr></table></figure>
+<h4 id="authz文件">authz文件</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[groups]</span><br><span class="line">[/]</span><br><span class="line">moxia = rw</span><br></pre></td></tr></table></figure>
+<p>参考：<br>
+<a href="https://blog.mioshu.com/archives/112.html" target="_blank" rel="noopener">https://blog.mioshu.com/archives/112.html</a><br>
+<a href="https://blog.csdn.net/u014236259/article/details/74276768" target="_blank" rel="noopener">https://blog.csdn.net/u014236259/article/details/74276768</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SVN</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/后端/" class="article-tag-list-link color3">后端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/docker-svn-server.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ubuntu-centos-update-source" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1079,130 +1195,6 @@
 
 
   
-    <article id="post-vultr-centos-ss" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/vultr-centos-ss.html">自建飞机场遨游互联网</a>
-    </h1>
-  
-
-        
-        <a href="/post/vultr-centos-ss.html" class="archive-article-date">
-  	<time datetime="2020-02-01T10:28:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本篇说明仅供交流与学习使用，请勿作出任何违反国家法律的行为。</p>
-<h2 id="购买vps">购买vps</h2>
-<p>推荐Vultr</p>
-<h2 id="安装ss">安装ss</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget — no-check-certificate -O shadowsocks.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</span><br><span class="line">chmod +x shadowsocks.sh</span><br><span class="line">./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log</span><br></pre></td></tr></table></figure>
-<h2 id="安装破解版锐速">安装破解版锐速</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/91yun/serverspeeder/master/serverspeeder-all.sh &amp;&amp; bash serverspeeder-all.sh</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>如果安装锐速报错，要更换下内核之后重启服务器，再执行步骤3</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh http://soft.91yun.org/ISO/Linux/CentOS/kernel/kernel-3.10.0-229.1.2.el7.x86_64.rpm --force</span><br></pre></td></tr></table></figure>
-<h2 id="安装bbr">安装bbr</h2>
-<h2 id="ss相关操作命令">ss相关操作命令</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/shadowsocks start      # 启动</span><br><span class="line">/etc/init.d/shadowsocks stop       # 停止</span><br><span class="line">/etc/init.d/shadowsocks restart    # 重启</span><br><span class="line">/etc/init.d/shadowsocks status     # 状态</span><br><span class="line">./shadowsocks.sh uninstall         # 卸载</span><br></pre></td></tr></table></figure>
-<h2 id="锐速相关操作命令">锐速相关操作命令</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">service serverSpeeder start        # 启动</span><br><span class="line">service serverSpeeder stop         # 停止</span><br><span class="line">service serverSpeeder restart      # 重启</span><br><span class="line">service serverSpeeder status       # 状态</span><br></pre></td></tr></table></figure>
-<h2 id="参考文章">参考文章</h2>
-<p><a href="https://www.qcgzxw.com/1640.html" target="_blank" rel="noopener">https://www.qcgzxw.com/1640.html</a><br>
-<a href="https://medium.com/@jackme256/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91-vultr-vps-%E6%90%AD%E5%BB%BA-shadowsocks-ss-%E6%95%99%E7%A8%8B-%E6%96%B0%E6%89%8B%E5%90%91-968613081aae" target="_blank" rel="noopener">https://medium.com/@jackme256/科学上网-vultr-vps-搭建-shadowsocks-ss-教程-新手向-968613081aae</a></p>
-<h2 id="更换端口">更换端口</h2>
-<blockquote>
-<p>有时候端口会被河蟹（可以ping通，但是telnet不通），可以这样操作</p>
-<blockquote>
-<p>1、vi /etc/shadowsocks.json<br>
-2、进入编辑模式修改后保存<br>
-3、重启服务</p>
-</blockquote>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vultr</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">shadowsocks</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">锐速</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/科学上网/" class="article-tag-list-link color5">科学上网</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/vultr-centos-ss.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
@@ -1217,7 +1209,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 天朝子民
+    		&copy; 2021 天朝子民
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1309,15 +1301,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">centos</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1361,11 +1353,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Weblogic</a>
+                <a href="javascript:void(0)" class="js-tag color5">Websphere</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Websphere</a>
+                <a href="javascript:void(0)" class="js-tag color4">Weblogic</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1389,6 +1381,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">pandorabox</a>
               </li>
              
@@ -1398,10 +1394,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">k2p</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1470,6 +1462,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Jenkins</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">格式化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">U盘</a>
               </li>
              
               <li class="article-tag-list-item">

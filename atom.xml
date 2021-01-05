@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://javalog.cn/"/>
-  <updated>2020-12-22T15:30:46.511Z</updated>
+  <updated>2021-01-05T14:33:24.565Z</updated>
   <id>https://javalog.cn/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ubuntu中格式化U盘</title>
+    <link href="https://javalog.cn/post/ubuntu-format-upan.html"/>
+    <id>https://javalog.cn/post/ubuntu-format-upan.html</id>
+    <published>2021-01-05T14:31:50.000Z</published>
+    <updated>2021-01-05T14:33:24.565Z</updated>
+    
+    <content type="html"><![CDATA[<p>参考：<br><a href="https://jingyan.baidu.com/article/4d58d541fdd67fddd5e9c06c.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/4d58d541fdd67fddd5e9c06c.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;参考：&lt;br&gt;
+&lt;a href=&quot;https://jingyan.baidu.com/article/4d58d541fdd67fddd5e9c06c.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://jingyan.baidu.co
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="运维" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="ubuntu" scheme="https://javalog.cn/tags/ubuntu/"/>
+    
+      <category term="格式化" scheme="https://javalog.cn/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96/"/>
+    
+      <category term="U盘" scheme="https://javalog.cn/tags/U%E7%9B%98/"/>
+    
+  </entry>
   
   <entry>
     <title>解决springboot+thymeleaf页面修改不自动加载</title>
@@ -236,9 +268,9 @@ Active Directory Federati
     
       <category term="Tomcat" scheme="https://javalog.cn/tags/Tomcat/"/>
     
-      <category term="Weblogic" scheme="https://javalog.cn/tags/Weblogic/"/>
-    
       <category term="Websphere" scheme="https://javalog.cn/tags/Websphere/"/>
+    
+      <category term="Weblogic" scheme="https://javalog.cn/tags/Weblogic/"/>
     
       <category term="Kerberos" scheme="https://javalog.cn/tags/Kerberos/"/>
     
@@ -539,39 +571,6 @@ N1盒子&lt;br&gt;
     
     
       <category term="斐讯N1" scheme="https://javalog.cn/tags/%E6%96%90%E8%AE%AFN1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>移动宽带光猫配置桥接</title>
-    <link href="https://javalog.cn/post/config-bridge.html"/>
-    <id>https://javalog.cn/post/config-bridge.html</id>
-    <published>2020-03-19T03:11:22.000Z</published>
-    <updated>2020-12-07T13:53:12.125Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="为啥要改桥接">为啥要改桥接</h2><p>光猫负责转化光信号，路由器负责拨号、网路分发；各司其职、物尽其用</p><h2 id="获取光猫超密">获取光猫超密</h2><p>方法基本有三：</p><ol><li>找运营商要</li><li>闲鱼花钱解决</li><li>自行破解<br>我是找运营商的安装宽带小哥索要的…光猫型号：GM220-S</li></ol><h2 id="修改配置">修改配置</h2><p>我是把所有的默认配置都删除了，重新新建：</p><p>注意vlan id</p><h2 id="测试">测试</h2><ol><li>路由器拨号</li></ol><ul><li>将路由器的WLAN口连接光猫的WLAN口</li><li>不同路由器型号、不同固件，具体配置入口不尽相同，大体是PPPoE拨号，输入宽带账户密码，显示拨号成功即可</li></ul><ol start="2"><li>电脑拨号</li></ol><ul><li>设置 -&gt; 网络与Internet</li><li>拨号 -&gt; 设置新连接</li><li>PPPoE拨号，输入宽带账户密码，显示拨号成功即可</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;为啥要改桥接&quot;&gt;为啥要改桥接&lt;/h2&gt;
-&lt;p&gt;光猫负责转化光信号，路由器负责拨号、网路分发；各司其职、物尽其用&lt;/p&gt;
-&lt;h2 id=&quot;获取光猫超密&quot;&gt;获取光猫超密&lt;/h2&gt;
-&lt;p&gt;方法基本有三：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;找运营商要&lt;/li&gt;
-&lt;li&gt;闲鱼花钱解
-      
-    
-    </summary>
-    
-      <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="网络" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E7%BD%91%E7%BB%9C/"/>
-    
-    
-      <category term="bridge" scheme="https://javalog.cn/tags/bridge/"/>
     
   </entry>
   
