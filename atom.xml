@@ -136,23 +136,31 @@
   
   <entry>
     <title>ubuntu下安装可自动更新的chrome</title>
-    <link href="https://javalog.cn/post/ubuntu%E4%B8%8B%E5%AE%89%E8%A3%85%E5%8F%AF%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E7%9A%84chrome.html"/>
-    <id>https://javalog.cn/post/ubuntu下安装可自动更新的chrome.html</id>
+    <link href="https://javalog.cn/post/ubuntu-ppa-install-chrome.html"/>
+    <id>https://javalog.cn/post/ubuntu-ppa-install-chrome.html</id>
     <published>2020-12-17T06:49:44.000Z</published>
-    <updated>2020-12-17T06:50:04.407Z</updated>
+    <updated>2021-01-07T06:33:54.362Z</updated>
     
-    <content type="html"><![CDATA[<p>参考：<br><a href="https://linuxhint.com/install_google_chrome_ubuntu_ppa/" target="_blank" rel="noopener">https://linuxhint.com/install_google_chrome_ubuntu_ppa/</a></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="添加公钥">添加公钥</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -</span><br></pre></td></tr></table></figure><h3 id="ppa源">PPA源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c &apos;echo &quot;deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main&quot;</span><br><span class="line">&gt;&gt; /etc/apt/sources.list.d/google.list&apos;</span><br></pre></td></tr></table></figure><h3 id="更新">更新</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure><h3 id="安装">安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install google-chrome-stable</span><br></pre></td></tr></table></figure><p>参考：<br><a href="https://linuxhint.com/install_google_chrome_ubuntu_ppa/" target="_blank" rel="noopener">https://linuxhint.com/install_google_chrome_ubuntu_ppa/</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;参考：&lt;br&gt;
-&lt;a href=&quot;https://linuxhint.com/install_google_chrome_ubuntu_ppa/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://linuxhint.com/install_go
+        &lt;h3 id=&quot;添加公钥&quot;&gt;添加公钥&lt;/h3&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td cla
       
     
     </summary>
     
+      <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="运维" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="ubuntu" scheme="https://javalog.cn/tags/ubuntu/"/>
+    
+      <category term="google chrome" scheme="https://javalog.cn/tags/google-chrome/"/>
     
   </entry>
   
