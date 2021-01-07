@@ -139,16 +139,17 @@
     <link href="https://javalog.cn/post/ubuntu-ppa-install-chrome.html"/>
     <id>https://javalog.cn/post/ubuntu-ppa-install-chrome.html</id>
     <published>2020-12-17T06:49:44.000Z</published>
-    <updated>2021-01-07T06:33:54.362Z</updated>
+    <updated>2021-01-07T06:42:51.557Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="添加公钥">添加公钥</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -</span><br></pre></td></tr></table></figure><h3 id="ppa源">PPA源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c &apos;echo &quot;deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main&quot;</span><br><span class="line">&gt;&gt; /etc/apt/sources.list.d/google.list&apos;</span><br></pre></td></tr></table></figure><h3 id="更新">更新</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure><h3 id="安装">安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install google-chrome-stable</span><br></pre></td></tr></table></figure><p>参考：<br><a href="https://linuxhint.com/install_google_chrome_ubuntu_ppa/" target="_blank" rel="noopener">https://linuxhint.com/install_google_chrome_ubuntu_ppa/</a></p>]]></content>
+    <content type="html"><![CDATA[<p>ubuntu里使用deb包安装的chrome没办法像在win里的chrome一样，用“关于”来检查/更新chrome版本；所以推荐使用ppa源安装的chrome，这样当发布新版本，就可以自动更新之。</p><h3 id="添加公钥">添加公钥</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -</span><br></pre></td></tr></table></figure><h3 id="添加ppa源">添加PPA源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c &apos;echo &quot;deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main&quot;</span><br><span class="line">&gt;&gt; /etc/apt/sources.list.d/google.list&apos;</span><br></pre></td></tr></table></figure><h3 id="更新源">更新源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure><h3 id="安装">安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install google-chrome-stable</span><br></pre></td></tr></table></figure><p>参考：<br><a href="https://linuxhint.com/install_google_chrome_ubuntu_ppa/" target="_blank" rel="noopener">https://linuxhint.com/install_google_chrome_ubuntu_ppa/</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;添加公钥&quot;&gt;添加公钥&lt;/h3&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td cla
+        &lt;p&gt;ubuntu里使用deb包安装的chrome没办法像在win里的chrome一样，用“关于”来检查/更新chrome版本；所以推荐使用ppa源安装的chrome，这样当发布新版本，就可以自动更新之。&lt;/p&gt;
+&lt;h3 id=&quot;添加公钥&quot;&gt;添加公钥&lt;/h3&gt;
+&lt;figure c
       
     
     </summary>

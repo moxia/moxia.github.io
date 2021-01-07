@@ -540,11 +540,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="添加公钥">添加公钥</h3>
+        <p>ubuntu里使用deb包安装的chrome没办法像在win里的chrome一样，用“关于”来检查/更新chrome版本；所以推荐使用ppa源安装的chrome，这样当发布新版本，就可以自动更新之。</p>
+<h3 id="添加公钥">添加公钥</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -</span><br></pre></td></tr></table></figure>
-<h3 id="ppa源">PPA源</h3>
+<h3 id="添加ppa源">添加PPA源</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c &apos;echo &quot;deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main&quot;</span><br><span class="line">&gt;&gt; /etc/apt/sources.list.d/google.list&apos;</span><br></pre></td></tr></table></figure>
-<h3 id="更新">更新</h3>
+<h3 id="更新源">更新源</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
 <h3 id="安装">安装</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install google-chrome-stable</span><br></pre></td></tr></table></figure>
@@ -1107,6 +1108,10 @@ remote_port = 2200</code></pre>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jdk</a>
               </li>
              
@@ -1295,11 +1300,11 @@ remote_port = 2200</code></pre>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BBR</a>
+                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
+                <a href="javascript:void(0)" class="js-tag color4">BBR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1319,6 +1324,10 @@ remote_port = 2200</code></pre>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Gitalk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vultr</a>
               </li>
              
@@ -1331,10 +1340,6 @@ remote_port = 2200</code></pre>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gitalk</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
@@ -1344,10 +1349,6 @@ remote_port = 2200</code></pre>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">thymeleaf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
             
             <div class="clearfix"></div>

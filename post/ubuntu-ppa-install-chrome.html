@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://javalog.cn">
   <title>ubuntu下安装可自动更新的chrome | JAVA日志</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="添加公钥 1wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add - PPA源 12sudo sh -c &amp;apos;echo &amp;quot;deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main&amp;quot;&amp;g">
+  <meta name="description" content="ubuntu里使用deb包安装的chrome没办法像在win里的chrome一样，用“关于”来检查/更新chrome版本；所以推荐使用ppa源安装的chrome，这样当发布新版本，就可以自动更新之。 添加公钥 1wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 添加PPA源 12s">
 <meta name="keywords" content="ubuntu,google chrome">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu下安装可自动更新的chrome">
 <meta property="og:url" content="https://javalog.cn/post/ubuntu-ppa-install-chrome.html">
 <meta property="og:site_name" content="JAVA日志">
-<meta property="og:description" content="添加公钥 1wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add - PPA源 12sudo sh -c &amp;apos;echo &amp;quot;deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main&amp;quot;&amp;g">
+<meta property="og:description" content="ubuntu里使用deb包安装的chrome没办法像在win里的chrome一样，用“关于”来检查/更新chrome版本；所以推荐使用ppa源安装的chrome，这样当发布新版本，就可以自动更新之。 添加公钥 1wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 添加PPA源 12s">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-01-07T06:33:54.362Z">
+<meta property="og:updated_time" content="2021-01-07T06:42:51.557Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu下安装可自动更新的chrome">
-<meta name="twitter:description" content="添加公钥 1wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add - PPA源 12sudo sh -c &amp;apos;echo &amp;quot;deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main&amp;quot;&amp;g">
+<meta name="twitter:description" content="ubuntu里使用deb包安装的chrome没办法像在win里的chrome一样，用“关于”来检查/更新chrome版本；所以推荐使用ppa源安装的chrome，这样当发布新版本，就可以自动更新之。 添加公钥 1wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 添加PPA源 12s">
   
     <link rel="alternative" href="/atom.xml" title="JAVA日志" type="application/atom+xml">
   
@@ -178,11 +178,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="添加公钥">添加公钥</h3>
+        <p>ubuntu里使用deb包安装的chrome没办法像在win里的chrome一样，用“关于”来检查/更新chrome版本；所以推荐使用ppa源安装的chrome，这样当发布新版本，就可以自动更新之。</p>
+<h3 id="添加公钥">添加公钥</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -</span><br></pre></td></tr></table></figure>
-<h3 id="ppa源">PPA源</h3>
+<h3 id="添加ppa源">添加PPA源</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c &apos;echo &quot;deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main&quot;</span><br><span class="line">&gt;&gt; /etc/apt/sources.list.d/google.list&apos;</span><br></pre></td></tr></table></figure>
-<h3 id="更新">更新</h3>
+<h3 id="更新源">更新源</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
 <h3 id="安装">安装</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install google-chrome-stable</span><br></pre></td></tr></table></figure>
@@ -497,6 +498,10 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jdk</a>
               </li>
              
@@ -685,11 +690,11 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BBR</a>
+                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
+                <a href="javascript:void(0)" class="js-tag color4">BBR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -709,6 +714,10 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Gitalk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vultr</a>
               </li>
              
@@ -721,10 +730,6 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gitalk</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
@@ -734,10 +739,6 @@ gitalk.render('gitalk-container')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">thymeleaf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
             
             <div class="clearfix"></div>
