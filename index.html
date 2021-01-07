@@ -155,6 +155,103 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ubuntu-ark-garbled" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/ubuntu-ark-garbled.html">ubuntu中zip压缩包乱码</a>
+    </h1>
+  
+
+        
+        <a href="/post/ubuntu-ark-garbled.html" class="archive-article-date">
+  	<time datetime="2021-01-07T03:53:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>从网上下载的zip包用ubuntu自带的ark打开之后显示乱码：<br>
+<img src="/assets/img/post/Screenshot_20210107_124958.png" alt="ark打开乱码"><br>
+使用如下命令解决：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unar Z3198-视频素材.zip</span><br></pre></td></tr></table></figure>
+<p><img src="/assets/img/post/Screenshot_20210107_125147.png" alt="unar解压解决乱码"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ubuntu乱码</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ark压缩包</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/运维/" class="article-tag-list-link color3">运维</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/ubuntu-ark-garbled.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ubuntu-format-upan" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -175,9 +272,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>参考：<br>
-<a href="https://jingyan.baidu.com/article/4d58d541fdd67fddd5e9c06c.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/4d58d541fdd67fddd5e9c06c.html</a></p>
-
+        <h3 id="查看挂载路径">查看挂载路径</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/mounts //查看已经挂在的路径</span><br></pre></td></tr></table></figure>
+<h3 id="卸载挂载">卸载挂载</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo umount /media/hi //卸载掉挂载的路径</span><br></pre></td></tr></table></figure>
+<h3 id="格式化命令">格式化命令</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mkfs.ntfs /dev/sdb4</span><br><span class="line">sudo mkfs.ext4 /dev/sdb4</span><br><span class="line">sudo mkfs.vfat -F 32 /dev/sdb4</span><br></pre></td></tr></table></figure>
       
 
       
@@ -850,141 +950,6 @@ remote_port = 2200</code></pre>
 
 
   
-    <article id="post-weblogic-websphere-tomcat-kerberos" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/weblogic-websphere-tomcat-kerberos.html">Weblogic、Websphere、Tomcat配置Kerberos</a>
-    </h1>
-  
-
-        
-        <a href="/post/weblogic-websphere-tomcat-kerberos.html" class="archive-article-date">
-  	<time datetime="2020-04-27T13:14:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="名词解释">名词解释</h2>
-<ul>
-<li>
-<p>ADDS<br>
-Active Directory Domain Services，活动目录域名服务</p>
-</li>
-<li>
-<p>ADFS<br>
-Active Directory Federation Services，活动目录联合服务</p>
-</li>
-<li>
-<p>MIM<br>
-Microsoft Identity Manager，</p>
-</li>
-<li>
-<p>KDC<br>
-Key Distribution Center，密钥分发中心</p>
-</li>
-</ul>
-<h2 id="安装win2012-server-r2">安装Win2012 Server R2</h2>
-<p>vbox安装，过程略<br>
-系统镜像下载：<br>
-激活工具下载：</p>
-<h2 id="安装adds">安装ADDS</h2>
-<p>参见：</p>
-<h2 id="安装adfs">安装ADFS</h2>
-<p>参见：</p>
-<h2 id="weblogic安装">Weblogic安装</h2>
-<p>参见：</p>
-<h2 id="weblogic配置">Weblogic配置</h2>
-<h2 id="kdc配置">KDC配置</h2>
-<p>参考：<br>
-<a href="https://blog.joden123.top/2019/03/09/sso/adfs/adds-install/" target="_blank" rel="noopener">https://blog.joden123.top/2019/03/09/sso/adfs/adds-install/</a><br>
-<a href="https://blog.joden123.top/2019/03/11/sso/adfs/adfs-install/" target="_blank" rel="noopener">https://blog.joden123.top/2019/03/11/sso/adfs/adfs-install/</a><br>
-<a href="https://www.cnblogs.com/firstdream/p/8515453.html" target="_blank" rel="noopener">https://www.cnblogs.com/firstdream/p/8515453.html</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Tomcat</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Weblogic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Websphere</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Kerberos</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/运维/" class="article-tag-list-link color3">运维</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/weblogic-websphere-tomcat-kerberos.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1087,11 +1052,11 @@ Key Distribution Center，密钥分发中心</p>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1099,11 +1064,11 @@ Key Distribution Center，密钥分发中心</p>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1139,11 +1104,11 @@ Key Distribution Center，密钥分发中心</p>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Weblogic</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+                <a href="javascript:void(0)" class="js-tag color4">Weblogic</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1255,6 +1220,14 @@ Key Distribution Center，密钥分发中心</p>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ubuntu乱码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ark压缩包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">格式化</a>
               </li>
              
@@ -1279,11 +1252,11 @@ Key Distribution Center，密钥分发中心</p>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BBR</a>
+                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
+                <a href="javascript:void(0)" class="js-tag color4">BBR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1307,10 +1280,6 @@ Key Distribution Center，密钥分发中心</p>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vultr</a>
               </li>
              
@@ -1320,6 +1289,10 @@ Key Distribution Center，密钥分发中心</p>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">锐速</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">

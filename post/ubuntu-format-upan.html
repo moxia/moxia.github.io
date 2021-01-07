@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://javalog.cn">
   <title>ubuntu中格式化U盘 | JAVA日志</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="参考： https://jingyan.baidu.com/article/4d58d541fdd67fddd5e9c06c.html">
+  <meta name="description" content="查看挂载路径 1cat /proc/mounts //查看已经挂在的路径 卸载挂载 1sudo umount /media/hi //卸载掉挂载的路径 格式化命令 123sudo mkfs.ntfs /dev/sdb4sudo mkfs.ext4 /dev/sdb4sudo mkfs.vfat -F 32 /dev/sdb4">
 <meta name="keywords" content="ubuntu,格式化,U盘">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu中格式化U盘">
 <meta property="og:url" content="https://javalog.cn/post/ubuntu-format-upan.html">
 <meta property="og:site_name" content="JAVA日志">
-<meta property="og:description" content="参考： https://jingyan.baidu.com/article/4d58d541fdd67fddd5e9c06c.html">
+<meta property="og:description" content="查看挂载路径 1cat /proc/mounts //查看已经挂在的路径 卸载挂载 1sudo umount /media/hi //卸载掉挂载的路径 格式化命令 123sudo mkfs.ntfs /dev/sdb4sudo mkfs.ext4 /dev/sdb4sudo mkfs.vfat -F 32 /dev/sdb4">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-01-05T14:33:24.565Z">
+<meta property="og:updated_time" content="2021-01-07T03:19:27.839Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu中格式化U盘">
-<meta name="twitter:description" content="参考： https://jingyan.baidu.com/article/4d58d541fdd67fddd5e9c06c.html">
+<meta name="twitter:description" content="查看挂载路径 1cat /proc/mounts //查看已经挂在的路径 卸载挂载 1sudo umount /media/hi //卸载掉挂载的路径 格式化命令 123sudo mkfs.ntfs /dev/sdb4sudo mkfs.ext4 /dev/sdb4sudo mkfs.vfat -F 32 /dev/sdb4">
   
     <link rel="alternative" href="/atom.xml" title="JAVA日志" type="application/atom+xml">
   
@@ -178,9 +178,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>参考：<br>
-<a href="https://jingyan.baidu.com/article/4d58d541fdd67fddd5e9c06c.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/4d58d541fdd67fddd5e9c06c.html</a></p>
-
+        <h3 id="查看挂载路径">查看挂载路径</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/mounts //查看已经挂在的路径</span><br></pre></td></tr></table></figure>
+<h3 id="卸载挂载">卸载挂载</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo umount /media/hi //卸载掉挂载的路径</span><br></pre></td></tr></table></figure>
+<h3 id="格式化命令">格式化命令</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mkfs.ntfs /dev/sdb4</span><br><span class="line">sudo mkfs.ext4 /dev/sdb4</span><br><span class="line">sudo mkfs.vfat -F 32 /dev/sdb4</span><br></pre></td></tr></table></figure>
       
 
       
@@ -316,6 +319,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/post/ubuntu-ark-garbled.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ubuntu中zip压缩包乱码
+        
+      </div>
+    </a>
   
   
     <a href="/post/springboot-thymeleaf-.html" id="article-nav-older" class="article-nav-link-wrap">
@@ -472,11 +484,11 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -484,11 +496,11 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -524,11 +536,11 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Weblogic</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+                <a href="javascript:void(0)" class="js-tag color4">Weblogic</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -640,6 +652,14 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ubuntu乱码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ark压缩包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">格式化</a>
               </li>
              
@@ -664,11 +684,11 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BBR</a>
+                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
+                <a href="javascript:void(0)" class="js-tag color4">BBR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -692,10 +712,6 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vultr</a>
               </li>
              
@@ -705,6 +721,10 @@ gitalk.render('gitalk-container')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">锐速</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">

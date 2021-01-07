@@ -155,6 +155,119 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-centos8-install-docker" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/centos8-install-docker.html">Centos8安装Docker</a>
+    </h1>
+  
+
+        
+        <a href="/post/centos8-install-docker.html" class="archive-article-date">
+  	<time datetime="2020-02-22T04:18:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>添加源</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>升级</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf install https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>安装</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf -y  install docker-ce</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>确认安装成功</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status docker</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable docker</span><br></pre></td></tr></table></figure>
+<p>参考：<br>
+<a href="https://bynss.com/2019/292681.html" target="_blank" rel="noopener">https://bynss.com/2019/292681.html</a><br>
+<a href="https://www.cnblogs.com/Zhusi/p/12324516.html" target="_blank" rel="noopener">https://www.cnblogs.com/Zhusi/p/12324516.html</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">centos</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/Docker/" class="article-tag-list-link color2">Docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/centos8-install-docker.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-docker-svn-server" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1091,110 +1204,6 @@
 
 
   
-    <article id="post-centos-tomcat-deploy" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/centos-tomcat-deploy.html">Centos7安装Tomcat部署应用</a>
-    </h1>
-  
-
-        
-        <a href="/post/centos-tomcat-deploy.html" class="archive-article-date">
-  	<time datetime="2020-02-02T11:23:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="安装jdk">安装jdk</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget [rpm包下载地址]</span><br><span class="line">rpm -ivh [rpm包]</span><br></pre></td></tr></table></figure>
-<h2 id="安装tomcat">安装tomcat</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget [tomcat下载地址]</span><br><span class="line">unzip [tomcat包]</span><br></pre></td></tr></table></figure>
-<h2 id="设置可执行权限">设置可执行权限</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd [tomcat解压地址]/bin</span><br><span class="line">chmod u+x *.sh</span><br></pre></td></tr></table></figure>
-<h2 id="开放8080端口">开放8080端口</h2>
-<blockquote>
-<p>centos7使用firewall防火墙，而不是iptables</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=8080/tcp --permanent</span><br><span class="line">systemctl restart firewalld.service</span><br></pre></td></tr></table></figure>
-<h2 id="设置北京时间">设置北京时间</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /etc/localtime</span><br><span class="line">ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Centos</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Tomcat</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/后端/" class="article-tag-list-link color3">后端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/centos-tomcat-deploy.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
@@ -1297,11 +1306,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1309,11 +1318,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1349,11 +1358,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Weblogic</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+                <a href="javascript:void(0)" class="js-tag color4">Weblogic</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1465,6 +1474,14 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ubuntu乱码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ark压缩包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">格式化</a>
               </li>
              
@@ -1489,11 +1506,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BBR</a>
+                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
+                <a href="javascript:void(0)" class="js-tag color4">BBR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1517,10 +1534,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vultr</a>
               </li>
              
@@ -1530,6 +1543,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">锐速</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
