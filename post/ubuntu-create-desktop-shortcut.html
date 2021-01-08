@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://javalog.cn">
   <title>ubuntu创建程序桌面快捷方式 | JAVA日志</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这里拿IDEA做示例 1vim /usr/share/applications/IDEA.desktop 复制下面内容到IDEA.desktop 12345678910[Desktop Entry]Encoding=UTF-8Name=IDEAComment=IDEA IDEExec=/home/zzj/soft/idea-IU-203.5981.155/bin/idea.shIcon=/home">
+  <meta name="description" content="系统环境：kubuntu20.04 这里拿IDEA做示例  创建.desktop文件 1vim /usr/share/applications/IDEA.desktop 复制下面内容到IDEA.desktop 主要要修改下Exec和Icon的路径，分别对应可执行文件和快捷方式图标 12345678910[Desktop Entry]Encoding=UTF-8Name=IDEAComment=I">
 <meta name="keywords" content="ubuntu,desktop">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu创建程序桌面快捷方式">
 <meta property="og:url" content="https://javalog.cn/post/ubuntu-create-desktop-shortcut.html">
 <meta property="og:site_name" content="JAVA日志">
-<meta property="og:description" content="这里拿IDEA做示例 1vim /usr/share/applications/IDEA.desktop 复制下面内容到IDEA.desktop 12345678910[Desktop Entry]Encoding=UTF-8Name=IDEAComment=IDEA IDEExec=/home/zzj/soft/idea-IU-203.5981.155/bin/idea.shIcon=/home">
+<meta property="og:description" content="系统环境：kubuntu20.04 这里拿IDEA做示例  创建.desktop文件 1vim /usr/share/applications/IDEA.desktop 复制下面内容到IDEA.desktop 主要要修改下Exec和Icon的路径，分别对应可执行文件和快捷方式图标 12345678910[Desktop Entry]Encoding=UTF-8Name=IDEAComment=I">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-01-07T13:45:23.257Z">
+<meta property="og:updated_time" content="2021-01-08T02:55:56.321Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu创建程序桌面快捷方式">
-<meta name="twitter:description" content="这里拿IDEA做示例 1vim /usr/share/applications/IDEA.desktop 复制下面内容到IDEA.desktop 12345678910[Desktop Entry]Encoding=UTF-8Name=IDEAComment=IDEA IDEExec=/home/zzj/soft/idea-IU-203.5981.155/bin/idea.shIcon=/home">
+<meta name="twitter:description" content="系统环境：kubuntu20.04 这里拿IDEA做示例  创建.desktop文件 1vim /usr/share/applications/IDEA.desktop 复制下面内容到IDEA.desktop 主要要修改下Exec和Icon的路径，分别对应可执行文件和快捷方式图标 12345678910[Desktop Entry]Encoding=UTF-8Name=IDEAComment=I">
   
     <link rel="alternative" href="/atom.xml" title="JAVA日志" type="application/atom+xml">
   
@@ -178,13 +178,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这里拿IDEA做示例</p>
+        <blockquote>
+<p>系统环境：kubuntu20.04<br>
+这里拿IDEA做示例</p>
+</blockquote>
+<h3 id="创建-desktop文件">创建.desktop文件</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/share/applications/IDEA.desktop</span><br></pre></td></tr></table></figure>
-<p>复制下面内容到IDEA.desktop</p>
+<h3 id="复制下面内容到idea-desktop">复制下面内容到IDEA.desktop</h3>
+<p>主要要修改下<code>Exec</code>和<code>Icon</code>的路径，分别对应可执行文件和快捷方式图标</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Encoding=UTF-8</span><br><span class="line">Name=IDEA</span><br><span class="line">Comment=IDEA IDE</span><br><span class="line">Exec=/home/zzj/soft/idea-IU-203.5981.155/bin/idea.sh</span><br><span class="line">Icon=/home/zzj/soft/idea-IU-203.5981.155/bin/idea.png</span><br><span class="line">Terminal=false</span><br><span class="line">StartupNotify=true</span><br><span class="line">Type=Application</span><br><span class="line">Categories=Application;Development;</span><br></pre></td></tr></table></figure>
-<p>赋可执行权限</p>
+<h3 id="赋可执行权限">赋可执行权限</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod u+x IDEA.desktop</span><br></pre></td></tr></table></figure>
-<p>复制到桌面</p>
+<h3 id="复制到桌面">复制到桌面</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/share/applications/IDEA.desktop ~/桌面/</span><br></pre></td></tr></table></figure>
 <p>参考：<br>
 <a href="https://blog.csdn.net/weixin_30379531/article/details/97091266" target="_blank" rel="noopener">https://blog.csdn.net/weixin_30379531/article/details/97091266</a></p>
@@ -476,11 +481,11 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color5">2020</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">2020</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -496,11 +501,19 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
+                <a href="javascript:void(0)" class="js-tag color2">Debian</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SSH</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Springboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -520,6 +533,10 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Weblogic</a>
               </li>
              
@@ -528,7 +545,7 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">openLDAP</a>
+                <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,19 +557,11 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Debian</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SSH</a>
+                <a href="javascript:void(0)" class="js-tag color4">openLDAP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -592,15 +601,15 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Putty</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ldap</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Putty</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -616,6 +625,38 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Kerberos</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">google chrome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ubuntu乱码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ark压缩包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">格式化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">U盘</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">desktop</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Fiddler</a>
               </li>
              
@@ -628,31 +669,7 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Kerberos</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">eclipse</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Jenkins</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">google chrome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">desktop</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">格式化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">U盘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -660,19 +677,7 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ubuntu乱码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ark压缩包</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">vbox</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">金税盘</a>
+                <a href="javascript:void(0)" class="js-tag color1">Emoji</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -684,11 +689,27 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Emoji</a>
+                <a href="javascript:void(0)" class="js-tag color4">Apple ID</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Apple ID</a>
+                <a href="javascript:void(0)" class="js-tag color5">vbox</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">金税盘</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">bridge</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Sass</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -708,22 +729,6 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">bridge</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Sass</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">springboot</a>
               </li>
              
@@ -732,7 +737,7 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
             
             <div class="clearfix"></div>
