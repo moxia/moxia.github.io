@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://javalog.cn">
-  <title>利用frp访问内网服务 | JAVA日志</title>
+  <title>Tag: armbian | JAVA日志</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="服务器端环境：ubuntu20.04，公网 客户端环境：armbian5.77，内网   服务器端   下载 配置 开机启动   客户端   下载 配置 开机启动  如服务器端配置： 123[common]bind_port = 7000token = 123456 客户端配置： [common] server_addr = xxx.xxx.xxx.xxx server_port = 7000">
-<meta name="keywords" content="ubuntu,frp,armbian">
-<meta property="og:type" content="article">
-<meta property="og:title" content="利用frp访问内网服务">
-<meta property="og:url" content="https://javalog.cn/post/利用frp访问内网服务.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="JAVA日志">
+<meta property="og:url" content="https://javalog.cn/tags/armbian/index.html">
 <meta property="og:site_name" content="JAVA日志">
-<meta property="og:description" content="服务器端环境：ubuntu20.04，公网 客户端环境：armbian5.77，内网   服务器端   下载 配置 开机启动   客户端   下载 配置 开机启动  如服务器端配置： 123[common]bind_port = 7000token = 123456 客户端配置： [common] server_addr = xxx.xxx.xxx.xxx server_port = 7000">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-01-08T08:10:34.779Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="利用frp访问内网服务">
-<meta name="twitter:description" content="服务器端环境：ubuntu20.04，公网 客户端环境：armbian5.77，内网   服务器端   下载 配置 开机启动   客户端   下载 配置 开机启动  如服务器端配置： 123[common]bind_port = 7000token = 123456 客户端配置： [common] server_addr = xxx.xxx.xxx.xxx server_port = 7000">
+<meta name="twitter:title" content="JAVA日志">
   
     <link rel="alternative" href="/atom.xml" title="JAVA日志" type="application/atom+xml">
   
@@ -158,98 +153,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-利用frp访问内网服务" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      利用frp访问内网服务
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/post/利用frp访问内网服务.html" class="archive-article-date">
+  	<time datetime="2020-08-30T01:31:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-30</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/post/利用frp访问内网服务.html">利用frp访问内网服务</a>
     </h1>
   
 
-        
-        <a href="/post/利用frp访问内网服务.html" class="archive-article-date">
-  	<time datetime="2020-08-30T01:31:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>服务器端环境：ubuntu20.04，公网<br>
-客户端环境：armbian5.77，内网</p>
-</blockquote>
-<ul>
-<li>服务器端</li>
-</ul>
-<ol>
-<li>下载</li>
-<li>配置</li>
-<li>开机启动</li>
-</ol>
-<ul>
-<li>客户端</li>
-</ul>
-<ol>
-<li>下载</li>
-<li>配置</li>
-<li>开机启动</li>
-</ol>
-<p>如服务器端配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">bind_port = 7000</span><br><span class="line">token = 123456</span><br></pre></td></tr></table></figure>
-<p>客户端配置：</p>
-<pre><code>[common]
-server_addr = xxx.xxx.xxx.xxx
-server_port = 7000
-token = 123456
-
-[ssh]
-type = tcp
-local_ip = 127.0.0.1
-local_port = 22
-remote_port = 2200</code></pre>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝咖啡<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/alipay.png">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/wechat.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -269,137 +202,19 @@ remote_port = 2200</code></pre>
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://javalog.cn/post/利用frp访问内网服务.html" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/post/vbox-use-invoce.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          vbox中使用金税盘
-        
-      </div>
-    </a>
   
   
-    <a href="/post/Vue学习笔记.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Vue学习笔记</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-    <div id="gitalk-container" class="comment" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if('true'){
-	var gitalk = new Gitalk({
-  	clientID: '2b41fa40feef2308b70e',
-  	clientSecret: 'ddc5c391295b77222fda5d6e364f64a3fc88297f',
-  	repo: 'moxia.github.io',
-  	owner: 'moxia',
-  	admin: ['moxia'],
-  	id: 'Sun Aug 30 2020 09:31:04 GMT+0800',
-  	distractionFreeMode: ''
-})
-gitalk.render('gitalk-container') 
-}
-</script>
     
-
-  
 
 
           </div>
@@ -422,9 +237,9 @@ gitalk.render('gitalk-container')
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
