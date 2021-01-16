@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://javalog.cn/assets/img/post/2020-03-01_142303.png">
 <meta property="og:image" content="https://javalog.cn/assets/img/post/2020-03-02_100349.png">
 <meta property="og:image" content="https://javalog.cn/assets/img/post/2020-03-01_162433.png">
-<meta property="og:updated_time" content="2021-01-06T13:16:50.811Z">
+<meta property="og:updated_time" content="2021-01-14T13:02:40.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker安装Oracle、Mysql、Mssql、Redis">
 <meta name="twitter:description" content="通过Docker安装各类数据库是件轻松愉悦的事情。 安装环境  [root@centos7 ~]# cat /etc/redhat-release CentOS Linux release 7.7.1908 (Core) [root@centos7 ~]# uname -r 3.10.0-1062.12.1.el7.x86_64 [root@centos7 ~]# hostname centos7">
@@ -251,7 +251,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p123456</span><br></pre></td></tr></table></figure>
 <p>如果是安装mysql8.0版本，还需要执行：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use mysql;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter user &apos;root&apos;@&apos;%&apos; identified with mysql_native_password by &apos;123456&apos;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter user &apos;root&apos;@&apos;%&apos; identified with mysql_native_password by &apos;123456&apos;;</span><br><span class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED WITH mysql_native_password BY &apos;123&apos;;</span><br></pre></td></tr></table></figure>
 <p>把密码加密方式改成<code>mysql_native_password</code></p>
 <ul>
 <li>远程连接<br>
@@ -675,14 +675,6 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Debian</a>
               </li>
              
@@ -692,6 +684,22 @@ gitalk.render('gitalk-container')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Springboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Weblogic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">openLDAP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -711,22 +719,6 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Weblogic</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Websphere</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">openLDAP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
               </li>
              
@@ -740,18 +732,6 @@ gitalk.render('gitalk-container')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">pandorabox</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">gocloud</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k2p</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -803,6 +783,10 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Websphere</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Kerberos</a>
               </li>
              
@@ -827,7 +811,19 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">google chrome</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">pandorabox</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">gocloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">k2p</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -847,7 +843,7 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">desktop</a>
+                <a href="javascript:void(0)" class="js-tag color4">google chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -859,10 +855,6 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">VirtualBox</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">frp</a>
               </li>
              
@@ -871,7 +863,11 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Emoji</a>
+                <a href="javascript:void(0)" class="js-tag color3">desktop</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">VirtualBox</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -879,15 +875,11 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Emoji</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BBR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Apple ID</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">bridge</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -912,6 +904,14 @@ gitalk.render('gitalk-container')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">锐速</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Apple ID</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">bridge</a>
               </li>
              
               <li class="article-tag-list-item">
