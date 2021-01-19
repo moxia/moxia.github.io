@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://javalog.cn/"/>
-  <updated>2021-01-08T02:55:56.321Z</updated>
+  <updated>2021-01-19T02:00:41.433Z</updated>
   <id>https://javalog.cn/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>kubuntu安装wps国际版</title>
+    <link href="https://javalog.cn/post/kubuntu-install-international-wps.html"/>
+    <id>https://javalog.cn/post/kubuntu-install-international-wps.html</id>
+    <published>2021-01-18T15:49:23.000Z</published>
+    <updated>2021-01-19T02:00:41.433Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="下载wps国际版和国内版">下载wps国际版和国内版</h3><h3 id="安装国际版">安装国际版</h3><h3 id="拷贝国内版语言包">拷贝国内版语言包</h3><h3 id="安装缺失字体">安装缺失字体</h3><h3 id="修复右键新建wps文档不存在问题">修复右键新建wps文档不存在问题</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;下载wps国际版和国内版&quot;&gt;下载wps国际版和国内版&lt;/h3&gt;
+&lt;h3 id=&quot;安装国际版&quot;&gt;安装国际版&lt;/h3&gt;
+&lt;h3 id=&quot;拷贝国内版语言包&quot;&gt;拷贝国内版语言包&lt;/h3&gt;
+&lt;h3 id=&quot;安装缺失字体&quot;&gt;安装缺失字体&lt;/h3&gt;
+&lt;h3 id=&quot;修复右键新建
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="运维" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="ubuntu" scheme="https://javalog.cn/tags/ubuntu/"/>
+    
+      <category term="wps" scheme="https://javalog.cn/tags/wps/"/>
+    
+  </entry>
   
   <entry>
     <title>ubuntu创建程序桌面快捷方式</title>
@@ -354,9 +387,9 @@ Active Directory Federati
     
       <category term="Tomcat" scheme="https://javalog.cn/tags/Tomcat/"/>
     
-      <category term="Websphere" scheme="https://javalog.cn/tags/Websphere/"/>
-    
       <category term="Weblogic" scheme="https://javalog.cn/tags/Weblogic/"/>
+    
+      <category term="Websphere" scheme="https://javalog.cn/tags/Websphere/"/>
     
       <category term="Kerberos" scheme="https://javalog.cn/tags/Kerberos/"/>
     
@@ -565,35 +598,6 @@ N1盒子&lt;br&gt;
       <category term="Docker" scheme="https://javalog.cn/tags/Docker/"/>
     
       <category term="Weblogic" scheme="https://javalog.cn/tags/Weblogic/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>N1刷机路由器openwrt</title>
-    <link href="https://javalog.cn/post/phicomm-n1-set-openwrt.html"/>
-    <id>https://javalog.cn/post/phicomm-n1-set-openwrt.html</id>
-    <published>2020-03-23T02:22:13.000Z</published>
-    <updated>2020-12-07T13:53:12.125Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="u盘">U盘</h2><h2 id="emmc">EMMC</h2>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;u盘&quot;&gt;U盘&lt;/h2&gt;
-&lt;h2 id=&quot;emmc&quot;&gt;EMMC&lt;/h2&gt;
-
-      
-    
-    </summary>
-    
-      <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="刷机" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E5%88%B7%E6%9C%BA/"/>
-    
-    
-      <category term="斐讯N1" scheme="https://javalog.cn/tags/%E6%96%90%E8%AE%AFN1/"/>
     
   </entry>
   
