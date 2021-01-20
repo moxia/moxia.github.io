@@ -8,19 +8,20 @@
   <link rel="dns-prefetch" href="https://javalog.cn">
   <title>kubuntu安装wps国际版 | JAVA日志</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="下载wps国际版和国内版 国际版：https://linux.wps.com 国内版：https://linux.wps.cn/ 安装国际版 1sudo dpkg -i wps-office_11.1.0.10161.XA_amd64.deb 拷贝国内版语言包，设置中文显示 解压wps-office_11.1.0.10161_amd64.deb，找到下面目录，复制到/目录；随意打开一个word文档">
+  <meta name="description" content="国际版没有鸡肋的云端功能，更加清爽，只是界面默认是英文的，需要使用国内版的语言包实现“汉化”。 下载wps国际版和国内版 国际版：https://linux.wps.com 国内版：https://linux.wps.cn/ 安装国际版 1sudo dpkg -i wps-office_11.1.0.10161.XA_amd64.deb 拷贝国内版语言包，设置中文显示 解压wps-office_1">
 <meta name="keywords" content="ubuntu,wps">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kubuntu安装wps国际版">
 <meta property="og:url" content="https://javalog.cn/post/kubuntu-install-international-wps.html">
 <meta property="og:site_name" content="JAVA日志">
-<meta property="og:description" content="下载wps国际版和国内版 国际版：https://linux.wps.com 国内版：https://linux.wps.cn/ 安装国际版 1sudo dpkg -i wps-office_11.1.0.10161.XA_amd64.deb 拷贝国内版语言包，设置中文显示 解压wps-office_11.1.0.10161_amd64.deb，找到下面目录，复制到/目录；随意打开一个word文档">
+<meta property="og:description" content="国际版没有鸡肋的云端功能，更加清爽，只是界面默认是英文的，需要使用国内版的语言包实现“汉化”。 下载wps国际版和国内版 国际版：https://linux.wps.com 国内版：https://linux.wps.cn/ 安装国际版 1sudo dpkg -i wps-office_11.1.0.10161.XA_amd64.deb 拷贝国内版语言包，设置中文显示 解压wps-office_1">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://javalog.cn/assets/img/post/2021-01-18_23-36.png">
-<meta property="og:updated_time" content="2021-01-20T03:03:31.532Z">
+<meta property="og:image" content="https://javalog.cn/assets/img/post/Peek_2021-01-20_17-09.gif">
+<meta property="og:updated_time" content="2021-01-20T09:13:40.619Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kubuntu安装wps国际版">
-<meta name="twitter:description" content="下载wps国际版和国内版 国际版：https://linux.wps.com 国内版：https://linux.wps.cn/ 安装国际版 1sudo dpkg -i wps-office_11.1.0.10161.XA_amd64.deb 拷贝国内版语言包，设置中文显示 解压wps-office_11.1.0.10161_amd64.deb，找到下面目录，复制到/目录；随意打开一个word文档">
+<meta name="twitter:description" content="国际版没有鸡肋的云端功能，更加清爽，只是界面默认是英文的，需要使用国内版的语言包实现“汉化”。 下载wps国际版和国内版 国际版：https://linux.wps.com 国内版：https://linux.wps.cn/ 安装国际版 1sudo dpkg -i wps-office_11.1.0.10161.XA_amd64.deb 拷贝国内版语言包，设置中文显示 解压wps-office_1">
 <meta name="twitter:image" content="https://javalog.cn/assets/img/post/2021-01-18_23-36.png">
   
     <link rel="alternative" href="/atom.xml" title="JAVA日志" type="application/atom+xml">
@@ -180,18 +181,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="下载wps国际版和国内版">下载wps国际版和国内版</h3>
+        <p>国际版没有鸡肋的云端功能，更加清爽，只是界面默认是英文的，需要使用国内版的语言包实现“汉化”。</p>
+<h3 id="下载wps国际版和国内版">下载wps国际版和国内版</h3>
 <p>国际版：<a href="https://linux.wps.com" target="_blank" rel="noopener">https://linux.wps.com</a><br>
 国内版：<a href="https://linux.wps.cn/" target="_blank" rel="noopener">https://linux.wps.cn/</a></p>
 <h3 id="安装国际版">安装国际版</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i wps-office_11.1.0.10161.XA_amd64.deb</span><br></pre></td></tr></table></figure>
 <h3 id="拷贝国内版语言包-设置中文显示">拷贝国内版语言包，设置中文显示</h3>
-<p>解压wps-office_11.1.0.10161_amd64.deb，找到下面目录，复制到<code>/</code>目录；随意打开一个word文档，点击右上角A标记按钮，设置下中文显示<br>
+<p>解压wps-office_11.1.0.10161_amd64.deb，找到下面目录，复制到<code>/opt/kingsoft/wps-office/office6/mui</code>目录；随意打开一个word文档，点击右上角被方框包裹的A标记按钮，设置下中文显示即可。<br>
 <img src="/assets/img/post/2021-01-18_23-36.png" alt="wps中文语言包"></p>
 <h3 id="安装缺失字体">安装缺失字体</h3>
 <p>下载字体包，解压到<code>xx</code>目录，执行以下命令</p>
 <h3 id="修复右键新建wps文档不存在问题">修复右键新建wps文档不存在问题</h3>
-<p>修改<code>/usr/share/templates</code>目录下的.desktop文件，修正模板文件路径即可</p>
+<p>修改<code>/usr/share/templates</code>目录下的.desktop文件，修正模板文件路径即可<br>
+<img src="/assets/img/post/Peek_2021-01-20_17-09.gif" alt="修复右键新建wps提示不存在问题"></p>
 <p>参考：<br>
 <a href="https://plumz.me/archives/11779/" target="_blank" rel="noopener">https://plumz.me/archives/11779/</a><br>
 <a href="https://mxy493.xyz/2019/04/08/Ubuntu%E5%AE%89%E8%A3%85WPS%EF%BC%88%E8%A7%A3%E5%86%B3%E5%AD%97%E4%BD%93%E7%BC%BA%E5%A4%B1%E9%97%AE%E9%A2%98%EF%BC%89/" target="_blank" rel="noopener">https://mxy493.xyz/2019/04/08/Ubuntu安装WPS（解决字体缺失问题）/</a></p>
@@ -492,6 +495,10 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
@@ -500,7 +507,15 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jdk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -512,19 +527,7 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Springboot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -548,15 +551,19 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Websphere</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Weblogic</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Websphere</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">openLDAP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -568,7 +575,7 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -588,10 +595,6 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">斐讯N1</a>
               </li>
              
@@ -604,11 +607,15 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Putty</a>
+                <a href="javascript:void(0)" class="js-tag color1">putty</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Putty</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -620,19 +627,23 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">putty</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Archlinux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Kerberos</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">eclipse</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -648,23 +659,11 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Kerberos</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">wps</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Jenkins</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">eclipse</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">google chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -676,11 +675,7 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">vbox</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">金税盘</a>
+                <a href="javascript:void(0)" class="js-tag color4">google chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -696,15 +691,15 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">vbox</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">金税盘</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">VirtualBox</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Emoji</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BBR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -716,15 +711,23 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Emoji</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Win10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">bridge</a>
+                <a href="javascript:void(0)" class="js-tag color4">BBR</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Apple ID</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">bridge</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -733,6 +736,10 @@ gitalk.render('gitalk-container')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Sass</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Gitalk</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -745,10 +752,6 @@ gitalk.render('gitalk-container')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">锐速</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gitalk</a>
               </li>
              
               <li class="article-tag-list-item">
