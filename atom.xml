@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://javalog.cn/"/>
-  <updated>2021-01-19T08:38:03.460Z</updated>
+  <updated>2021-01-21T14:54:09.792Z</updated>
   <id>https://javalog.cn/</id>
   
   <author>
@@ -21,22 +21,28 @@
     <link href="https://javalog.cn/post/ubuntu-history-auto-complete.html"/>
     <id>https://javalog.cn/post/ubuntu-history-auto-complete.html</id>
     <published>2021-01-19T02:53:30.000Z</published>
-    <updated>2021-01-19T08:38:03.460Z</updated>
+    <updated>2021-01-21T14:54:09.792Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="ctrl-r">ctrl+r</h3><h3 id="配置">配置</h3><p>参考：<br><a href="https://blog.csdn.net/styshoo/article/details/50984772" target="_blank" rel="noopener">https://blog.csdn.net/styshoo/article/details/50984772</a></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="ctrl-r">ctrl+r</h3><p>打开终端，ctrl+r键入之前输入过的命令片段，会自动匹配出完整命令，回车确认再次执行，再次按ctrl+r可以在匹配到的完整命令里进行切换</p><h3 id="配置">配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/inputrc</span><br></pre></td></tr></table></figure><p>按<code>/</code>搜索关键词<code>history-search</code>，删除这两行前面的#，退出保存，再重新登录终端即可，PgUp\PgDn可以在匹配到的完整命令里进行切换<br><img src="/assets/img/post/2021-01-21_22-51.png" alt="编辑inputrc"></p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;h3 id=&quot;ctrl-r&quot;&gt;ctrl+r&lt;/h3&gt;
+&lt;p&gt;打开终端，ctrl+r键入之前输入过的命令片段，会自动匹配出完整命令，回车确认再次执行，再次按ctrl+r可以在匹配到的完整命令里进行切换&lt;/p&gt;
 &lt;h3 id=&quot;配置&quot;&gt;配置&lt;/h3&gt;
-&lt;p&gt;参考：&lt;br&gt;
-&lt;a href=&quot;https://blog.csdn.net/styshoo/article/details/50984772&quot; target=&quot;_blank&quot; 
+&lt;figure class=&quot;
       
     
     </summary>
     
+      <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="运维" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="ubuntu" scheme="https://javalog.cn/tags/ubuntu/"/>
     
   </entry>
   
