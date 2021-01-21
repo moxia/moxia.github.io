@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://javalog.cn/"/>
-  <updated>2021-01-21T14:57:13.344Z</updated>
+  <updated>2021-01-21T15:00:26.152Z</updated>
   <id>https://javalog.cn/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://javalog.cn/post/ubuntu-history-auto-complete.html"/>
     <id>https://javalog.cn/post/ubuntu-history-auto-complete.html</id>
     <published>2021-01-19T02:53:30.000Z</published>
-    <updated>2021-01-21T14:57:13.344Z</updated>
+    <updated>2021-01-21T15:00:26.152Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="方法一">方法一</h3><p>打开终端，ctrl+r键入之前输入过的命令片段，会自动匹配出完整命令，回车确认再次执行，再次按ctrl+r可以在匹配到的完整命令里进行切换</p><h3 id="方法二">方法二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/inputrc</span><br></pre></td></tr></table></figure><p>按<code>/</code>搜索关键词<code>history-search</code>，删除这两行前面的#，退出保存，再重新登录终端即可，PgUp\PgDn可以在匹配到的完整命令里进行切换<br><img src="/assets/img/post/2021-01-21_22-51.png" alt="编辑inputrc"></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="方法一">方法一</h3><p>打开终端，ctrl+r键入之前输入过的命令片段，会自动匹配出完整命令，回车确认再次执行，再次按ctrl+r可以在匹配到的完整命令里进行切换</p><h3 id="方法二">方法二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/inputrc</span><br></pre></td></tr></table></figure><p>按<code>/</code>搜索关键词<code>history-search</code>，删除这两行前面的#，退出保存，再重新登录终端，键入之前输入过的命令开头部分，PgUp\PgDn可以在匹配到的完整命令里进行切换<br><img src="/assets/img/post/2021-01-21_22-51.png" alt="编辑inputrc"></p>]]></content>
     
     <summary type="html">
     

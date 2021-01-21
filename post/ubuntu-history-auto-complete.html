@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="https://javalog.cn">
   <title>kubuntu下终端历史命令自动补全 | JAVA日志</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="方法一 打开终端，ctrl+r键入之前输入过的命令片段，会自动匹配出完整命令，回车确认再次执行，再次按ctrl+r可以在匹配到的完整命令里进行切换 方法二 1sudo vim /etc/inputrc 按/搜索关键词history-search，删除这两行前面的#，退出保存，再重新登录终端即可，PgUp\PgDn可以在匹配到的完整命令里进行切换">
+  <meta name="description" content="方法一 打开终端，ctrl+r键入之前输入过的命令片段，会自动匹配出完整命令，回车确认再次执行，再次按ctrl+r可以在匹配到的完整命令里进行切换 方法二 1sudo vim /etc/inputrc 按/搜索关键词history-search，删除这两行前面的#，退出保存，再重新登录终端，键入之前输入过的命令开头部分，PgUp\PgDn可以在匹配到的完整命令里进行切换">
 <meta name="keywords" content="ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kubuntu下终端历史命令自动补全">
 <meta property="og:url" content="https://javalog.cn/post/ubuntu-history-auto-complete.html">
 <meta property="og:site_name" content="JAVA日志">
-<meta property="og:description" content="方法一 打开终端，ctrl+r键入之前输入过的命令片段，会自动匹配出完整命令，回车确认再次执行，再次按ctrl+r可以在匹配到的完整命令里进行切换 方法二 1sudo vim /etc/inputrc 按/搜索关键词history-search，删除这两行前面的#，退出保存，再重新登录终端即可，PgUp\PgDn可以在匹配到的完整命令里进行切换">
+<meta property="og:description" content="方法一 打开终端，ctrl+r键入之前输入过的命令片段，会自动匹配出完整命令，回车确认再次执行，再次按ctrl+r可以在匹配到的完整命令里进行切换 方法二 1sudo vim /etc/inputrc 按/搜索关键词history-search，删除这两行前面的#，退出保存，再重新登录终端，键入之前输入过的命令开头部分，PgUp\PgDn可以在匹配到的完整命令里进行切换">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://javalog.cn/assets/img/post/2021-01-21_22-51.png">
-<meta property="og:updated_time" content="2021-01-21T14:57:13.344Z">
+<meta property="og:updated_time" content="2021-01-21T15:00:26.152Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kubuntu下终端历史命令自动补全">
-<meta name="twitter:description" content="方法一 打开终端，ctrl+r键入之前输入过的命令片段，会自动匹配出完整命令，回车确认再次执行，再次按ctrl+r可以在匹配到的完整命令里进行切换 方法二 1sudo vim /etc/inputrc 按/搜索关键词history-search，删除这两行前面的#，退出保存，再重新登录终端即可，PgUp\PgDn可以在匹配到的完整命令里进行切换">
+<meta name="twitter:description" content="方法一 打开终端，ctrl+r键入之前输入过的命令片段，会自动匹配出完整命令，回车确认再次执行，再次按ctrl+r可以在匹配到的完整命令里进行切换 方法二 1sudo vim /etc/inputrc 按/搜索关键词history-search，删除这两行前面的#，退出保存，再重新登录终端，键入之前输入过的命令开头部分，PgUp\PgDn可以在匹配到的完整命令里进行切换">
 <meta name="twitter:image" content="https://javalog.cn/assets/img/post/2021-01-21_22-51.png">
   
     <link rel="alternative" href="/atom.xml" title="JAVA日志" type="application/atom+xml">
@@ -184,7 +184,7 @@
 <p>打开终端，ctrl+r键入之前输入过的命令片段，会自动匹配出完整命令，回车确认再次执行，再次按ctrl+r可以在匹配到的完整命令里进行切换</p>
 <h3 id="方法二">方法二</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/inputrc</span><br></pre></td></tr></table></figure>
-<p>按<code>/</code>搜索关键词<code>history-search</code>，删除这两行前面的#，退出保存，再重新登录终端即可，PgUp\PgDn可以在匹配到的完整命令里进行切换<br>
+<p>按<code>/</code>搜索关键词<code>history-search</code>，删除这两行前面的#，退出保存，再重新登录终端，键入之前输入过的命令开头部分，PgUp\PgDn可以在匹配到的完整命令里进行切换<br>
 <img src="/assets/img/post/2021-01-21_22-51.png" alt="编辑inputrc"></p>
 
       
@@ -462,10 +462,6 @@ gitalk.render('gitalk-container')
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">2020</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Centos</a>
               </li>
              
@@ -474,7 +470,7 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color5">2020</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -494,15 +490,19 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Springboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Debian</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SSH</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Springboot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -538,15 +538,15 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Yilia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -598,11 +598,11 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+                <a href="javascript:void(0)" class="js-tag color1">Putty</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Putty</a>
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,10 +618,6 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">eclipse</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Fiddler</a>
               </li>
              
@@ -631,6 +627,10 @@ gitalk.render('gitalk-container')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Https</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">eclipse</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -654,23 +654,15 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">desktop</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">格式化</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">U盘</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">desktop</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">vbox</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">金税盘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -686,11 +678,19 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Emoji</a>
+                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
+                <a href="javascript:void(0)" class="js-tag color5">vbox</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">金税盘</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Emoji</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -714,10 +714,6 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gitalk</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vultr</a>
               </li>
              
@@ -727,6 +723,10 @@ gitalk.render('gitalk-container')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">锐速</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Gitalk</a>
               </li>
              
               <li class="article-tag-list-item">
