@@ -265,9 +265,9 @@
     <link href="https://javalog.cn/post/vbox-use-invoce.html"/>
     <id>https://javalog.cn/post/vbox-use-invoce.html</id>
     <published>2020-12-12T02:42:14.000Z</published>
-    <updated>2020-12-15T05:57:41.430Z</updated>
+    <updated>2021-01-23T15:40:46.455Z</updated>
     
-    <content type="html"><![CDATA[<p>物理机安装的是ubuntu，用来处理日常事务，vbox里起一个win10虚拟机，用来打印发票。<br>1、安装vbox扩展<br>2、物理机插上金税盘<br>3、使用如下命令将用户名添加到vboxusers组<br>sudo adduser usrname vboxusers<br>4、vbox配置读取物理机U口</p><p>参考：<br><a href="https://www.cnblogs.com/pngcui/p/5951495.html" target="_blank" rel="noopener">https://www.cnblogs.com/pngcui/p/5951495.html</a></p>]]></content>
+    <content type="html"><![CDATA[<p>物理机安装的是ubuntu，用来处理日常事务，vbox里起一个win10虚拟机，用来打印发票。<br>1、安装vbox扩展<br>2、物理机插上金税盘<br>3、使用如下命令将用户名添加到vboxusers组<br>sudo adduser usrname vboxusers<br>4、vbox配置读取物理机U口<br><img src="/assets/img/post/2021-01-23_20-21.png" alt="vbox中使用金税盘"></p><p>参考：<br><a href="https://www.cnblogs.com/pngcui/p/5951495.html" target="_blank" rel="noopener">https://www.cnblogs.com/pngcui/p/5951495.html</a></p>]]></content>
     
     <summary type="html">
     
