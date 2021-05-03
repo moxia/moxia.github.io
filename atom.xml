@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>JAVA日志</title>
+  
+  <subtitle>不卑不亢，不骄不躁</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://javalog.cn/"/>
+  <updated>2021-05-03T23:33:49.911Z</updated>
+  <id>https://javalog.cn/</id>
+  
+  <author>
+    <name>天朝子民</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Selenium-Java模拟登录oschina</title>
+    <link href="https://javalog.cn/post/Selenium-Java%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95oschina.html"/>
+    <id>https://javalog.cn/post/Selenium-Java模拟登录oschina.html</id>
+    <published>2021-05-03T11:41:05.000Z</published>
+    <updated>2021-05-03T23:33:49.911Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">package com.ah;</span><br><span class="line"></span><br><span class="line">import org.checkerframework.checker.nullness.compatqual.NullableDecl;</span><br><span class="line">import org.openqa.selenium.By;</span><br><span class="line">import org.openqa.selenium.WebDriver;</span><br><span class="line">import org.openqa.selenium.WebElement;</span><br><span class="line">import org.openqa.selenium.chrome.ChromeDriver;</span><br><span class="line">import org.openqa.selenium.support.ui.ExpectedCondition;</span><br><span class="line">import org.openqa.selenium.support.ui.WebDriverWait;</span><br><span class="line"></span><br><span class="line">public class LoginOsc &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        System.setProperty(&quot;webdriver.chrome.driver&quot;, &quot;driver/chromedriver.exe&quot;);</span><br><span class="line">        ChromeDriver chromeDriver = new ChromeDriver();</span><br><span class="line">        chromeDriver.manage().window().maximize();</span><br><span class="line">        chromeDriver.get(&quot;https://www.oschina.net/home/login&quot;);</span><br><span class="line">        WebElement webElement = chromeDriver.findElements(By.className(&quot;osc-tabs__item&quot;)).get(1);</span><br><span class="line">        webElement.click();</span><br><span class="line">        WebElement username = chromeDriver.findElementByName(&quot;username&quot;);</span><br><span class="line">        WebElement password = chromeDriver.findElementByName(&quot;password&quot;);</span><br><span class="line">        username.clear();</span><br><span class="line">        password.clear();</span><br><span class="line">        username.sendKeys(&quot;账户&quot;);</span><br><span class="line">        password.sendKeys(&quot;密码&quot;);</span><br><span class="line">        //取消勾选</span><br><span class="line">        WebElement saveLogin = chromeDriver.findElementByClassName(&quot;checkbox-remember&quot;);</span><br><span class="line">        saveLogin.click();</span><br><span class="line">        WebElement button = chromeDriver.findElements(By.className(&quot;btn-submit&quot;)).get(1);</span><br><span class="line">        button.click();</span><br><span class="line">        //显示等待</span><br><span class="line">        WebElement info = new WebDriverWait(chromeDriver, 10).until(new ExpectedCondition&lt;WebElement&gt;() &#123;</span><br><span class="line">            @NullableDecl</span><br><span class="line">            @Override</span><br><span class="line">            public WebElement apply(@NullableDecl WebDriver d) &#123;</span><br><span class="line">                return d.findElement(By.className(&quot;user-info&quot;));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        //显示出侧边栏</span><br><span class="line">        info.click();</span><br><span class="line">        WebElement center = chromeDriver.findElement(By.xpath(&quot;//*[@id=\&quot;userSidebar\&quot;]/a[1]&quot;));</span><br><span class="line">        //进入个人中心</span><br><span class="line">        center.click();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="/assets/img/post/og7eg-9eib2.gif" alt="演示Selenium-Java模拟登录oschina"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Springboot+Mybatis-Plus实现增删改查及分页</title>
+    <link href="https://javalog.cn/post/Springboot-Mybatis-Plus%E5%AE%9E%E7%8E%B0%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E5%8F%8A%E5%88%86%E9%A1%B5.html"/>
+    <id>https://javalog.cn/post/Springboot-Mybatis-Plus实现增删改查及分页.html</id>
+    <published>2021-04-09T11:50:44.000Z</published>
+    <updated>2021-04-09T11:50:44.497Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Springboot+Jpa实现增删改查及分页</title>
+    <link href="https://javalog.cn/post/Springboot-Jpa%E5%AE%9E%E7%8E%B0%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E5%8F%8A%E5%88%86%E9%A1%B5.html"/>
+    <id>https://javalog.cn/post/Springboot-Jpa实现增删改查及分页.html</id>
+    <published>2021-04-09T11:50:08.000Z</published>
+    <updated>2021-04-09T11:50:08.825Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Springboot+Mybatis实现增删改查及分页</title>
+    <link href="https://javalog.cn/post/Springboot-Mybatis%E5%AE%9E%E7%8E%B0%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E5%8F%8A%E5%88%86%E9%A1%B5.html"/>
+    <id>https://javalog.cn/post/Springboot-Mybatis实现增删改查及分页.html</id>
+    <published>2021-04-09T11:50:08.000Z</published>
+    <updated>2021-04-09T11:50:08.827Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>kubuntu下终端历史命令自动补全</title>
+    <link href="https://javalog.cn/post/ubuntu-history-auto-complete.html"/>
+    <id>https://javalog.cn/post/ubuntu-history-auto-complete.html</id>
+    <published>2021-01-19T02:53:30.000Z</published>
+    <updated>2021-03-26T12:06:50.208Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="方法一">方法一</h3><p>打开终端，ctrl+r键入之前输入过的命令片段，会自动匹配出完整命令，回车确认再次执行，再次按ctrl+r可以在匹配到的完整命令里进行切换</p><h3 id="方法二">方法二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/inputrc</span><br></pre></td></tr></table></figure><p>按<code>/</code>搜索关键词<code>history-search</code>，删除这两行前面的#，退出保存，再重新登录终端，键入之前输入过的命令开头部分，PgUp\PgDn可以在匹配到的完整命令里进行切换<br><img src="/assets/img/post/2021-01-21_22-51.png" alt="编辑inputrc"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;方法一&quot;&gt;方法一&lt;/h3&gt;
+&lt;p&gt;打开终端，ctrl+r键入之前输入过的命令片段，会自动匹配出完整命令，回车确认再次执行，再次按ctrl+r可以在匹配到的完整命令里进行切换&lt;/p&gt;
+&lt;h3 id=&quot;方法二&quot;&gt;方法二&lt;/h3&gt;
+&lt;figure class=&quot;high
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="运维" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="ubuntu" scheme="https://javalog.cn/tags/ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kubuntu安装wps国际版</title>
+    <link href="https://javalog.cn/post/kubuntu-install-international-wps.html"/>
+    <id>https://javalog.cn/post/kubuntu-install-international-wps.html</id>
+    <published>2021-01-18T15:49:23.000Z</published>
+    <updated>2021-03-26T12:06:50.209Z</updated>
+    
+    <content type="html"><![CDATA[<p>国际版没有鸡肋的云端功能，更加清爽，只是界面默认是英文的，需要使用国内版的语言包实现“汉化”。</p><h3 id="下载wps国际版和国内版">下载wps国际版和国内版</h3><p>国际版：<a href="https://linux.wps.com" target="_blank" rel="noopener">https://linux.wps.com</a><br>国内版：<a href="https://linux.wps.cn/" target="_blank" rel="noopener">https://linux.wps.cn/</a></p><h3 id="安装国际版">安装国际版</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i wps-office_11.1.0.10161.XA_amd64.deb</span><br></pre></td></tr></table></figure><h3 id="拷贝国内版语言包-设置中文显示">拷贝国内版语言包，设置中文显示</h3><p>解压wps-office_11.1.0.10161_amd64.deb，找到下面目录，复制到<code>/opt/kingsoft/wps-office/office6/mui</code>目录；随意打开一个word文档，点击右上角被方框包裹的A标记按钮，设置下中文显示即可。<br><img src="/assets/img/post/2021-01-18_23-36.png" alt="wps中文语言包"></p><h3 id="安装缺失字体">安装缺失字体</h3><p>下载<a href="/assets/wps_symbol_fonts.zip">wps_symbol_fonts.zip</a>字体包，解压到<code>/usr/share/fonts</code>目录，执行以下命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mkfontscale</span><br><span class="line">sudo mkfontdir</span><br><span class="line">sudo fc-cache</span><br></pre></td></tr></table></figure><h3 id="修复右键新建wps文档不存在问题">修复右键新建wps文档不存在问题</h3><p>修改<code>/usr/share/templates</code>目录下的.desktop文件，修正模板文件路径即可<br><img src="/assets/img/post/Peek_2021-01-20_17-09.gif" alt="修复右键新建wps提示不存在问题"></p><p>参考：<br><a href="https://plumz.me/archives/11779/" target="_blank" rel="noopener">https://plumz.me/archives/11779/</a><br><a href="https://mxy493.xyz/2019/04/08/Ubuntu%E5%AE%89%E8%A3%85WPS%EF%BC%88%E8%A7%A3%E5%86%B3%E5%AD%97%E4%BD%93%E7%BC%BA%E5%A4%B1%E9%97%AE%E9%A2%98%EF%BC%89/" target="_blank" rel="noopener">https://mxy493.xyz/2019/04/08/Ubuntu安装WPS（解决字体缺失问题）/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;国际版没有鸡肋的云端功能，更加清爽，只是界面默认是英文的，需要使用国内版的语言包实现“汉化”。&lt;/p&gt;
+&lt;h3 id=&quot;下载wps国际版和国内版&quot;&gt;下载wps国际版和国内版&lt;/h3&gt;
+&lt;p&gt;国际版：&lt;a href=&quot;https://linux.wps.com&quot; target
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="运维" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="ubuntu" scheme="https://javalog.cn/tags/ubuntu/"/>
+    
+      <category term="wps" scheme="https://javalog.cn/tags/wps/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ubuntu创建程序桌面快捷方式</title>
+    <link href="https://javalog.cn/post/ubuntu-create-desktop-shortcut.html"/>
+    <id>https://javalog.cn/post/ubuntu-create-desktop-shortcut.html</id>
+    <published>2021-01-07T04:59:49.000Z</published>
+    <updated>2021-03-26T12:06:50.214Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>系统环境：kubuntu20.04<br>这里拿IDEA做示例</p></blockquote><h3 id="创建-desktop文件">创建.desktop文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/share/applications/IDEA.desktop</span><br></pre></td></tr></table></figure><h3 id="复制下面内容到idea-desktop">复制下面内容到IDEA.desktop</h3><p>主要要修改下<code>Exec</code>和<code>Icon</code>的路径，分别对应可执行文件和快捷方式图标</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Encoding=UTF-8</span><br><span class="line">Name=IDEA</span><br><span class="line">Comment=IDEA IDE</span><br><span class="line">Exec=/home/zzj/soft/idea-IU-203.5981.155/bin/idea.sh</span><br><span class="line">Icon=/home/zzj/soft/idea-IU-203.5981.155/bin/idea.png</span><br><span class="line">Terminal=false</span><br><span class="line">StartupNotify=true</span><br><span class="line">Type=Application</span><br><span class="line">Categories=Application;Development;</span><br></pre></td></tr></table></figure><h3 id="赋可执行权限">赋可执行权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod u+x IDEA.desktop</span><br></pre></td></tr></table></figure><h3 id="复制到桌面">复制到桌面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/share/applications/IDEA.desktop ~/桌面/</span><br></pre></td></tr></table></figure><p>参考：<br><a href="https://blog.csdn.net/weixin_30379531/article/details/97091266" target="_blank" rel="noopener">https://blog.csdn.net/weixin_30379531/article/details/97091266</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;系统环境：kubuntu20.04&lt;br&gt;
+这里拿IDEA做示例&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;创建-desktop文件&quot;&gt;创建.desktop文件&lt;/h3&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="运维" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="ubuntu" scheme="https://javalog.cn/tags/ubuntu/"/>
+    
+      <category term="desktop" scheme="https://javalog.cn/tags/desktop/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ubuntu中zip压缩包乱码问题</title>
+    <link href="https://javalog.cn/post/ubuntu-ark-garbled.html"/>
+    <id>https://javalog.cn/post/ubuntu-ark-garbled.html</id>
+    <published>2021-01-07T03:53:36.000Z</published>
+    <updated>2021-03-26T12:06:50.212Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>系统环境：kubuntu 20.04</p></blockquote><p>从网上下载的zip包用ubuntu自带的ark打开之后显示乱码：<br><img src="/assets/img/post/Screenshot_20210107_124958.png" alt="ark打开乱码"><br>使用如下命令解决：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unar Z3198-视频素材.zip</span><br></pre></td></tr></table></figure><p><img src="/assets/img/post/Screenshot_20210107_125147.png" alt="unar解压解决乱码"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;系统环境：kubuntu 20.04&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;从网上下载的zip包用ubuntu自带的ark打开之后显示乱码：&lt;br&gt;
+&lt;img src=&quot;/assets/img/post/Screenshot_20210107_
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="运维" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="ubuntu乱码" scheme="https://javalog.cn/tags/ubuntu%E4%B9%B1%E7%A0%81/"/>
+    
+      <category term="ark压缩包" scheme="https://javalog.cn/tags/ark%E5%8E%8B%E7%BC%A9%E5%8C%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ubuntu中格式化U盘</title>
+    <link href="https://javalog.cn/post/ubuntu-format-upan.html"/>
+    <id>https://javalog.cn/post/ubuntu-format-upan.html</id>
+    <published>2021-01-05T14:31:50.000Z</published>
+    <updated>2021-03-26T12:06:50.213Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="查看挂载路径">查看挂载路径</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/mounts //查看已经挂在的路径</span><br></pre></td></tr></table></figure><h3 id="卸载挂载">卸载挂载</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo umount /media/hi //卸载掉挂载的路径</span><br></pre></td></tr></table></figure><h3 id="格式化命令">格式化命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mkfs.ntfs /dev/sdb4</span><br><span class="line">sudo mkfs.ext4 /dev/sdb4</span><br><span class="line">sudo mkfs.vfat -F 32 /dev/sdb4</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;查看挂载路径&quot;&gt;查看挂载路径&lt;/h3&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="运维" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="ubuntu" scheme="https://javalog.cn/tags/ubuntu/"/>
+    
+      <category term="格式化" scheme="https://javalog.cn/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96/"/>
+    
+      <category term="U盘" scheme="https://javalog.cn/tags/U%E7%9B%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决springboot+thymeleaf页面修改不自动加载</title>
+    <link href="https://javalog.cn/post/springboot-thymeleaf-.html"/>
+    <id>https://javalog.cn/post/springboot-thymeleaf-.html</id>
+    <published>2020-12-22T13:30:42.000Z</published>
+    <updated>2021-03-26T12:06:50.234Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="解决办法1：">解决办法1：</h2><p>开发环境用如下配置即可</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Templates reloading during development</span><br><span class="line">spring.thymeleaf.prefix=file:src/main/resources/templates/</span><br><span class="line">spring.thymeleaf.cache=false</span><br><span class="line"></span><br><span class="line"># Static resources reloading during development</span><br><span class="line">spring.resources.static-locations=file:src/main/resources/static/</span><br><span class="line">spring.resources.cache-period=0</span><br></pre></td></tr></table></figure><p>application.properties中增加如上配置，运行项目即可</p><h2 id="解决办法2：">解决办法2：</h2><p>1、File-&gt;Settings-&gt;Build, Execution, Deployment-&gt;Compiler，勾选Build project automatically<br>2、Help-&gt;Find Action，搜索Registry，勾选compiler.automake.allow.when.app.running<br>如上设置IDEA，运行项目即可</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;解决办法1：&quot;&gt;解决办法1：&lt;/h2&gt;
+&lt;p&gt;开发环境用如下配置即可&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="后端" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="springboot" scheme="https://javalog.cn/tags/springboot/"/>
+    
+      <category term="thymeleaf" scheme="https://javalog.cn/tags/thymeleaf/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ubuntu下安装可自动更新的chrome</title>
+    <link href="https://javalog.cn/post/ubuntu-ppa-install-chrome.html"/>
+    <id>https://javalog.cn/post/ubuntu-ppa-install-chrome.html</id>
+    <published>2020-12-17T06:49:44.000Z</published>
+    <updated>2021-03-26T12:06:50.211Z</updated>
+    
+    <content type="html"><![CDATA[<p>ubuntu里使用deb包安装的chrome没办法像在win里的chrome一样，用“关于”来检查/更新chrome版本；所以推荐使用ppa源安装的chrome，这样当发布新版本，就可以自动更新之。</p><h3 id="添加公钥">添加公钥</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -</span><br></pre></td></tr></table></figure><h3 id="添加ppa源">添加PPA源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c &apos;echo &quot;deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main&quot;</span><br><span class="line">&gt;&gt; /etc/apt/sources.list.d/google.list&apos;</span><br></pre></td></tr></table></figure><h3 id="更新源">更新源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure><h3 id="安装">安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install google-chrome-stable</span><br></pre></td></tr></table></figure><p>参考：<br><a href="https://linuxhint.com/install_google_chrome_ubuntu_ppa/" target="_blank" rel="noopener">https://linuxhint.com/install_google_chrome_ubuntu_ppa/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;ubuntu里使用deb包安装的chrome没办法像在win里的chrome一样，用“关于”来检查/更新chrome版本；所以推荐使用ppa源安装的chrome，这样当发布新版本，就可以自动更新之。&lt;/p&gt;
+&lt;h3 id=&quot;添加公钥&quot;&gt;添加公钥&lt;/h3&gt;
+&lt;figure c
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="运维" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="ubuntu" scheme="https://javalog.cn/tags/ubuntu/"/>
+    
+      <category term="google chrome" scheme="https://javalog.cn/tags/google-chrome/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>union与union all的区别</title>
+    <link href="https://javalog.cn/post/union%E4%B8%8Eunion%20all%E7%9A%84%E5%8C%BA%E5%88%AB.html"/>
+    <id>https://javalog.cn/post/union与union all的区别.html</id>
+    <published>2020-12-15T13:53:26.000Z</published>
+    <updated>2021-03-26T12:06:50.216Z</updated>
+    
+    <content type="html"><![CDATA[<p>参考：<br><a href="https://www.cnblogs.com/xiangshu/articles/2054447.html" target="_blank" rel="noopener">https://www.cnblogs.com/xiangshu/articles/2054447.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;参考：&lt;br&gt;
+&lt;a href=&quot;https://www.cnblogs.com/xiangshu/articles/2054447.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.cnblogs.com/xiangshu/
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vbox中使用金税盘</title>
+    <link href="https://javalog.cn/post/vbox-use-invoce.html"/>
+    <id>https://javalog.cn/post/vbox-use-invoce.html</id>
+    <published>2020-12-12T02:42:14.000Z</published>
+    <updated>2021-03-26T12:06:50.217Z</updated>
+    
+    <content type="html"><![CDATA[<p>物理机安装的是ubuntu，用来处理日常事务，vbox里起一个win10虚拟机，用来打印发票。<br>1、安装vbox扩展<br>2、物理机插上金税盘<br>3、使用如下命令将用户名添加到vboxusers组<br>sudo adduser usrname vboxusers<br>4、vbox配置读取物理机U口<br><img src="/assets/img/post/2021-01-23_20-21.png" alt="vbox中使用金税盘"></p><p>参考：<br><a href="https://www.cnblogs.com/pngcui/p/5951495.html" target="_blank" rel="noopener">https://www.cnblogs.com/pngcui/p/5951495.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;物理机安装的是ubuntu，用来处理日常事务，vbox里起一个win10虚拟机，用来打印发票。&lt;br&gt;
+1、安装vbox扩展&lt;br&gt;
+2、物理机插上金税盘&lt;br&gt;
+3、使用如下命令将用户名添加到vboxusers组&lt;br&gt;
+sudo adduser usrname vbox
+      
+    
+    </summary>
+    
+      <category term="杂项" scheme="https://javalog.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+      <category term="vbox" scheme="https://javalog.cn/tags/vbox/"/>
+    
+      <category term="金税盘" scheme="https://javalog.cn/tags/%E9%87%91%E7%A8%8E%E7%9B%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>利用frp访问内网服务</title>
+    <link href="https://javalog.cn/post/frp-access-intranet-services.html"/>
+    <id>https://javalog.cn/post/frp-access-intranet-services.html</id>
+    <published>2020-08-30T01:31:04.000Z</published>
+    <updated>2021-03-26T12:06:50.220Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>服务器端环境：ubuntu20.04，公网<br>客户端环境：armbian5.77，内网</p></blockquote><ul><li>服务器端</li></ul><ol><li>下载<br>在<a href="https://github.com/fatedier/frp/releases" target="_blank" rel="noopener">frp的github仓库</a>上下载对应的版本</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.34.3/frp_0.34.3_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure><p>然后解压</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf frp_0.34.3_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure><ol start="2"><li>配置<br>修改</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd frp_0.34.3_linux_amd64</span><br><span class="line">vim frps.ini</span><br></pre></td></tr></table></figure><p>如服务器端配置：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">bind_port = 7000</span><br><span class="line">token = 123456</span><br></pre></td></tr></table></figure><ol start="3"><li>开机启动</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cp frps /usr/bin/frps</span><br><span class="line">mkdir -p /etc/frp</span><br><span class="line">cp frps.ini /etc/frp/frps.ini</span><br><span class="line">cp systemd/frps.service /etc/systemd/system/frps.service</span><br></pre></td></tr></table></figure><ul><li>客户端</li></ul><ol><li>下载</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.34.3/frp_0.34.3_linux_arm64.tar.gz</span><br></pre></td></tr></table></figure><p>然后解压</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf frp_0.34.3_linux_arm64.tar.gz</span><br></pre></td></tr></table></figure><ol start="2"><li>配置</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd frp_0.34.3_linux_arm64</span><br><span class="line">vim frpc.ini</span><br></pre></td></tr></table></figure><p>客户端配置：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = xxx.xxx.xxx.xxx</span><br><span class="line">server_port = 7000</span><br><span class="line">token = 123456</span><br><span class="line"></span><br><span class="line">[ssh]</span><br><span class="line">type = tcp</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = 22</span><br><span class="line">remote_port = 2200</span><br></pre></td></tr></table></figure><ol start="3"><li>开机启动</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cp frpc /usr/bin/frpc</span><br><span class="line">mkdir -p /etc/frp</span><br><span class="line">cp frpc.ini /etc/frp/frpc.ini</span><br><span class="line">cp systemd/frpc.service /etc/systemd/system/frpc.service</span><br></pre></td></tr></table></figure><p>通过如上配置，就可以通过<code>ssh -p 2200 root@xxx.xxx.xxx.xxx</code>ssh访问处在内网的armbian<br><img src="/assets/img/post/Screenshot_20210109_221746.png" alt="frp访问内网服务"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;服务器端环境：ubuntu20.04，公网&lt;br&gt;
+客户端环境：armbian5.77，内网&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;服务器端&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;下载&lt;br&gt;
+在&lt;a href=&quot;https://
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="运维" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="ubuntu" scheme="https://javalog.cn/tags/ubuntu/"/>
+    
+      <category term="frp" scheme="https://javalog.cn/tags/frp/"/>
+    
+      <category term="armbian" scheme="https://javalog.cn/tags/armbian/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue学习笔记</title>
+    <link href="https://javalog.cn/post/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://javalog.cn/post/Vue学习笔记.html</id>
+    <published>2020-06-13T07:41:37.000Z</published>
+    <updated>2021-03-26T12:06:50.198Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>申请5T网盘</title>
+    <link href="https://javalog.cn/post/%E7%94%B3%E8%AF%B75T%E7%BD%91%E7%9B%98.html"/>
+    <id>https://javalog.cn/post/申请5T网盘.html</id>
+    <published>2020-05-04T05:33:21.000Z</published>
+    <updated>2021-03-26T12:06:50.226Z</updated>
+    
+    <content type="html"><![CDATA[<p>参考：<br><a href="https://zhuanlan.zhihu.com/p/105438817" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/105438817</a><br><a href="https://blog.curlc.com/archives/66.html" target="_blank" rel="noopener">https://blog.curlc.com/archives/66.html</a><br><a href="https://blog.devyi.com/archives/388/" target="_blank" rel="noopener">https://blog.devyi.com/archives/388/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;参考：&lt;br&gt;
+&lt;a href=&quot;https://zhuanlan.zhihu.com/p/105438817&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://zhuanlan.zhihu.com/p/105438817&lt;/a&gt;&lt;br&gt;
+&lt;a
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>下载飞狗moco</title>
+    <link href="https://javalog.cn/post/%E4%B8%8B%E8%BD%BD%E9%A3%9E%E7%8B%97moco.html"/>
+    <id>https://javalog.cn/post/下载飞狗moco.html</id>
+    <published>2020-05-04T01:51:32.000Z</published>
+    <updated>2021-03-26T12:06:50.219Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Weblogic、Websphere、Tomcat配置Kerberos</title>
+    <link href="https://javalog.cn/post/weblogic-websphere-tomcat-kerberos.html"/>
+    <id>https://javalog.cn/post/weblogic-websphere-tomcat-kerberos.html</id>
+    <published>2020-04-27T13:14:12.000Z</published>
+    <updated>2021-03-26T12:06:50.200Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="名词解释">名词解释</h2><ul><li><p>ADDS<br>Active Directory Domain Services，活动目录域名服务</p></li><li><p>ADFS<br>Active Directory Federation Services，活动目录联合服务</p></li><li><p>MIM<br>Microsoft Identity Manager，</p></li><li><p>KDC<br>Key Distribution Center，密钥分发中心</p></li></ul><h2 id="安装win2012-server-r2">安装Win2012 Server R2</h2><p>vbox安装，过程略<br>系统镜像下载：<br>激活工具下载：</p><h2 id="安装adds">安装ADDS</h2><p>参见：</p><h2 id="安装adfs">安装ADFS</h2><p>参见：</p><h2 id="weblogic安装">Weblogic安装</h2><p>参见：</p><h2 id="weblogic配置">Weblogic配置</h2><h2 id="kdc配置">KDC配置</h2><p>参考：<br><a href="https://blog.joden123.top/2019/03/09/sso/adfs/adds-install/" target="_blank" rel="noopener">https://blog.joden123.top/2019/03/09/sso/adfs/adds-install/</a><br><a href="https://blog.joden123.top/2019/03/11/sso/adfs/adfs-install/" target="_blank" rel="noopener">https://blog.joden123.top/2019/03/11/sso/adfs/adfs-install/</a><br><a href="https://www.cnblogs.com/firstdream/p/8515453.html" target="_blank" rel="noopener">https://www.cnblogs.com/firstdream/p/8515453.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;名词解释&quot;&gt;名词解释&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ADDS&lt;br&gt;
+Active Directory Domain Services，活动目录域名服务&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ADFS&lt;br&gt;
+Active Directory Federati
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="运维" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="Tomcat" scheme="https://javalog.cn/tags/Tomcat/"/>
+    
+      <category term="Weblogic" scheme="https://javalog.cn/tags/Weblogic/"/>
+    
+      <category term="Websphere" scheme="https://javalog.cn/tags/Websphere/"/>
+    
+      <category term="Kerberos" scheme="https://javalog.cn/tags/Kerberos/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>K2P刷机潘多拉、高恪</title>
+    <link href="https://javalog.cn/post/k2p-pandorabox-gocloud.html"/>
+    <id>https://javalog.cn/post/k2p-pandorabox-gocloud.html</id>
+    <published>2020-04-27T12:22:20.000Z</published>
+    <updated>2021-03-26T12:06:50.178Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="刷入breed">刷入Breed</h2><h2 id="刷pandorabox">刷pandorabox</h2><h2 id="刷gocloud">刷gocloud</h2><ul><li>先刷底包</li><li>刷入固件</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;刷入breed&quot;&gt;刷入Breed&lt;/h2&gt;
+&lt;h2 id=&quot;刷pandorabox&quot;&gt;刷pandorabox&lt;/h2&gt;
+&lt;h2 id=&quot;刷gocloud&quot;&gt;刷gocloud&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;先刷底包&lt;/li&gt;
+&lt;li&gt;刷入固件&lt;/li&gt;
+&lt;/ul&gt;
+
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="刷机" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E5%88%B7%E6%9C%BA/"/>
+    
+    
+      <category term="pandorabox" scheme="https://javalog.cn/tags/pandorabox/"/>
+    
+      <category term="gocloud" scheme="https://javalog.cn/tags/gocloud/"/>
+    
+      <category term="k2p" scheme="https://javalog.cn/tags/k2p/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2012安装ADDS</title>
+    <link href="https://javalog.cn/post/2012%E5%AE%89%E8%A3%85ADDS.html"/>
+    <id>https://javalog.cn/post/2012安装ADDS.html</id>
+    <published>2020-04-27T09:28:47.000Z</published>
+    <updated>2021-03-26T12:06:50.156Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="虚拟机安装">虚拟机安装</h2><h2 id="安装2012">安装2012</h2><h2 id="配置单一域控">配置单一域控</h2><h2 id="主备域控">主备域控</h2><p><a href="https://www.ityww.cn/114.html" target="_blank" rel="noopener">https://www.ityww.cn/114.html</a><br><a href="https://www.ityww.cn/154.html" target="_blank" rel="noopener">https://www.ityww.cn/154.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;虚拟机安装&quot;&gt;虚拟机安装&lt;/h2&gt;
+&lt;h2 id=&quot;安装2012&quot;&gt;安装2012&lt;/h2&gt;
+&lt;h2 id=&quot;配置单一域控&quot;&gt;配置单一域控&lt;/h2&gt;
+&lt;h2 id=&quot;主备域控&quot;&gt;主备域控&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.ityww.cn/1
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
