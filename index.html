@@ -155,19 +155,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Selenium-Java模拟登录oschina" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-selenium-java-login-oschina" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/post/Selenium-Java模拟登录oschina.html">Selenium-Java模拟登录oschina</a>
+      <a class="article-title" href="/post/selenium-java-login-oschina.html">Selenium-Java模拟登录oschina</a>
     </h1>
   
 
         
-        <a href="/post/Selenium-Java模拟登录oschina.html" class="archive-article-date">
+        <a href="/post/selenium-java-login-oschina.html" class="archive-article-date">
   	<time datetime="2021-05-03T11:41:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-03</time>
 </a>
         
@@ -175,7 +175,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">package com.ah;</span><br><span class="line"></span><br><span class="line">import org.checkerframework.checker.nullness.compatqual.NullableDecl;</span><br><span class="line">import org.openqa.selenium.By;</span><br><span class="line">import org.openqa.selenium.WebDriver;</span><br><span class="line">import org.openqa.selenium.WebElement;</span><br><span class="line">import org.openqa.selenium.chrome.ChromeDriver;</span><br><span class="line">import org.openqa.selenium.support.ui.ExpectedCondition;</span><br><span class="line">import org.openqa.selenium.support.ui.WebDriverWait;</span><br><span class="line"></span><br><span class="line">public class LoginOsc &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        System.setProperty(&quot;webdriver.chrome.driver&quot;, &quot;driver/chromedriver.exe&quot;);</span><br><span class="line">        ChromeDriver chromeDriver = new ChromeDriver();</span><br><span class="line">        chromeDriver.manage().window().maximize();</span><br><span class="line">        chromeDriver.get(&quot;https://www.oschina.net/home/login&quot;);</span><br><span class="line">        WebElement webElement = chromeDriver.findElements(By.className(&quot;osc-tabs__item&quot;)).get(1);</span><br><span class="line">        webElement.click();</span><br><span class="line">        WebElement username = chromeDriver.findElementByName(&quot;username&quot;);</span><br><span class="line">        WebElement password = chromeDriver.findElementByName(&quot;password&quot;);</span><br><span class="line">        username.clear();</span><br><span class="line">        password.clear();</span><br><span class="line">        username.sendKeys(&quot;账户&quot;);</span><br><span class="line">        password.sendKeys(&quot;密码&quot;);</span><br><span class="line">        //取消勾选</span><br><span class="line">        WebElement saveLogin = chromeDriver.findElementByClassName(&quot;checkbox-remember&quot;);</span><br><span class="line">        saveLogin.click();</span><br><span class="line">        WebElement button = chromeDriver.findElements(By.className(&quot;btn-submit&quot;)).get(1);</span><br><span class="line">        button.click();</span><br><span class="line">        //显示等待</span><br><span class="line">        WebElement info = new WebDriverWait(chromeDriver, 10).until(new ExpectedCondition&lt;WebElement&gt;() &#123;</span><br><span class="line">            @NullableDecl</span><br><span class="line">            @Override</span><br><span class="line">            public WebElement apply(@NullableDecl WebDriver d) &#123;</span><br><span class="line">                return d.findElement(By.className(&quot;user-info&quot;));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        //显示出侧边栏</span><br><span class="line">        info.click();</span><br><span class="line">        WebElement center = chromeDriver.findElement(By.xpath(&quot;//*[@id=\&quot;userSidebar\&quot;]/a[1]&quot;));</span><br><span class="line">        //进入个人中心</span><br><span class="line">        center.click();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="新建maven工程">新建maven工程</h2>
+<h2 id="增加maven坐标">增加maven坐标</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;selenium-java&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;3.141.59&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="代码实现">代码实现</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">package com.ah;</span><br><span class="line"></span><br><span class="line">import org.checkerframework.checker.nullness.compatqual.NullableDecl;</span><br><span class="line">import org.openqa.selenium.By;</span><br><span class="line">import org.openqa.selenium.WebDriver;</span><br><span class="line">import org.openqa.selenium.WebElement;</span><br><span class="line">import org.openqa.selenium.chrome.ChromeDriver;</span><br><span class="line">import org.openqa.selenium.support.ui.ExpectedCondition;</span><br><span class="line">import org.openqa.selenium.support.ui.WebDriverWait;</span><br><span class="line"></span><br><span class="line">public class LoginOsc &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        System.setProperty(&quot;webdriver.chrome.driver&quot;, &quot;driver/chromedriver.exe&quot;);</span><br><span class="line">        ChromeDriver chromeDriver = new ChromeDriver();</span><br><span class="line">        chromeDriver.manage().window().maximize();</span><br><span class="line">        chromeDriver.get(&quot;https://www.oschina.net/home/login&quot;);</span><br><span class="line">        WebElement webElement = chromeDriver.findElements(By.className(&quot;osc-tabs__item&quot;)).get(1);</span><br><span class="line">        webElement.click();</span><br><span class="line">        WebElement username = chromeDriver.findElementByName(&quot;username&quot;);</span><br><span class="line">        WebElement password = chromeDriver.findElementByName(&quot;password&quot;);</span><br><span class="line">        username.clear();</span><br><span class="line">        password.clear();</span><br><span class="line">        username.sendKeys(&quot;账户&quot;);</span><br><span class="line">        password.sendKeys(&quot;密码&quot;);</span><br><span class="line">        //取消勾选</span><br><span class="line">        WebElement saveLogin = chromeDriver.findElementByClassName(&quot;checkbox-remember&quot;);</span><br><span class="line">        saveLogin.click();</span><br><span class="line">        WebElement button = chromeDriver.findElements(By.className(&quot;btn-submit&quot;)).get(1);</span><br><span class="line">        button.click();</span><br><span class="line">        //显示等待</span><br><span class="line">        WebElement info = new WebDriverWait(chromeDriver, 10).until(new ExpectedCondition&lt;WebElement&gt;() &#123;</span><br><span class="line">            @NullableDecl</span><br><span class="line">            @Override</span><br><span class="line">            public WebElement apply(@NullableDecl WebDriver d) &#123;</span><br><span class="line">                return d.findElement(By.className(&quot;user-info&quot;));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        //显示出侧边栏</span><br><span class="line">        info.click();</span><br><span class="line">        WebElement center = chromeDriver.findElement(By.xpath(&quot;//*[@id=\&quot;userSidebar\&quot;]/a[1]&quot;));</span><br><span class="line">        //进入个人中心</span><br><span class="line">        center.click();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="演示">演示</h2>
 <p><img src="/assets/img/post/og7eg-9eib2.gif" alt="演示Selenium-Java模拟登录oschina"></p>
 
       
@@ -185,11 +190,45 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Selenium</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Oschina</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/后端/" class="article-tag-list-link color3">后端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/post/Selenium-Java模拟登录oschina.html">展开全文 >></a>
+          <a class="article-more-a" href="/post/selenium-java-login-oschina.html">展开全文 >></a>
         </p>
       
 
@@ -1143,15 +1182,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Springboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Debian</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SSH</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Springboot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1176,6 +1215,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Weblogic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Websphere</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1219,10 +1262,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Websphere</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Vbox</a>
               </li>
              
@@ -1240,6 +1279,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Putty</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Selenium</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Oschina</a>
               </li>
              
               <li class="article-tag-list-item">
