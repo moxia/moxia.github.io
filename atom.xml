@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://javalog.cn/"/>
-  <updated>2021-05-04T03:11:23.850Z</updated>
+  <updated>2021-05-14T06:26:55.315Z</updated>
   <id>https://javalog.cn/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>增加鼠标指针图标</title>
+    <link href="https://javalog.cn/post/%E5%A2%9E%E5%8A%A0%E9%BC%A0%E6%A0%87%E6%8C%87%E9%92%88%E5%9B%BE%E6%A0%87.html"/>
+    <id>https://javalog.cn/post/增加鼠标指针图标.html</id>
+    <published>2021-05-14T06:26:55.000Z</published>
+    <updated>2021-05-14T06:26:55.315Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>给Hexo的Yilia主题增加鼠标点击爆炸效果</title>
+    <link href="https://javalog.cn/post/hexo-yilia-explosion-effect.html"/>
+    <id>https://javalog.cn/post/hexo-yilia-explosion-effect.html</id>
+    <published>2021-05-14T06:01:15.000Z</published>
+    <updated>2021-05-14T06:26:07.172Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="前端" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Hexo" scheme="https://javalog.cn/tags/Hexo/"/>
+    
+      <category term="Yilia" scheme="https://javalog.cn/tags/Yilia/"/>
+    
+  </entry>
   
   <entry>
     <title>Selenium-Java模拟登录oschina</title>
@@ -50,10 +86,10 @@
   
   <entry>
     <title>Springboot+Mybatis-Plus实现增删改查及分页</title>
-    <link href="https://javalog.cn/post/Springboot-Mybatis-Plus%E5%AE%9E%E7%8E%B0%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E5%8F%8A%E5%88%86%E9%A1%B5.html"/>
-    <id>https://javalog.cn/post/Springboot-Mybatis-Plus实现增删改查及分页.html</id>
+    <link href="https://javalog.cn/post/springboot-mybatisplus-curd-pagination.html"/>
+    <id>https://javalog.cn/post/springboot-mybatisplus-curd-pagination.html</id>
     <published>2021-04-09T11:50:44.000Z</published>
-    <updated>2021-04-09T11:50:44.497Z</updated>
+    <updated>2021-05-09T02:13:17.016Z</updated>
     
     <summary type="html">
     
@@ -494,69 +530,6 @@ Active Directory Federati
       <category term="Websphere" scheme="https://javalog.cn/tags/Websphere/"/>
     
       <category term="Kerberos" scheme="https://javalog.cn/tags/Kerberos/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>K2P刷机潘多拉、高恪</title>
-    <link href="https://javalog.cn/post/k2p-pandorabox-gocloud.html"/>
-    <id>https://javalog.cn/post/k2p-pandorabox-gocloud.html</id>
-    <published>2020-04-27T12:22:20.000Z</published>
-    <updated>2021-03-26T12:06:50.178Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="刷入breed">刷入Breed</h2><h2 id="刷pandorabox">刷pandorabox</h2><h2 id="刷gocloud">刷gocloud</h2><ul><li>先刷底包</li><li>刷入固件</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;刷入breed&quot;&gt;刷入Breed&lt;/h2&gt;
-&lt;h2 id=&quot;刷pandorabox&quot;&gt;刷pandorabox&lt;/h2&gt;
-&lt;h2 id=&quot;刷gocloud&quot;&gt;刷gocloud&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;先刷底包&lt;/li&gt;
-&lt;li&gt;刷入固件&lt;/li&gt;
-&lt;/ul&gt;
-
-      
-    
-    </summary>
-    
-      <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="刷机" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E5%88%B7%E6%9C%BA/"/>
-    
-    
-      <category term="pandorabox" scheme="https://javalog.cn/tags/pandorabox/"/>
-    
-      <category term="gocloud" scheme="https://javalog.cn/tags/gocloud/"/>
-    
-      <category term="k2p" scheme="https://javalog.cn/tags/k2p/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2012安装ADDS</title>
-    <link href="https://javalog.cn/post/2012%E5%AE%89%E8%A3%85ADDS.html"/>
-    <id>https://javalog.cn/post/2012安装ADDS.html</id>
-    <published>2020-04-27T09:28:47.000Z</published>
-    <updated>2021-03-26T12:06:50.156Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="虚拟机安装">虚拟机安装</h2><h2 id="安装2012">安装2012</h2><h2 id="配置单一域控">配置单一域控</h2><h2 id="主备域控">主备域控</h2><p><a href="https://www.ityww.cn/114.html" target="_blank" rel="noopener">https://www.ityww.cn/114.html</a><br><a href="https://www.ityww.cn/154.html" target="_blank" rel="noopener">https://www.ityww.cn/154.html</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;虚拟机安装&quot;&gt;虚拟机安装&lt;/h2&gt;
-&lt;h2 id=&quot;安装2012&quot;&gt;安装2012&lt;/h2&gt;
-&lt;h2 id=&quot;配置单一域控&quot;&gt;配置单一域控&lt;/h2&gt;
-&lt;h2 id=&quot;主备域控&quot;&gt;主备域控&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.ityww.cn/1
-      
-    
-    </summary>
-    
     
   </entry>
   
