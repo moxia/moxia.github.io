@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="https://javalog.cn">
   <title>给Hexo的Yilia主题增加鼠标点击爆炸效果 | JAVA日志</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="修改layout.ejs 123456789101112&amp;lt;%- partial(&amp;apos;_partial/head&amp;apos;) %&amp;gt;&amp;lt;body&amp;gt;  &amp;lt;div id=&amp;quot;container&amp;quot; q-class=&amp;quot;show:isCtnShow&amp;quot;&amp;gt;    &amp;lt;!-- 新增一行 --&amp;gt;    &amp;lt;canvas cl">
+  <meta name="description" content="修改layout.ejs 123456789101112&amp;lt;%- partial(&apos;_partial/head&apos;) %&amp;gt;&amp;lt;body&amp;gt;  &amp;lt;div id=&quot;container&quot; q-class=&quot;show:isCtnShow&quot;&amp;gt;    &amp;lt;!-- 新增一行 --&amp;gt;    &amp;lt;canvas class=&quot;fireworks&quot; style=&quot;positio">
 <meta name="keywords" content="Hexo,Yilia">
 <meta property="og:type" content="article">
 <meta property="og:title" content="给Hexo的Yilia主题增加鼠标点击爆炸效果">
 <meta property="og:url" content="https://javalog.cn/post/hexo-yilia-explosion-effect.html">
 <meta property="og:site_name" content="JAVA日志">
-<meta property="og:description" content="修改layout.ejs 123456789101112&amp;lt;%- partial(&amp;apos;_partial/head&amp;apos;) %&amp;gt;&amp;lt;body&amp;gt;  &amp;lt;div id=&amp;quot;container&amp;quot; q-class=&amp;quot;show:isCtnShow&amp;quot;&amp;gt;    &amp;lt;!-- 新增一行 --&amp;gt;    &amp;lt;canvas cl">
+<meta property="og:description" content="修改layout.ejs 123456789101112&amp;lt;%- partial(&apos;_partial/head&apos;) %&amp;gt;&amp;lt;body&amp;gt;  &amp;lt;div id=&quot;container&quot; q-class=&quot;show:isCtnShow&quot;&amp;gt;    &amp;lt;!-- 新增一行 --&amp;gt;    &amp;lt;canvas class=&quot;fireworks&quot; style=&quot;positio">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://javalog.cn/assets/img/post/explosion.gif">
-<meta property="og:updated_time" content="2021-05-14T07:54:11.931Z">
+<meta property="og:updated_time" content="2021-05-14T11:23:33.161Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="给Hexo的Yilia主题增加鼠标点击爆炸效果">
-<meta name="twitter:description" content="修改layout.ejs 123456789101112&amp;lt;%- partial(&amp;apos;_partial/head&amp;apos;) %&amp;gt;&amp;lt;body&amp;gt;  &amp;lt;div id=&amp;quot;container&amp;quot; q-class=&amp;quot;show:isCtnShow&amp;quot;&amp;gt;    &amp;lt;!-- 新增一行 --&amp;gt;    &amp;lt;canvas cl">
+<meta name="twitter:description" content="修改layout.ejs 123456789101112&amp;lt;%- partial(&apos;_partial/head&apos;) %&amp;gt;&amp;lt;body&amp;gt;  &amp;lt;div id=&quot;container&quot; q-class=&quot;show:isCtnShow&quot;&amp;gt;    &amp;lt;!-- 新增一行 --&amp;gt;    &amp;lt;canvas class=&quot;fireworks&quot; style=&quot;positio">
 <meta name="twitter:image" content="https://javalog.cn/assets/img/post/explosion.gif">
   
     <link rel="alternative" href="/atom.xml" title="JAVA日志" type="application/atom+xml">
@@ -182,15 +182,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="修改layout-ejs">修改<code>layout.ejs</code></h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;%- partial(&apos;_partial/head&apos;) %&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;container&quot; q-class=&quot;show:isCtnShow&quot;&gt;</span><br><span class="line">    &lt;!-- 新增一行 --&gt;</span><br><span class="line">    &lt;canvas class=&quot;fireworks&quot; style=&quot;position: fixed;left: 0;top: 0;z-index: 9999; pointer-events: none;&quot; &gt;&lt;/canvas&gt;</span><br><span class="line">    ...</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;!-- 新增两行 --&gt;</span><br><span class="line">  &lt;script src=&quot;https://cdn.bootcss.com/animejs/2.2.0/anime.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script src=&quot;https://script-1256884783.file.myqcloud.com/cursor/explosion.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">_partial</span>/<span class="attr">head</span>') %&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span> <span class="attr">q-class</span>=<span class="string">"show:isCtnShow"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 新增一行 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">class</span>=<span class="string">"fireworks"</span> <span class="attr">style</span>=<span class="string">"position: fixed;left: 0;top: 0;z-index: 9999; pointer-events: none;"</span> &gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 新增两行 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/animejs/2.2.0/anime.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://script-1256884783.file.myqcloud.com/cursor/explosion.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="修改grid-scss">修改<code>grid.scss</code></h2>
-<p>给<code>.mid-col</code>增加<code>z-index: 999;</code>样式<br>
-.mid-col {<br>
-…<br>
-	width: auto;<br>
-	z-index: 999;<br>
-…<br>
-}</p>
+<p>给<code>.mid-col</code>增加<code>z-index: 999;</code>样式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.mid-col</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">	<span class="selector-tag">width</span>: <span class="selector-tag">auto</span>;</span><br><span class="line">	<span class="selector-tag">z-index</span>: 999;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="重新编译-本地预览效果">重新编译，本地预览效果</h2>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm run dist</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
 <h2 id="效果">效果</h2>
@@ -504,11 +499,11 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -528,6 +523,14 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Weblogic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
@@ -544,19 +547,11 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Weblogic</a>
+                <a href="javascript:void(0)" class="js-tag color5">Websphere</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">openLDAP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Websphere</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -572,10 +567,6 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">pandorabox</a>
               </li>
              
@@ -585,6 +576,10 @@ gitalk.render('gitalk-container')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">k2p</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -672,19 +667,15 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Jenkins</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">google chrome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ubuntu乱码</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ark压缩包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">google chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -712,15 +703,15 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Emoji</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">frp</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">armbian</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Emoji</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -733,6 +724,10 @@ gitalk.render('gitalk-container')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Apple ID</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Jenkins</a>
               </li>
              
               <li class="article-tag-list-item">
