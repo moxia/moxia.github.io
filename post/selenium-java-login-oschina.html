@@ -17,7 +17,7 @@
 <meta property="og:description" content="新建maven工程 使用IDEA创建普通maven项目，根据chrome版本下载相应的chromedriver.exe，放在项目根目录/driver里 增加maven坐标 12345&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.seleniumhq.selenium&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;selenium-ja">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://javalog.cn/assets/img/post/og7eg-9eib2.gif">
-<meta property="og:updated_time" content="2021-05-04T03:11:23.850Z">
+<meta property="og:updated_time" content="2021-05-14T14:22:14.151Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Selenium-Java模拟登录oschina">
 <meta name="twitter:description" content="新建maven工程 使用IDEA创建普通maven项目，根据chrome版本下载相应的chromedriver.exe，放在项目根目录/driver里 增加maven坐标 12345&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.seleniumhq.selenium&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;selenium-ja">
@@ -184,9 +184,9 @@
         <h2 id="新建maven工程">新建maven工程</h2>
 <p>使用IDEA创建普通maven项目，根据chrome版本下载相应的<a href="https://chromedriver.chromium.org/downloads" target="_blank" rel="noopener">chromedriver.exe</a>，放在<code>项目根目录/driver里</code></p>
 <h2 id="增加maven坐标">增加maven坐标</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;selenium-java&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;3.141.59&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.seleniumhq.selenium<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>selenium-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.141.59<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="代码实现">代码实现</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">package com.ah;</span><br><span class="line"></span><br><span class="line">import org.checkerframework.checker.nullness.compatqual.NullableDecl;</span><br><span class="line">import org.openqa.selenium.By;</span><br><span class="line">import org.openqa.selenium.WebDriver;</span><br><span class="line">import org.openqa.selenium.WebElement;</span><br><span class="line">import org.openqa.selenium.chrome.ChromeDriver;</span><br><span class="line">import org.openqa.selenium.support.ui.ExpectedCondition;</span><br><span class="line">import org.openqa.selenium.support.ui.WebDriverWait;</span><br><span class="line"></span><br><span class="line">public class LoginOsc &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        System.setProperty(&quot;webdriver.chrome.driver&quot;, &quot;driver/chromedriver.exe&quot;);</span><br><span class="line">        ChromeDriver chromeDriver = new ChromeDriver();</span><br><span class="line">        chromeDriver.manage().window().maximize();</span><br><span class="line">        chromeDriver.get(&quot;https://www.oschina.net/home/login&quot;);</span><br><span class="line">        WebElement webElement = chromeDriver.findElements(By.className(&quot;osc-tabs__item&quot;)).get(1);</span><br><span class="line">        webElement.click();</span><br><span class="line">        WebElement username = chromeDriver.findElementByName(&quot;username&quot;);</span><br><span class="line">        WebElement password = chromeDriver.findElementByName(&quot;password&quot;);</span><br><span class="line">        username.clear();</span><br><span class="line">        password.clear();</span><br><span class="line">        username.sendKeys(&quot;账户&quot;);</span><br><span class="line">        password.sendKeys(&quot;密码&quot;);</span><br><span class="line">        //取消勾选</span><br><span class="line">        WebElement saveLogin = chromeDriver.findElementByClassName(&quot;checkbox-remember&quot;);</span><br><span class="line">        saveLogin.click();</span><br><span class="line">        WebElement button = chromeDriver.findElements(By.className(&quot;btn-submit&quot;)).get(1);</span><br><span class="line">        button.click();</span><br><span class="line">        //显示等待</span><br><span class="line">        WebElement info = new WebDriverWait(chromeDriver, 10).until(new ExpectedCondition&lt;WebElement&gt;() &#123;</span><br><span class="line">            @NullableDecl</span><br><span class="line">            @Override</span><br><span class="line">            public WebElement apply(@NullableDecl WebDriver d) &#123;</span><br><span class="line">                return d.findElement(By.className(&quot;user-info&quot;));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        //显示出侧边栏</span><br><span class="line">        info.click();</span><br><span class="line">        WebElement center = chromeDriver.findElement(By.xpath(&quot;//*[@id=\&quot;userSidebar\&quot;]/a[1]&quot;));</span><br><span class="line">        //进入个人中心</span><br><span class="line">        center.click();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.ah;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.checkerframework.checker.nullness.compatqual.NullableDecl;</span><br><span class="line"><span class="keyword">import</span> org.openqa.selenium.By;</span><br><span class="line"><span class="keyword">import</span> org.openqa.selenium.WebDriver;</span><br><span class="line"><span class="keyword">import</span> org.openqa.selenium.WebElement;</span><br><span class="line"><span class="keyword">import</span> org.openqa.selenium.chrome.ChromeDriver;</span><br><span class="line"><span class="keyword">import</span> org.openqa.selenium.support.ui.ExpectedCondition;</span><br><span class="line"><span class="keyword">import</span> org.openqa.selenium.support.ui.WebDriverWait;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginOsc</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.setProperty(<span class="string">"webdriver.chrome.driver"</span>, <span class="string">"driver/chromedriver.exe"</span>);</span><br><span class="line">        ChromeDriver chromeDriver = <span class="keyword">new</span> ChromeDriver();</span><br><span class="line">        chromeDriver.manage().window().maximize();</span><br><span class="line">        chromeDriver.get(<span class="string">"https://www.oschina.net/home/login"</span>);</span><br><span class="line">        WebElement webElement = chromeDriver.findElements(By.className(<span class="string">"osc-tabs__item"</span>)).get(<span class="number">1</span>);</span><br><span class="line">        webElement.click();</span><br><span class="line">        WebElement username = chromeDriver.findElementByName(<span class="string">"username"</span>);</span><br><span class="line">        WebElement password = chromeDriver.findElementByName(<span class="string">"password"</span>);</span><br><span class="line">        username.clear();</span><br><span class="line">        password.clear();</span><br><span class="line">        username.sendKeys(<span class="string">"账户"</span>);</span><br><span class="line">        password.sendKeys(<span class="string">"密码"</span>);</span><br><span class="line">        <span class="comment">//取消勾选</span></span><br><span class="line">        WebElement saveLogin = chromeDriver.findElementByClassName(<span class="string">"checkbox-remember"</span>);</span><br><span class="line">        saveLogin.click();</span><br><span class="line">        WebElement button = chromeDriver.findElements(By.className(<span class="string">"btn-submit"</span>)).get(<span class="number">1</span>);</span><br><span class="line">        button.click();</span><br><span class="line">        <span class="comment">//显示等待</span></span><br><span class="line">        WebElement info = <span class="keyword">new</span> WebDriverWait(chromeDriver, <span class="number">10</span>).until(<span class="keyword">new</span> ExpectedCondition&lt;WebElement&gt;() &#123;</span><br><span class="line">            <span class="meta">@NullableDecl</span></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> WebElement <span class="title">apply</span><span class="params">(@NullableDecl WebDriver d)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> d.findElement(By.className(<span class="string">"user-info"</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">//显示出侧边栏</span></span><br><span class="line">        info.click();</span><br><span class="line">        WebElement center = chromeDriver.findElement(By.xpath(<span class="string">"//*[@id=\"userSidebar\"]/a[1]"</span>));</span><br><span class="line">        <span class="comment">//进入个人中心</span></span><br><span class="line">        center.click();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="演示">演示</h2>
 <p><img src="/assets/img/post/og7eg-9eib2.gif" alt="演示Selenium-Java模拟登录oschina"></p>
 
@@ -490,23 +490,7 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Debian</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SSH</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Springboot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,11 +506,23 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Weblogic</a>
+                <a href="javascript:void(0)" class="js-tag color2">Debian</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SSH</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Springboot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -550,7 +546,31 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Weblogic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Websphere</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">openLDAP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Yilia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -566,31 +586,11 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">openLDAP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">斐讯N1</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">putty</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
+                <a href="javascript:void(0)" class="js-tag color5">斐讯N1</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -602,7 +602,27 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">putty</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Putty</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Selenium</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Oschina</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -619,22 +639,6 @@ gitalk.render('gitalk-container')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Selenium</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Oschina</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -662,23 +666,15 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">格式化</a>
+                <a href="javascript:void(0)" class="js-tag color4">wps</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">U盘</a>
+                <a href="javascript:void(0)" class="js-tag color3">Jenkins</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">google chrome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">vbox</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">金税盘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -690,19 +686,27 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">格式化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">U盘</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">desktop</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">vbox</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">金税盘</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">VirtualBox</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">wps</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Yilia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Emoji</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -714,7 +718,11 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Jenkins</a>
+                <a href="javascript:void(0)" class="js-tag color1">Emoji</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -722,7 +730,11 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">desktop</a>
+                <a href="javascript:void(0)" class="js-tag color4">Apple ID</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">bridge</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -731,10 +743,6 @@ gitalk.render('gitalk-container')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Sass</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">bridge</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -754,15 +762,7 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Apple ID</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
               </li>
              
               <li class="article-tag-list-item">
