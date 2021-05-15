@@ -1,0 +1,17 @@
+@media screen and (min-width:1025px) {
+	.logo-site:before {
+		content: "";
+		position: absolute;
+		left: -665px;
+		top: -460px;
+		width: 250px;
+		height: 15px;
+		background-color: rgba(255,255,255,.5);
+		transform: rotate(-45deg);
+		animation: searchLights 1s ease-in 1s infinite
+	}
+
+	.logo-site img {
+		-webkit-transition-duration: .5s
+	}
+}
