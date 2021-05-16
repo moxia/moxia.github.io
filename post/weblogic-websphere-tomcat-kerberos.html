@@ -9,7 +9,7 @@
   <title>Weblogic、Websphere、Tomcat配置Kerberos | JAVA日志</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="名词解释   ADDS Active Directory Domain Services，活动目录域名服务   ADFS Active Directory Federation Services，活动目录联合服务   MIM Microsoft Identity Manager，   KDC Key Distribution Center，密钥分发中心   安装Win2012 Server R2">
-<meta name="keywords" content="Tomcat,Websphere,Weblogic,Kerberos">
+<meta name="keywords" content="Tomcat,Weblogic,Websphere,Kerberos">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Weblogic、Websphere、Tomcat配置Kerberos">
 <meta property="og:url" content="https://javalog.cn/post/weblogic-websphere-tomcat-kerberos.html">
@@ -266,11 +266,11 @@ Key Distribution Center，密钥分发中心</p>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Websphere</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Weblogic</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Weblogic</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Websphere</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -579,7 +579,19 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Weblogic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Websphere</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">openLDAP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -591,15 +603,23 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Weblogic</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">斐讯N1</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vbox</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">LEDE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -612,26 +632,6 @@ gitalk.render('gitalk-container')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">k2p</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">斐讯N1</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">openLDAP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vbox</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">LEDE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -994,7 +994,9 @@ gitalk.render('gitalk-container')
   <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
   <script>
    // 对所有链接跳转事件绑定pjax容器container
-   $(document).pjax('a[target!=_blank]', '#container', {fragment:'#container', timeout:8000})
+  $(function(){
+    $(document).pjax('a[target!=_blank]', '#container', {fragment:'#container', timeout:8000})
+  })
   </script>
 </body>
 </html>

@@ -549,9 +549,9 @@ Active Directory Federati
     
       <category term="Tomcat" scheme="https://javalog.cn/tags/Tomcat/"/>
     
-      <category term="Websphere" scheme="https://javalog.cn/tags/Websphere/"/>
-    
       <category term="Weblogic" scheme="https://javalog.cn/tags/Weblogic/"/>
+    
+      <category term="Websphere" scheme="https://javalog.cn/tags/Websphere/"/>
     
       <category term="Kerberos" scheme="https://javalog.cn/tags/Kerberos/"/>
     
