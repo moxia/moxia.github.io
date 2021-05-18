@@ -119,11 +119,11 @@
   </entry>
   
   <entry>
-    <title>Springboot+Jpa实现增删改查及分页</title>
+    <title>Springboot+Mybatis实现增删改查及分页</title>
     <link href="https://javalog.cn/post/default.html"/>
     <id>https://javalog.cn/post/default.html</id>
     <published>2021-04-09T11:50:08.000Z</published>
-    <updated>2021-04-09T11:50:08.825Z</updated>
+    <updated>2021-04-09T11:50:08.827Z</updated>
     
     
     
@@ -132,11 +132,11 @@
   </entry>
   
   <entry>
-    <title>Springboot+Mybatis实现增删改查及分页</title>
+    <title>Springboot+Jpa实现增删改查及分页</title>
     <link href="https://javalog.cn/post/default.html"/>
     <id>https://javalog.cn/post/default.html</id>
     <published>2021-04-09T11:50:08.000Z</published>
-    <updated>2021-04-09T11:50:08.827Z</updated>
+    <updated>2021-04-09T11:50:08.825Z</updated>
     
     
     
@@ -360,28 +360,6 @@
   </entry>
   
   <entry>
-    <title>union与union all的区别</title>
-    <link href="https://javalog.cn/post/default.html"/>
-    <id>https://javalog.cn/post/default.html</id>
-    <published>2020-12-15T13:53:26.000Z</published>
-    <updated>2021-03-26T12:06:50.216Z</updated>
-    
-    <content type="html"><![CDATA[<p>参考：<br><a href="https://www.cnblogs.com/xiangshu/articles/2054447.html">https://www.cnblogs.com/xiangshu/articles/2054447.html</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;参考：&lt;br&gt;
-&lt;a href=&quot;https://www.cnblogs.com/xiangshu/articles/2054447.html&quot;&gt;https://www.cnblogs.com/xiangshu/articles/2054447.html&lt;/a&gt;&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>vbox中使用金税盘</title>
     <link href="https://javalog.cn/post/vbox-use-invoce.html"/>
     <id>https://javalog.cn/post/vbox-use-invoce.html</id>
@@ -591,6 +569,35 @@ N1盒子&lt;br&gt;
     <category term="Docker" scheme="https://javalog.cn/tags/Docker/"/>
     
     <category term="openLDAP" scheme="https://javalog.cn/tags/openLDAP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker安装Websphere并部署应用</title>
+    <link href="https://javalog.cn/post/docker-install-websphere-deploy.html"/>
+    <id>https://javalog.cn/post/docker-install-websphere-deploy.html</id>
+    <published>2020-03-25T14:58:59.000Z</published>
+    <updated>2021-05-18T00:37:47.623Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="设置密码">设置密码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/local/websphere</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd websphere</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch PASSWORD</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim PASSWORD</span><br></pre></td></tr></table></figure><blockquote><p>输入</p><blockquote><p>wsadmin888</p></blockquote></blockquote><h2 id="拉取镜像">拉取镜像</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull websphere-traditional:latest</span><br></pre></td></tr></table></figure><h2 id="运行容器">运行容器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name websphere -v $(pwd)/PASSWORD:/tmp/PASSWORD -p 9043:9043 -p 9443:9443 -d ibmcom/websphere-traditional:latest</span><br></pre></td></tr></table></figure><h2 id="部署应用">部署应用</h2><ul><li>访问地址：<a href="https://ip:9043/ibm/console/login.do?action=secure">https://ip:9043/ibm/console/login.do?action=secure</a></li></ul><blockquote><p>账户：wsadmin<br>密码：wsadmin888</p></blockquote><ul><li>Applications -&gt; Application Types -&gt; WebSphere enterprise applications -&gt; Install -&gt; 选择应用安装包test.war -&gt; Next</li><li>Fast Path -&gt; Next</li><li>勾选Distribute Application，勾选Create MBeans for resources -&gt; Next</li><li>勾选Select -&gt; Next</li><li>勾选Select -&gt; Next</li><li>Context Root输入/test -&gt; Next -&gt; Finish</li><li>点击Save</li><li>在Enterprise Applications列表，勾选 -&gt; Start</li><li>访问：<a href="https://ip:9443/test">https://ip:9443/test</a></li></ul><p>参考：<br><a href="https://hub.docker.com/r/ibmcom/websphere-traditional/">https://hub.docker.com/r/ibmcom/websphere-traditional/</a><br><a href="https://www.cnblogs.com/DFX339/p/8572445.html">https://www.cnblogs.com/DFX339/p/8572445.html</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;设置密码&quot;&gt;设置密码&lt;/h2&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="虚拟机" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+    
+    <category term="Docker" scheme="https://javalog.cn/tags/Docker/"/>
+    
+    <category term="Websphere" scheme="https://javalog.cn/tags/Websphere/"/>
     
   </entry>
   
