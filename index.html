@@ -159,6 +159,115 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-升级Hexo到5-4-0版本" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/update-hexo-5.4.0.html">升级Hexo到5.4.0版本</a>
+    </h1>
+  
+
+        
+        <a href="/post/update-hexo-5.4.0.html" class="archive-article-date">
+  	<time datetime="2021-05-18T01:41:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>全局升级 hexo-cli</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<ul>
+<li>检查系统中的插件是否有升级的，可以看到自己前面都安装了那些插件</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g npm-check</span><br><span class="line">npm-check</span><br></pre></td></tr></table></figure>
+<ul>
+<li>升级系统中的插件</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g npm-upgrade</span><br><span class="line">npm-upgrade</span><br></pre></td></tr></table></figure>
+<ul>
+<li>更新全局包</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update -g</span><br></pre></td></tr></table></figure>
+<ul>
+<li>更新生产环境依赖包<br>
+npm update --save</li>
+<li>查看 package.json</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;hexo-site&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;0.0.0&quot;,</span><br><span class="line">  &quot;private&quot;: true,</span><br><span class="line">  &quot;hexo&quot;: &#123;</span><br><span class="line">    &quot;version&quot;: &quot;5.4.0&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;hexo&quot;: &quot;^5.4.0&quot;,</span><br><span class="line">    &quot;hexo-deployer-git&quot;: &quot;^3.0.0&quot;,</span><br><span class="line">    &quot;hexo-generator-archive&quot;: &quot;^1.0.0&quot;,</span><br><span class="line">    &quot;hexo-generator-category&quot;: &quot;^1.0.0&quot;,</span><br><span class="line">    &quot;hexo-generator-feed&quot;: &quot;^3.0.0&quot;,</span><br><span class="line">    &quot;hexo-generator-index&quot;: &quot;^2.0.0&quot;,</span><br><span class="line">    &quot;hexo-generator-json-content&quot;: &quot;^4.2.3&quot;,</span><br><span class="line">    &quot;hexo-generator-tag&quot;: &quot;^1.0.0&quot;,</span><br><span class="line">    &quot;hexo-renderer-ejs&quot;: &quot;^1.0.0&quot;,</span><br><span class="line">    &quot;hexo-renderer-markdown-it&quot;: &quot;^5.0.0&quot;,</span><br><span class="line">    &quot;hexo-renderer-stylus&quot;: &quot;^2.0.1&quot;,</span><br><span class="line">    &quot;hexo-server&quot;: &quot;^2.0.0&quot;,</span><br><span class="line">    &quot;hexo-wordcount&quot;: &quot;^6.0.1&quot;,</span><br><span class="line">    &quot;markdown-it-checkbox&quot;: &quot;^1.1.0&quot;,</span><br><span class="line">    &quot;markdown-it-emoji&quot;: &quot;^2.0.0&quot;,</span><br><span class="line">    &quot;twemoji&quot;: &quot;^13.0.2&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/前端/" class="article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/update-hexo-5.4.0.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-给Hexo的Yilia主题增加好看的鼠标指针图标" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -521,14 +630,14 @@
 
 
   
-    <article id="post-Springboot-Mybatis实现增删改查及分页" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Springboot-Jpa实现增删改查及分页" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/post/default.html">Springboot+Mybatis实现增删改查及分页</a>
+      <a class="article-title" href="/post/default.html">Springboot+Jpa实现增删改查及分页</a>
     </h1>
   
 
@@ -583,14 +692,14 @@
 
 
   
-    <article id="post-Springboot-Jpa实现增删改查及分页" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Springboot-Mybatis实现增删改查及分页" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/post/default.html">Springboot+Jpa实现增删改查及分页</a>
+      <a class="article-title" href="/post/default.html">Springboot+Mybatis实现增删改查及分页</a>
     </h1>
   
 
@@ -956,106 +1065,6 @@
 
 
   
-    <article id="post-ubuntu中zip压缩包乱码问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/ubuntu-ark-garbled.html">ubuntu中zip压缩包乱码问题</a>
-    </h1>
-  
-
-        
-        <a href="/post/ubuntu-ark-garbled.html" class="archive-article-date">
-  	<time datetime="2021-01-07T03:53:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>系统环境：kubuntu 20.04</p>
-</blockquote>
-<p>从网上下载的zip包用ubuntu自带的ark打开之后显示乱码：<br>
-<img src="/assets/img/post/Screenshot_20210107_124958.png" alt="ark打开乱码"><br>
-使用如下命令解决：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unar Z3198-视频素材.zip</span><br></pre></td></tr></table></figure>
-<p><img src="/assets/img/post/Screenshot_20210107_125147.png" alt="unar解压解决乱码"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ubuntu乱码</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ark压缩包</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/运维/" class="article-tag-list-link color3">运维</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/ubuntu-ark-garbled.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1250,11 +1259,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color5">斐讯N1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">斐讯N1</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1382,11 +1391,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Emoji</a>
+                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
+                <a href="javascript:void(0)" class="js-tag color1">Emoji</a>
               </li>
              
               <li class="article-tag-list-item">

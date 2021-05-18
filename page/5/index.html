@@ -159,6 +159,99 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Centos8安装Oracle Jdk8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/centos-install-oracle-jdk.html">Centos8安装Oracle Jdk8</a>
+    </h1>
+  
+
+        
+        <a href="/post/centos-install-oracle-jdk.html" class="archive-article-date">
+  	<time datetime="2020-02-27T12:52:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>怎样在centos系统里安装jdk，看这篇就够了~</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">centos</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jdk</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/后端/" class="article-tag-list-link color3">后端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/centos-install-oracle-jdk.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Putty免密SSH登录Centos7虚拟机" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1110,135 +1203,6 @@
 
 
   
-    <article id="post-ios手机app抓包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/fiddler-ios-app.html">使用fiddler抓取ios手机app数据包</a>
-    </h1>
-  
-
-        
-        <a href="/post/fiddler-ios-app.html" class="archive-article-date">
-  	<time datetime="2020-02-05T08:21:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>前提：手机和安装Fiddler的电脑必须处在同一网络。</p>
-</blockquote>
-<h2 id="下载Fiddler">下载Fiddler</h2>
-<p>从官网下载<a target="_blank" rel="noopener" href="https://www.telerik.com/download/fiddler">Fiddler</a>，并安装。</p>
-<h2 id="配置Fiddler">配置Fiddler</h2>
-<ol>
-<li>打开Fiddler，选择“Tools-&gt;Fiddler Options…”；</li>
-<li>在弹出的对话框中选择“HTTPS”选项卡，勾选“Capture HTTPS CONNECTs”，接着勾选“Decrypt HTTPS traffic”；</li>
-<li>如果你要监听的程序访问的HTTPS站点使用的是不可信的证书，则请接着把下面的“Ignore server certificate errors”勾选上；</li>
-<li>切换&quot;Connections&quot;选项卡，勾选上“Allow remote computers to connect”<br>
-<img src="/assets/img/post/2020-02-07_112824.png" alt="2,3"><br>
-<img src="/assets/img/post/2020-02-07_112837.png" alt="4"></li>
-</ol>
-<h2 id="获取电脑IP">获取电脑IP</h2>
-<p>执行ipconfig，查看ip地址，记下备用。<br>
-<img src="/assets/img/post/2020-02-07_113022.png" alt="ipconfig"></p>
-<h2 id="配置手机端">配置手机端</h2>
-<ol>
-<li>设置-&gt;无线局域网，点击已连接wifi后面的感叹号配置代理，服务器地址：上面一步记下的电脑ip；端口号：在“Tools-&gt;Fiddler Options”-&gt;&quot;Connections&quot;中查看，默认8888</li>
-<li>手机浏览器访问http://电脑ip:端口，安装证书</li>
-<li>设置-&gt;通用-&gt;关于本机-&gt;证书信任设置，将其设置为开启<br>
-<img src="/assets/img/post/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200207114608.jpg" alt="1"><br>
-<img src="/assets/img/post/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200207114555.png" alt="2"><br>
-<img src="/assets/img/post/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200207114602.png" alt="3"></li>
-</ol>
-<h2 id="测试">测试</h2>
-<p>打开手机app，看下电脑端的Fiddler是不是已经抓到数据包了。</p>
-<blockquote>
-<p>注意：关掉浏览器和手机端的代理软件，不然会导致抓不到包。比如Chrome安装了Proxy SwitchyOmega扩展，需要禁用，不然导致Chrome上的请求抓不到包；比如手机端开启了VPN也要关掉，否则按照上面的配置之后还是抓不到包。</p>
-</blockquote>
-<h2 id="参考">参考</h2>
-<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5c1b39f6e51d4502a232ca8c">Fiddler安装https证书</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Fiddler</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Ios</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Https</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/后端/" class="article-tag-list-link color3">后端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/fiddler-ios-app.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
@@ -1433,11 +1397,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color5">斐讯N1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">斐讯N1</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1565,11 +1529,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Emoji</a>
+                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
+                <a href="javascript:void(0)" class="js-tag color1">Emoji</a>
               </li>
              
               <li class="article-tag-list-item">

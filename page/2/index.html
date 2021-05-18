@@ -159,6 +159,106 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ubuntu中zip压缩包乱码问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/ubuntu-ark-garbled.html">ubuntu中zip压缩包乱码问题</a>
+    </h1>
+  
+
+        
+        <a href="/post/ubuntu-ark-garbled.html" class="archive-article-date">
+  	<time datetime="2021-01-07T03:53:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>系统环境：kubuntu 20.04</p>
+</blockquote>
+<p>从网上下载的zip包用ubuntu自带的ark打开之后显示乱码：<br>
+<img src="/assets/img/post/Screenshot_20210107_124958.png" alt="ark打开乱码"><br>
+使用如下命令解决：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unar Z3198-视频素材.zip</span><br></pre></td></tr></table></figure>
+<p><img src="/assets/img/post/Screenshot_20210107_125147.png" alt="unar解压解决乱码"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ubuntu乱码</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ark压缩包</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/运维/" class="article-tag-list-link color3">运维</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/ubuntu-ark-garbled.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ubuntu中格式化U盘" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1444,135 +1544,6 @@ Password：ldap123</p>
 
 
   
-    <article id="post-Docker安装Websphere并部署应用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/docker-install-websphere-deploy.html">Docker安装Websphere并部署应用</a>
-    </h1>
-  
-
-        
-        <a href="/post/docker-install-websphere-deploy.html" class="archive-article-date">
-  	<time datetime="2020-03-25T14:58:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="设置密码">设置密码</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/local/websphere</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd websphere</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch PASSWORD</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim PASSWORD</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>输入</p>
-<blockquote>
-<p>wsadmin888</p>
-</blockquote>
-</blockquote>
-<h2 id="拉取镜像">拉取镜像</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull websphere-traditional:latest</span><br></pre></td></tr></table></figure>
-<h2 id="运行容器">运行容器</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name websphere -v $(pwd)/PASSWORD:/tmp/PASSWORD -p 9043:9043 -p 9443:9443 -d ibmcom/websphere-traditional:latest</span><br></pre></td></tr></table></figure>
-<h2 id="部署应用">部署应用</h2>
-<ul>
-<li>访问地址：<a target="_blank" rel="noopener" href="https://ip:9043/ibm/console/login.do?action=secure">https://ip:9043/ibm/console/login.do?action=secure</a></li>
-</ul>
-<blockquote>
-<p>账户：wsadmin<br>
-密码：wsadmin888</p>
-</blockquote>
-<ul>
-<li>Applications -&gt; Application Types -&gt; WebSphere enterprise applications -&gt; Install -&gt; 选择应用安装包test.war -&gt; Next</li>
-<li>Fast Path -&gt; Next</li>
-<li>勾选Distribute Application，勾选Create MBeans for resources -&gt; Next</li>
-<li>勾选Select -&gt; Next</li>
-<li>勾选Select -&gt; Next</li>
-<li>Context Root输入/test -&gt; Next -&gt; Finish</li>
-<li>点击Save</li>
-<li>在Enterprise Applications列表，勾选 -&gt; Start</li>
-<li>访问：<a target="_blank" rel="noopener" href="https://ip:9443/test">https://ip:9443/test</a></li>
-</ul>
-<p>参考：<br>
-<a target="_blank" rel="noopener" href="https://hub.docker.com/r/ibmcom/websphere-traditional/">https://hub.docker.com/r/ibmcom/websphere-traditional/</a><br>
-<a target="_blank" rel="noopener" href="https://www.cnblogs.com/DFX339/p/8572445.html">https://www.cnblogs.com/DFX339/p/8572445.html</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Websphere</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/虚拟机/" class="article-tag-list-link color4">虚拟机</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/docker-install-websphere-deploy.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1767,11 +1738,11 @@ Password：ldap123</p>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color5">斐讯N1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">斐讯N1</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1899,11 +1870,11 @@ Password：ldap123</p>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Emoji</a>
+                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
+                <a href="javascript:void(0)" class="js-tag color1">Emoji</a>
               </li>
              
               <li class="article-tag-list-item">

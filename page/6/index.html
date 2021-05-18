@@ -159,6 +159,135 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ios手机app抓包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/fiddler-ios-app.html">使用fiddler抓取ios手机app数据包</a>
+    </h1>
+  
+
+        
+        <a href="/post/fiddler-ios-app.html" class="archive-article-date">
+  	<time datetime="2020-02-05T08:21:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>前提：手机和安装Fiddler的电脑必须处在同一网络。</p>
+</blockquote>
+<h2 id="下载Fiddler">下载Fiddler</h2>
+<p>从官网下载<a target="_blank" rel="noopener" href="https://www.telerik.com/download/fiddler">Fiddler</a>，并安装。</p>
+<h2 id="配置Fiddler">配置Fiddler</h2>
+<ol>
+<li>打开Fiddler，选择“Tools-&gt;Fiddler Options…”；</li>
+<li>在弹出的对话框中选择“HTTPS”选项卡，勾选“Capture HTTPS CONNECTs”，接着勾选“Decrypt HTTPS traffic”；</li>
+<li>如果你要监听的程序访问的HTTPS站点使用的是不可信的证书，则请接着把下面的“Ignore server certificate errors”勾选上；</li>
+<li>切换&quot;Connections&quot;选项卡，勾选上“Allow remote computers to connect”<br>
+<img src="/assets/img/post/2020-02-07_112824.png" alt="2,3"><br>
+<img src="/assets/img/post/2020-02-07_112837.png" alt="4"></li>
+</ol>
+<h2 id="获取电脑IP">获取电脑IP</h2>
+<p>执行ipconfig，查看ip地址，记下备用。<br>
+<img src="/assets/img/post/2020-02-07_113022.png" alt="ipconfig"></p>
+<h2 id="配置手机端">配置手机端</h2>
+<ol>
+<li>设置-&gt;无线局域网，点击已连接wifi后面的感叹号配置代理，服务器地址：上面一步记下的电脑ip；端口号：在“Tools-&gt;Fiddler Options”-&gt;&quot;Connections&quot;中查看，默认8888</li>
+<li>手机浏览器访问http://电脑ip:端口，安装证书</li>
+<li>设置-&gt;通用-&gt;关于本机-&gt;证书信任设置，将其设置为开启<br>
+<img src="/assets/img/post/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200207114608.jpg" alt="1"><br>
+<img src="/assets/img/post/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200207114555.png" alt="2"><br>
+<img src="/assets/img/post/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200207114602.png" alt="3"></li>
+</ol>
+<h2 id="测试">测试</h2>
+<p>打开手机app，看下电脑端的Fiddler是不是已经抓到数据包了。</p>
+<blockquote>
+<p>注意：关掉浏览器和手机端的代理软件，不然会导致抓不到包。比如Chrome安装了Proxy SwitchyOmega扩展，需要禁用，不然导致Chrome上的请求抓不到包；比如手机端开启了VPN也要关掉，否则按照上面的配置之后还是抓不到包。</p>
+</blockquote>
+<h2 id="参考">参考</h2>
+<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5c1b39f6e51d4502a232ca8c">Fiddler安装https证书</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Fiddler</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Ios</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Https</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/后端/" class="article-tag-list-link color3">后端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/fiddler-ios-app.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-自认为好用的Chrome扩展" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1108,112 +1237,6 @@
 
 
   
-    <article id="post-给Hexo的Yilia主题增加分类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/yilia-add-categories.html">给Hexo的Yilia主题增加分类</a>
-    </h1>
-  
-
-        
-        <a href="/post/yilia-add-categories.html" class="archive-article-date">
-  	<time datetime="2019-09-02T14:21:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="起因">起因</h2>
-<p>Hexo博客搭建好之后，选择了Yilia主题，不得不说这个主题很耐看，符合我的胃口，但没有分类会很不方便文章的管理，显得比较错乱，极有必要解决下，所以在网上搜寻解决办法。</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.voidking.com/dev-hexo-categories/">Hexo添加categories页面</a></p>
-</blockquote>
-<p>找到上面这篇文章，但发现这个博主用的是Yilia主题老版本，还是使用Stylus进行css预处理，而最新的版本使用的是Sass对css进行预处理。对前端比较小白的我，没办法只能查阅Sass的相关资料，不过好在最后折腾成功，特此记录下，方便后来的小伙伴参考。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Yilia</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Stylus</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Sass</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/前端/" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/yilia-add-categories.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
@@ -1408,11 +1431,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color5">斐讯N1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">斐讯N1</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1540,11 +1563,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Emoji</a>
+                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
+                <a href="javascript:void(0)" class="js-tag color1">Emoji</a>
               </li>
              
               <li class="article-tag-list-item">

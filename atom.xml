@@ -6,7 +6,7 @@
   <link href="https://javalog.cn/atom.xml" rel="self"/>
   
   <link href="https://javalog.cn/"/>
-  <updated>2021-05-18T00:40:51.229Z</updated>
+  <updated>2021-05-18T01:44:52.355Z</updated>
   <id>https://javalog.cn/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>升级Hexo到5.4.0版本</title>
+    <link href="https://javalog.cn/post/update-hexo-5.4.0.html"/>
+    <id>https://javalog.cn/post/update-hexo-5.4.0.html</id>
+    <published>2021-05-18T01:41:58.000Z</published>
+    <updated>2021-05-18T01:44:52.355Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>全局升级 hexo-cli</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure><ul><li>检查系统中的插件是否有升级的，可以看到自己前面都安装了那些插件</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g npm-check</span><br><span class="line">npm-check</span><br></pre></td></tr></table></figure><ul><li>升级系统中的插件</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g npm-upgrade</span><br><span class="line">npm-upgrade</span><br></pre></td></tr></table></figure><ul><li>更新全局包</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update -g</span><br></pre></td></tr></table></figure><ul><li>更新生产环境依赖包<br>npm update --save</li><li>查看 package.json</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;hexo-site&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;0.0.0&quot;,</span><br><span class="line">  &quot;private&quot;: true,</span><br><span class="line">  &quot;hexo&quot;: &#123;</span><br><span class="line">    &quot;version&quot;: &quot;5.4.0&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;hexo&quot;: &quot;^5.4.0&quot;,</span><br><span class="line">    &quot;hexo-deployer-git&quot;: &quot;^3.0.0&quot;,</span><br><span class="line">    &quot;hexo-generator-archive&quot;: &quot;^1.0.0&quot;,</span><br><span class="line">    &quot;hexo-generator-category&quot;: &quot;^1.0.0&quot;,</span><br><span class="line">    &quot;hexo-generator-feed&quot;: &quot;^3.0.0&quot;,</span><br><span class="line">    &quot;hexo-generator-index&quot;: &quot;^2.0.0&quot;,</span><br><span class="line">    &quot;hexo-generator-json-content&quot;: &quot;^4.2.3&quot;,</span><br><span class="line">    &quot;hexo-generator-tag&quot;: &quot;^1.0.0&quot;,</span><br><span class="line">    &quot;hexo-renderer-ejs&quot;: &quot;^1.0.0&quot;,</span><br><span class="line">    &quot;hexo-renderer-markdown-it&quot;: &quot;^5.0.0&quot;,</span><br><span class="line">    &quot;hexo-renderer-stylus&quot;: &quot;^2.0.1&quot;,</span><br><span class="line">    &quot;hexo-server&quot;: &quot;^2.0.0&quot;,</span><br><span class="line">    &quot;hexo-wordcount&quot;: &quot;^6.0.1&quot;,</span><br><span class="line">    &quot;markdown-it-checkbox&quot;: &quot;^1.1.0&quot;,</span><br><span class="line">    &quot;markdown-it-emoji&quot;: &quot;^2.0.0&quot;,</span><br><span class="line">    &quot;twemoji&quot;: &quot;^13.0.2&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;全局升级 hexo-cli&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pr</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="前端" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Hexo" scheme="https://javalog.cn/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>给Hexo的Yilia主题增加好看的鼠标指针图标</title>
@@ -119,11 +148,11 @@
   </entry>
   
   <entry>
-    <title>Springboot+Mybatis实现增删改查及分页</title>
+    <title>Springboot+Jpa实现增删改查及分页</title>
     <link href="https://javalog.cn/post/default.html"/>
     <id>https://javalog.cn/post/default.html</id>
     <published>2021-04-09T11:50:08.000Z</published>
-    <updated>2021-04-09T11:50:08.827Z</updated>
+    <updated>2021-04-09T11:50:08.825Z</updated>
     
     
     
@@ -132,11 +161,11 @@
   </entry>
   
   <entry>
-    <title>Springboot+Jpa实现增删改查及分页</title>
+    <title>Springboot+Mybatis实现增删改查及分页</title>
     <link href="https://javalog.cn/post/default.html"/>
     <id>https://javalog.cn/post/default.html</id>
     <published>2021-04-09T11:50:08.000Z</published>
-    <updated>2021-04-09T11:50:08.825Z</updated>
+    <updated>2021-04-09T11:50:08.827Z</updated>
     
     
     
@@ -569,35 +598,6 @@ N1盒子&lt;br&gt;
     <category term="Docker" scheme="https://javalog.cn/tags/Docker/"/>
     
     <category term="openLDAP" scheme="https://javalog.cn/tags/openLDAP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker安装Websphere并部署应用</title>
-    <link href="https://javalog.cn/post/docker-install-websphere-deploy.html"/>
-    <id>https://javalog.cn/post/docker-install-websphere-deploy.html</id>
-    <published>2020-03-25T14:58:59.000Z</published>
-    <updated>2021-05-18T00:37:47.623Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="设置密码">设置密码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/local/websphere</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd websphere</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch PASSWORD</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim PASSWORD</span><br></pre></td></tr></table></figure><blockquote><p>输入</p><blockquote><p>wsadmin888</p></blockquote></blockquote><h2 id="拉取镜像">拉取镜像</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull websphere-traditional:latest</span><br></pre></td></tr></table></figure><h2 id="运行容器">运行容器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name websphere -v $(pwd)/PASSWORD:/tmp/PASSWORD -p 9043:9043 -p 9443:9443 -d ibmcom/websphere-traditional:latest</span><br></pre></td></tr></table></figure><h2 id="部署应用">部署应用</h2><ul><li>访问地址：<a href="https://ip:9043/ibm/console/login.do?action=secure">https://ip:9043/ibm/console/login.do?action=secure</a></li></ul><blockquote><p>账户：wsadmin<br>密码：wsadmin888</p></blockquote><ul><li>Applications -&gt; Application Types -&gt; WebSphere enterprise applications -&gt; Install -&gt; 选择应用安装包test.war -&gt; Next</li><li>Fast Path -&gt; Next</li><li>勾选Distribute Application，勾选Create MBeans for resources -&gt; Next</li><li>勾选Select -&gt; Next</li><li>勾选Select -&gt; Next</li><li>Context Root输入/test -&gt; Next -&gt; Finish</li><li>点击Save</li><li>在Enterprise Applications列表，勾选 -&gt; Start</li><li>访问：<a href="https://ip:9443/test">https://ip:9443/test</a></li></ul><p>参考：<br><a href="https://hub.docker.com/r/ibmcom/websphere-traditional/">https://hub.docker.com/r/ibmcom/websphere-traditional/</a><br><a href="https://www.cnblogs.com/DFX339/p/8572445.html">https://www.cnblogs.com/DFX339/p/8572445.html</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;设置密码&quot;&gt;设置密码&lt;/h2&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="虚拟机" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
-    
-    
-    <category term="Docker" scheme="https://javalog.cn/tags/Docker/"/>
-    
-    <category term="Websphere" scheme="https://javalog.cn/tags/Websphere/"/>
     
   </entry>
   
