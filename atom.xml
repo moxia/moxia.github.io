@@ -6,7 +6,7 @@
   <link href="https://javalog.cn/atom.xml" rel="self"/>
   
   <link href="https://javalog.cn/"/>
-  <updated>2021-05-18T01:49:16.237Z</updated>
+  <updated>2021-05-18T14:55:59.224Z</updated>
   <id>https://javalog.cn/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>个体工商户申请电子增值税普通发票</title>
+    <link href="https://javalog.cn/post/individual-business-electronic-invoices.html"/>
+    <id>https://javalog.cn/post/individual-business-electronic-invoices.html</id>
+    <published>2021-05-18T14:41:29.000Z</published>
+    <updated>2021-05-18T14:55:59.224Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>办税大厅上操作</li></ol><ul><li>申请<br>【我要办税】-【发票票种核定】，按要求填写，发票种类代码选择[增值税电子普通发票]，点击【核定申请】，耐心等待审批。</li><li>领票<br>【我要办税】-【发票领用（电子发票）】，按要求填写，点击【申请】。</li></ul><ol start="2"><li>开票软件上操作</li></ol><ul><li>xx<br>【系统设置】-【网上变更】-【金税盘网上变更】</li><li>oo<br>【发票领用管理】-【网上领票管理】-【领用发票】-【手工下载】，发票类型下拉选择[增值税电子普通发票]，发票张数输入你申请时的数量，点击【下载】。</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;办税大厅上操作&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;申请&lt;br&gt;
+【我要办税】-【发票票种核定】，按要求填写，发票种类代码选择[增值税电子普通发票]，点击【核定申请】，耐心等待审批。&lt;/li&gt;
+&lt;li&gt;领票&lt;br&gt;
+【我要办税】-【发票领用（电子发票）】，按</summary>
+      
+    
+    
+    
+    <category term="生活" scheme="https://javalog.cn/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    <category term="杂项" scheme="https://javalog.cn/categories/%E7%94%9F%E6%B4%BB/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>升级Hexo到5.4.0版本</title>
@@ -399,7 +430,7 @@
     <link href="https://javalog.cn/post/vbox-use-invoce.html"/>
     <id>https://javalog.cn/post/vbox-use-invoce.html</id>
     <published>2020-12-12T02:42:14.000Z</published>
-    <updated>2021-05-18T00:37:49.340Z</updated>
+    <updated>2021-05-18T14:45:05.655Z</updated>
     
     <content type="html"><![CDATA[<p>物理机安装的是ubuntu，用来处理日常事务，vbox里起一个win10虚拟机，用来打印发票。<br>1、安装vbox扩展<br>2、物理机插上金税盘<br>3、使用如下命令将用户名添加到vboxusers组<br>sudo adduser usrname vboxusers<br>4、vbox配置读取物理机U口<br><img src="/assets/img/post/2021-01-23_20-21.png" alt="vbox中使用金税盘"></p><p>参考：<br><a href="https://www.cnblogs.com/pngcui/p/5951495.html">https://www.cnblogs.com/pngcui/p/5951495.html</a></p>]]></content>
     
@@ -415,7 +446,9 @@ sudo adduser usrname vbox</summary>
     
     
     
-    <category term="杂项" scheme="https://javalog.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    <category term="生活" scheme="https://javalog.cn/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    <category term="杂项" scheme="https://javalog.cn/categories/%E7%94%9F%E6%B4%BB/%E6%9D%82%E9%A1%B9/"/>
     
     
     <category term="vbox" scheme="https://javalog.cn/tags/vbox/"/>
@@ -574,36 +607,6 @@ N1盒子&lt;br&gt;
     
     
     <category term="斐讯N1" scheme="https://javalog.cn/tags/%E6%96%90%E8%AE%AFN1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker安装openLDAP和phpLDAPadmin</title>
-    <link href="https://javalog.cn/post/docker-install-openldap-phpldapadmin.html"/>
-    <id>https://javalog.cn/post/docker-install-openldap-phpldapadmin.html</id>
-    <published>2020-03-27T07:10:40.000Z</published>
-    <updated>2021-05-18T00:37:47.623Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="安装openLDAP">安装openLDAP</h2><h3 id="拉取镜像">拉取镜像</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull osixia/openldap</span><br></pre></td></tr></table></figure><h3 id="运行容器">运行容器</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 389:389 --name myopenldap --network bridge --hostname openldap-host --env LDAP_ORGANISATION=&quot;mylitboy&quot; --env LDAP_DOMAIN=&quot;mylitboy.com&quot; --env LDAP_ADMIN_PASSWORD=&quot;ldap123&quot; --detach osixia/openldap</span><br></pre></td></tr></table></figure><blockquote><p>解释：</p><blockquote><p>配置LDAP组织者：–env LDAP_ORGANISATION=“mylitboy”<br>配置LDAP域：–env LDAP_DOMAIN=“<a href="http://mylitboy.com">mylitboy.com</a>”<br>配置LDAP密码：–env LDAP_ADMIN_PASSWORD=“ldap123”<br>默认登录用户名：admin</p></blockquote></blockquote><h2 id="安装phpLDAPadmin">安装phpLDAPadmin</h2><h3 id="拉取镜像-v2">拉取镜像</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull osixia/phpldapadmin</span><br></pre></td></tr></table></figure><h2 id="查看openLDAP容器ip">查看openLDAP容器ip</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect container_id</span><br></pre></td></tr></table></figure><h3 id="运行容器-v2">运行容器</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --privileged -p 10004:80 --name myphpldapadmin --env PHPLDAPADMIN_HTTPS=false --env PHPLDAPADMIN_LDAP_HOSTS=172.17.0.6 --detach osixia/phpldapadmin</span><br></pre></td></tr></table></figure><blockquote><p>解释</p><blockquote><p>配置的Ldap地址：–env PHPLDAPADMIN_LDAP_HOSTS=172.17.0.6<br>配置不开启HTTPS：–env PHPLDAPADMIN_HTTPS=false（默认是true），如果开启HTTPS，需要配置443端口映射：-p 8443:443，并采用https访问</p></blockquote></blockquote><h2 id="测试">测试</h2><p>访问：<a href="http://ip:10004">http://ip:10004</a>，登录正常即成功</p><blockquote><p>Login DN：cn=admin,dc=mylitboy,dc=com<br>Password：ldap123</p></blockquote><p>参考：<br><a href="https://github.com/osixia/docker-openldap">https://github.com/osixia/docker-openldap</a><br><a href="https://github.com/osixia/docker-phpLDAPadmin">https://github.com/osixia/docker-phpLDAPadmin</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;安装openLDAP&quot;&gt;安装openLDAP&lt;/h2&gt;
-&lt;h3 id=&quot;拉取镜像&quot;&gt;拉取镜像&lt;/h3&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span cla</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="虚拟机" scheme="https://javalog.cn/categories/%E6%8A%80%E6%9C%AF/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
-    
-    
-    <category term="Docker" scheme="https://javalog.cn/tags/Docker/"/>
-    
-    <category term="openLDAP" scheme="https://javalog.cn/tags/openLDAP/"/>
     
   </entry>
   

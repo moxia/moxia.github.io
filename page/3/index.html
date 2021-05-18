@@ -165,6 +165,135 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Docker安装openLDAP和adminLDAP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/docker-install-openldap-phpldapadmin.html">Docker安装openLDAP和phpLDAPadmin</a>
+    </h1>
+  
+
+        
+        <a href="/post/docker-install-openldap-phpldapadmin.html" class="archive-article-date">
+  	<time datetime="2020-03-27T07:10:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装openLDAP">安装openLDAP</h2>
+<h3 id="拉取镜像">拉取镜像</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull osixia/openldap</span><br></pre></td></tr></table></figure>
+<h3 id="运行容器">运行容器</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 389:389 --name myopenldap --network bridge --hostname openldap-host --env LDAP_ORGANISATION=&quot;mylitboy&quot; --env LDAP_DOMAIN=&quot;mylitboy.com&quot; --env LDAP_ADMIN_PASSWORD=&quot;ldap123&quot; --detach osixia/openldap</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>解释：</p>
+<blockquote>
+<p>配置LDAP组织者：–env LDAP_ORGANISATION=“mylitboy”<br>
+配置LDAP域：–env LDAP_DOMAIN=“<a target="_blank" rel="noopener" href="http://mylitboy.com">mylitboy.com</a>”<br>
+配置LDAP密码：–env LDAP_ADMIN_PASSWORD=“ldap123”<br>
+默认登录用户名：admin</p>
+</blockquote>
+</blockquote>
+<h2 id="安装phpLDAPadmin">安装phpLDAPadmin</h2>
+<h3 id="拉取镜像-v2">拉取镜像</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull osixia/phpldapadmin</span><br></pre></td></tr></table></figure>
+<h2 id="查看openLDAP容器ip">查看openLDAP容器ip</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect container_id</span><br></pre></td></tr></table></figure>
+<h3 id="运行容器-v2">运行容器</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --privileged -p 10004:80 --name myphpldapadmin --env PHPLDAPADMIN_HTTPS=false --env PHPLDAPADMIN_LDAP_HOSTS=172.17.0.6 --detach osixia/phpldapadmin</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>解释</p>
+<blockquote>
+<p>配置的Ldap地址：–env PHPLDAPADMIN_LDAP_HOSTS=172.17.0.6<br>
+配置不开启HTTPS：–env PHPLDAPADMIN_HTTPS=false（默认是true），如果开启HTTPS，需要配置443端口映射：-p 8443:443，并采用https访问</p>
+</blockquote>
+</blockquote>
+<h2 id="测试">测试</h2>
+<p>访问：<a target="_blank" rel="noopener" href="http://ip:10004">http://ip:10004</a>，登录正常即成功</p>
+<blockquote>
+<p>Login DN：cn=admin,dc=mylitboy,dc=com<br>
+Password：ldap123</p>
+</blockquote>
+<p>参考：<br>
+<a target="_blank" rel="noopener" href="https://github.com/osixia/docker-openldap">https://github.com/osixia/docker-openldap</a><br>
+<a target="_blank" rel="noopener" href="https://github.com/osixia/docker-phpLDAPadmin">https://github.com/osixia/docker-phpLDAPadmin</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">openLDAP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/虚拟机/" class="article-tag-list-link color4">虚拟机</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/docker-install-openldap-phpldapadmin.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Docker安装Websphere并部署应用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1237,117 +1366,6 @@ password=weblogic888</p>
 
 
   
-    <article id="post-开启谷歌云服务器的BBR" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/gcp-debian-open-bbr.html">开启谷歌云服务器的BBR</a>
-    </h1>
-  
-
-        
-        <a href="/post/gcp-debian-open-bbr.html" class="archive-article-date">
-  	<time datetime="2020-03-13T01:08:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在谷歌云上新建Debian9主机后，默认没有开启BBR，可以通过下面的操作开启它。</p>
-<h2 id="修改系统变量">修改系统变量</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;net.core.default_qdisc=fq&quot; &gt;&gt; /etc/sysctl.conf</span><br><span class="line">echo &quot;net.ipv4.tcp_congestion_control=bbr&quot; &gt;&gt; /etc/sysctl.conf</span><br></pre></td></tr></table></figure>
-<h2 id="保存生效">保存生效</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl -p</span><br></pre></td></tr></table></figure>
-<h2 id="查看内核是否已开启BBR">查看内核是否已开启BBR</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl net.ipv4.tcp_available_congestion_control</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>显示以下即已开启：</p>
-<blockquote>
-<p>net.ipv4.tcp_available_congestion_control = bbr cubic reno</p>
-</blockquote>
-</blockquote>
-<h2 id="查看BBR是否启动">查看BBR是否启动</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsmod | grep bbr</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>显示以下即启动成功：</p>
-<blockquote>
-<p>tcp_bbr                20480  14</p>
-</blockquote>
-</blockquote>
-<p>参考：<br>
-<a target="_blank" rel="noopener" href="https://www.moerats.com/archives/297">https://www.moerats.com/archives/297</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BBR</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/Linux/" class="article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/gcp-debian-open-bbr.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -1582,15 +1600,15 @@ password=weblogic888</p>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ldap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1682,11 +1700,11 @@ password=weblogic888</p>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Apple ID</a>
+                <a href="javascript:void(0)" class="js-tag color4">BBR</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BBR</a>
+                <a href="javascript:void(0)" class="js-tag color4">Apple ID</a>
               </li>
              
               <li class="article-tag-list-item">
