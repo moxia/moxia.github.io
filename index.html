@@ -165,6 +165,68 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Springboot-jdbcTemp实现增删改查及分页" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/springboot-jdbctemplate-crud.html">Springboot+jdbcTemp实现增删改查及分页</a>
+    </h1>
+  
+
+        
+        <a href="/post/springboot-jdbctemplate-crud.html" class="archive-article-date">
+  	<time datetime="2021-05-19T00:23:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/springboot-jdbctemplate-crud.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-个体工商户申请电子增值税普通发票" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -185,23 +247,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
+        <ul>
 <li>办税大厅上操作</li>
-</ol>
-<ul>
-<li>申请<br>
-【我要办税】-【发票票种核定】，按要求填写，发票种类代码选择[增值税电子普通发票]，点击【核定申请】，耐心等待审批。</li>
-<li>领票<br>
-【我要办税】-【发票领用（电子发票）】，按要求填写，点击【申请】。</li>
 </ul>
-<ol start="2">
-<li>开票软件上操作</li>
+<ol>
+<li>申请票种核定<br>
+【我要办税】-【发票票种核定】，按要求填写，发票种类代码选择[增值税电子普通发票]，点击【核定申请】，耐心等待审批，审批完成后就有了开电子发票的权限。</li>
+<li>申领电子发票<br>
+【我要办税】-【发票领用（电子发票）】，按要求填写，点击【申请】。</li>
 </ol>
 <ul>
-<li>xx<br>
-【系统设置】-【网上变更】-【金税盘网上变更】</li>
-<li>oo<br>
+<li>开票软件上操作</li>
+</ul>
+<ol>
+<li>网上变更<br>
+【系统设置】-【网上变更】-【金税盘网上变更】，直接点击【确定】。</li>
+<li>领用电子发票<br>
 【发票领用管理】-【网上领票管理】-【领用发票】-【手工下载】，发票类型下拉选择[增值税电子普通发票]，发票张数输入你申请时的数量，点击【下载】。</li>
+</ol>
+<ul>
+<li>测试</li>
 </ul>
 
       
@@ -973,116 +1038,6 @@
 
 
   
-    <article id="post-kubuntu安装wps国际版" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/kubuntu-install-international-wps.html">kubuntu安装wps国际版</a>
-    </h1>
-  
-
-        
-        <a href="/post/kubuntu-install-international-wps.html" class="archive-article-date">
-  	<time datetime="2021-01-18T15:49:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>国际版没有鸡肋的云端功能，更加清爽，只是界面默认是英文的，需要使用国内版的语言包实现“汉化”。</p>
-<h3 id="下载wps国际版和国内版">下载wps国际版和国内版</h3>
-<p>国际版：<a target="_blank" rel="noopener" href="https://linux.wps.com">https://linux.wps.com</a><br>
-国内版：<a target="_blank" rel="noopener" href="https://linux.wps.cn/">https://linux.wps.cn/</a></p>
-<h3 id="安装国际版">安装国际版</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i wps-office_11.1.0.10161.XA_amd64.deb</span><br></pre></td></tr></table></figure>
-<h3 id="拷贝国内版语言包，设置中文显示">拷贝国内版语言包，设置中文显示</h3>
-<p>解压wps-office_11.1.0.10161_amd64.deb，找到下面目录，复制到<code>/opt/kingsoft/wps-office/office6/mui</code>目录；随意打开一个word文档，点击右上角被方框包裹的A标记按钮，设置下中文显示即可。<br>
-<img src="/assets/img/post/2021-01-18_23-36.png" alt="wps中文语言包"></p>
-<h3 id="安装缺失字体">安装缺失字体</h3>
-<p>下载<a href="/assets/wps_symbol_fonts.zip">wps_symbol_fonts.zip</a>字体包，解压到<code>/usr/share/fonts</code>目录，执行以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mkfontscale</span><br><span class="line">sudo mkfontdir</span><br><span class="line">sudo fc-cache</span><br></pre></td></tr></table></figure>
-<h3 id="修复右键新建wps文档不存在问题">修复右键新建wps文档不存在问题</h3>
-<p>修改<code>/usr/share/templates</code>目录下的.desktop文件，修正模板文件路径即可<br>
-<img src="/assets/img/post/Peek_2021-01-20_17-09.gif" alt="修复右键新建wps提示不存在问题"></p>
-<p>参考：<br>
-<a target="_blank" rel="noopener" href="https://plumz.me/archives/11779/">https://plumz.me/archives/11779/</a><br>
-<a target="_blank" rel="noopener" href="https://mxy493.xyz/2019/04/08/Ubuntu%E5%AE%89%E8%A3%85WPS%EF%BC%88%E8%A7%A3%E5%86%B3%E5%AD%97%E4%BD%93%E7%BC%BA%E5%A4%B1%E9%97%AE%E9%A2%98%EF%BC%89/">https://mxy493.xyz/2019/04/08/Ubuntu安装WPS（解决字体缺失问题）/</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ubuntu</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">wps</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/运维/" class="article-tag-list-link color3">运维</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/kubuntu-install-international-wps.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1193,11 +1148,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1233,11 +1188,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+                <a href="javascript:void(0)" class="js-tag color4">Weblogic</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Weblogic</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1277,27 +1232,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">斐讯N1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vbox</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">LEDE</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">putty</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1317,15 +1256,31 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">putty</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vbox</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">LEDE</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ldap</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1385,10 +1340,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">desktop</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">vbox</a>
               </li>
              
@@ -1398,6 +1349,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">VirtualBox</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">desktop</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1417,11 +1372,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BBR</a>
+                <a href="javascript:void(0)" class="js-tag color4">Apple ID</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Apple ID</a>
+                <a href="javascript:void(0)" class="js-tag color4">BBR</a>
               </li>
              
               <li class="article-tag-list-item">
