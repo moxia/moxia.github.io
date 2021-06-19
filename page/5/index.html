@@ -165,6 +165,277 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Docker安装Oracle、Mysql、Mssql、Redis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/docker-install-oracle-mysql-mssql-redis.html">Docker安装Oracle、Mysql、Mssql、Redis</a>
+    </h1>
+  
+
+        
+        <a href="/post/docker-install-oracle-mysql-mssql-redis.html" class="archive-article-date">
+  	<time datetime="2020-02-29T10:57:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>通过Docker安装各类数据库是件轻松愉悦的事情。</p>
+<h2 id="安装环境">安装环境</h2>
+<blockquote>
+<p>[root@centos7 ~]# cat /etc/redhat-release<br>
+<code>CentOS Linux release 7.7.1908 (Core)</code><br>
+[root@centos7 ~]# uname -r<br>
+<code>3.10.0-1062.12.1.el7.x86_64</code><br>
+[root@centos7 ~]# hostname<br>
+<code>centos7</code><br>
+[root@centos7 ~]# ifconfig<br>
+…<code>inet 192.168.31.247  netmask 255.255.255.0</code>…</p>
+</blockquote>
+<h2 id="Oracle篇">Oracle篇</h2>
+<ul>
+<li>登录docker hub<br>
+先到<a target="_blank" rel="noopener" href="https://hub.docker.com">官网</a>注册，然后用这个账户密码运行下面的命令，登录</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker login</span><br></pre></td></tr></table></figure>
+<ul>
+<li>拉取镜像<br>
+镜像挺大，需要良好的网络环境，否则容易拉取失败</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull store/oracle/database-enterprise:12.2.0.1</span><br></pre></td></tr></table></figure>
+<ul>
+<li>运行容器<br>
+启动的很慢，耐心等待，状态会从starting-&gt;unhealthy-&gt;healthy，执行<code>docker ps -a</code>可以查看状态。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name oracle12 --restart=always -p 1521:1521 -d store/oracle/database-enterprise:12.2.0.1</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>默认的sid为ORCLCDB，用户sys，密码Oradoc_db1</p>
+</blockquote>
+<ul>
+<li>本地连接</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it oracle12 bash -c &quot;source /home/oracle/.bashrc; sqlplus /nolog&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conn /as sysdba</span><br><span class="line">或</span><br><span class="line">conn sys/Oradoc_db1@ORCLCDB as sysdba</span><br></pre></td></tr></table></figure>
+<ul>
+<li>远程连接<br>
+这里使用Navicat Premium 12进行测试<br>
+<img src="/assets/img/post/2020-03-01_225608.png" alt="远程连接oracle12"></li>
+</ul>
+<h2 id="Mysql篇">Mysql篇</h2>
+<ul>
+<li>拉取镜像</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull mysql:5.7</span><br></pre></td></tr></table></figure>
+<ul>
+<li>运行容器</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --name mysql5.7 --restart=always -p 3306:3306 -e &#x27;MYSQL_ROOT_PASSWORD=123456&#x27; -d mysql:5.7</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参数解释：</p>
+<blockquote>
+<p><code>--name mysql5.7</code> 定义容器名<br>
+<code>--restart=always</code> 容器自动启动<br>
+<code>-p 3306:3306</code> 映射端口<br>
+<code>-e MYSQL_ROOT_PASSWORD=123456</code> 设置root数据库密码<br>
+<code>-d</code> 后台运行容器</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>本地连接<br>
+这里的本地指的是在容器内连接mysql</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker exec -it mysql5.7 bash</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p123456</span><br></pre></td></tr></table></figure>
+<p>如果是安装mysql8.0版本，还需要执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use mysql;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter user &#x27;root&#x27;@&#x27;%&#x27; identified with mysql_native_password by &#x27;123456&#x27;;</span><br><span class="line">alter user &#x27;root&#x27;@&#x27;localhost&#x27; identified with mysql_native_password by &#x27;123456&#x27;;</span><br></pre></td></tr></table></figure>
+<p>把密码加密方式改成<code>mysql_native_password</code></p>
+<ul>
+<li>远程连接<br>
+这里使用Navicat Premium 12进行测试<br>
+<img src="/assets/img/post/2020-03-01_142303.png" alt="远程连接mysql5.7"></li>
+</ul>
+<h2 id="Mssql篇">Mssql篇</h2>
+<ul>
+<li>拉取镜像</li>
+</ul>
+<blockquote>
+<p>这个镜像已经作废（迁移）</p>
+<blockquote>
+<p><s>docker pull microsoft/mssql-server-linux</s></p>
+</blockquote>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull mcr.microsoft.com/mssql/server:2017-latest</span><br></pre></td></tr></table></figure>
+<ul>
+<li>运行容器</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name mssql2017 --restart=always -e &#x27;ACCEPT_EULA=Y&#x27; -e &#x27;SA_PASSWORD=javalog.cn&#x27; -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest</span><br></pre></td></tr></table></figure>
+<ul>
+<li>本地连接</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it mssql2017 /bin/bash</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P &#x27;javalog.cn&#x27;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建数据库</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE testDB</span><br><span class="line">go</span><br></pre></td></tr></table></figure>
+<ul>
+<li>远程连接<br>
+这里使用Navicat Premium 12进行测试<br>
+<img src="/assets/img/post/2020-03-02_100349.png" alt="远程连接mssql2017"></li>
+</ul>
+<h2 id="Redis篇">Redis篇</h2>
+<ul>
+<li>拉取镜像</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker pull redis:5</span><br></pre></td></tr></table></figure>
+<ul>
+<li>运行容器<br>
+创建相关目录</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -vp /usr/local/docker/redis/data</span><br></pre></td></tr></table></figure>
+<p>下载redis官方的默认配置文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -P /usr/local/docker/redis http://download.redis.io/redis-stable/redis.conf</span><br></pre></td></tr></table></figure>
+<p>启动redis</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --name redis5 --restart=always -v /usr/local/docker/redis/redis.conf:/etc/redis/redis.conf -v /usr/local/docker/redis/data:/data -p 6379:6379 -d redis:5 redis-server /etc/redis/redis.conf --appendonly yes</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参数解释：</p>
+<blockquote>
+<p><code>-v /usr/local/docker/redis/redis.conf:/etc/redis/redis.conf -v /usr/local/docker/redis/data:/data</code> 宿主机与容器进行目录映射，可以直接操作宿主机上的文件就同步到容器内<br>
+<code>--appendonly yes</code> 数据持久化到本地</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>本地连接</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker exec -it redis5 /bin/bash</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli</span><br></pre></td></tr></table></figure>
+<ul>
+<li>远程连接<br>
+这里使用Another.Redis.Desktop.Manager进行测试</li>
+</ul>
+<blockquote>
+<ul>
+<li>需要修改配置文件：<br>
+vi /usr/local/docker/redis/redis.conf</li>
+</ul>
+<blockquote>
+<ul>
+<li>允许远程连接<br>
+bind 127.0.0.1 -&gt; #bind 127.0.0.1<br>
+protected-mode yes -&gt; protected-mode no</li>
+<li>增加密码验证<br>
+# requirepass foobared -&gt; requirepass 123456</li>
+</ul>
+</blockquote>
+<ul>
+<li>重启redis服务<br>
+docker restart redis5</li>
+</ul>
+</blockquote>
+<p><img src="/assets/img/post/2020-03-01_162433.png" alt="远程连接redis5"></p>
+<h2 id="官方地址">官方地址</h2>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://hub.docker.com/_/oracle-database-enterprise-edition">Oracle</a></li>
+<li><a target="_blank" rel="noopener" href="https://hub.docker.com/_/mysql">Mysql</a></li>
+<li><a target="_blank" rel="noopener" href="https://hub.docker.com/_/microsoft-mssql-server">Mssql</a></li>
+<li><a target="_blank" rel="noopener" href="https://hub.docker.com/_/redis">Redis</a></li>
+</ol>
+<p>参考：<br>
+<a target="_blank" rel="noopener" href="https://blog.csdn.net/stevensxiao/article/details/102986503">https://blog.csdn.net/stevensxiao/article/details/102986503</a><br>
+<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000014232366">https://segmentfault.com/a/1190000014232366</a><br>
+<a target="_blank" rel="noopener" href="https://www.cnblogs.com/sablier/p/11605606.html">https://www.cnblogs.com/sablier/p/11605606.html</a><br>
+<a target="_blank" rel="noopener" href="https://wangxin1248.github.io/linux/2018/07/ubuntu18.04-install-redis.html">https://wangxin1248.github.io/linux/2018/07/ubuntu18.04-install-redis.html</a><br>
+<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42456466/article/details/87270959">https://blog.csdn.net/weixin_42456466/article/details/87270959</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mssql</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/Docker/" class="article-tag-list-link color2">Docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/docker-install-oracle-mysql-mssql-redis.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vbox设置共享文件夹" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1114,103 +1385,6 @@ CentOS Linux release 7.6.1810 (Core)<br>
 
 
   
-    <article id="post-Putty常用设置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/putty-common-set.html">Putty常用设置</a>
-    </h1>
-  
-
-        
-        <a href="/post/putty-common-set.html" class="archive-article-date">
-  	<time datetime="2020-02-11T02:23:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="字体">字体</h2>
-<p><img src="/assets/img/post/2020-02-11_141600.png" alt="设置Putty字体"></p>
-<h2 id="颜色">颜色</h2>
-<p><img src="/assets/img/post/2020-02-11_141806.png" alt="设置Putty颜色"></p>
-<h2 id="全屏">全屏</h2>
-<p><img src="/assets/img/post/2020-02-11_141830.png" alt="设置Putty全屏"></p>
-<h2 id="保持连接">保持连接</h2>
-<p><img src="/assets/img/post/2020-02-11_141933.png" alt="设置Putty保持连接"></p>
-<p>记得保存session，下次依然有效，否则每次都要重新设置。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Putty</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/工具/" class="article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/putty-common-set.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
@@ -1321,11 +1495,11 @@ CentOS Linux release 7.6.1810 (Core)<br>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1405,11 +1579,11 @@ CentOS Linux release 7.6.1810 (Core)<br>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">斐讯N1</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color5">斐讯N1</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1429,10 +1603,6 @@ CentOS Linux release 7.6.1810 (Core)<br>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Putty</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Selenium</a>
               </li>
              
@@ -1445,15 +1615,23 @@ CentOS Linux release 7.6.1810 (Core)<br>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Putty</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JdbcTemplate</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ldap</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1489,10 +1667,6 @@ CentOS Linux release 7.6.1810 (Core)<br>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">google chrome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Jenkins</a>
               </li>
              
@@ -1505,15 +1679,19 @@ CentOS Linux release 7.6.1810 (Core)<br>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">google chrome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">desktop</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">格式化</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">U盘</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">desktop</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1541,7 +1719,7 @@ CentOS Linux release 7.6.1810 (Core)<br>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
+                <a href="javascript:void(0)" class="js-tag color4">Apple ID</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1549,19 +1727,11 @@ CentOS Linux release 7.6.1810 (Core)<br>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Apple ID</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">bridge</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Sass</a>
+                <a href="javascript:void(0)" class="js-tag color1">Win10</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1581,7 +1751,11 @@ CentOS Linux release 7.6.1810 (Core)<br>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+                <a href="javascript:void(0)" class="js-tag color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Sass</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1590,6 +1764,10 @@ CentOS Linux release 7.6.1810 (Core)<br>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">thymeleaf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
             
             <div class="clearfix"></div>
